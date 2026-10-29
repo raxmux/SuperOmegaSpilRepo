@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 public enum TriggerType
 {
+    none,
     EnemyKilled,
     PlayerDamaged,
     playerHealed
@@ -25,8 +25,21 @@ public struct TriggerContext
 }
 public class TriggerManager : MonoBehaviour
 {
+    public static TriggerManager Instance;
+
     private Dictionary<TriggerType,List<Action<TriggerContext>>> listeners 
         = new Dictionary<TriggerType, List<Action<TriggerContext>>>();
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
 
     public void TriggerEvent(TriggerType triggerType, TriggerContext context)
     {
