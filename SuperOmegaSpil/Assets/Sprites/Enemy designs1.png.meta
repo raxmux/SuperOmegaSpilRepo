@@ -1,0 +1,507 @@
+fileFormatVersion: 2
+guid: 282d93401c6d21946a777070c5049e4b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -47677686791688135
+    second: Enemy designs1_0
+  - first:
+      213: -129957047980891047
+    second: Enemy designs1_1
+  - first:
+      213: -5942454342811339491
+    second: Enemy designs1_2
+  - first:
+      213: -1680636986229837777
+    second: Enemy designs1_3
+  - first:
+      213: -5177711461069624471
+    second: Enemy designs1_4
+  - first:
+      213: 5294934261195349360
+    second: Enemy designs1_5
+  - first:
+      213: 2120740121605040918
+    second: Enemy designs1_6
+  - first:
+      213: 1991099130415050572
+    second: Enemy designs1_7
+  - first:
+      213: 7298357912627542160
+    second: Enemy designs1_8
+  - first:
+      213: 7201067781695602338
+    second: Enemy designs1_9
+  - first:
+      213: -7560441633457950266
+    second: Enemy designs1_10
+  - first:
+      213: 5410695896803693634
+    second: Enemy designs1_11
+  - first:
+      213: -3009025212296127794
+    second: Enemy designs1_12
+  - first:
+      213: -1945457695982100175
+    second: Enemy designs1_13
+  - first:
+      213: 3319639731902755580
+    second: Enemy designs1_14
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: 4
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Enemy designs1_0
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 394
+        width: 86
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 930b11f756d965ff0800000000000000
+      internalID: -47677686791688135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy designs1_1
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 395
+        width: 124
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9546a0fd0cc423ef0800000000000000
+      internalID: -129957047980891047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy designs1_2
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 398
+        width: 101
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d15b0ca7249288da0800000000000000
+      internalID: -5942454342811339491
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy designs1_3
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 401
+        width: 74
+        height: 148
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f20336fb09d2da8e0800000000000000
+      internalID: -1680636986229837777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy designs1_4
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 224
+        width: 73
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96be97ddbd21528b0800000000000000
+      internalID: -5177711461069624471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy designs1_5
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 223
+        width: 97
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07d189328a26b7940800000000000000
+      internalID: 5294934261195349360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy designs1_6
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 217
+        width: 115
+        height: 139
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61bef2987e16e6d10800000000000000
+      internalID: 2120740121605040918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy designs1_7
+      rect:
+        serializedVersion: 2
+        x: 464
+        y: 224
+        width: 100
+        height: 145
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c4f6afc1c1ec1ab10800000000000000
+      internalID: 1991099130415050572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy designs1_8
+      rect:
+        serializedVersion: 2
+        x: 620
+        y: 223
+        width: 52
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09873d96ad9f84560800000000000000
+      internalID: 7298357912627542160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy designs1_9
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 44
+        width: 71
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2aef97b9ef45fe360800000000000000
+      internalID: 7201067781695602338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy designs1_10
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 42
+        width: 88
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6c13aac246ae31790800000000000000
+      internalID: -7560441633457950266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy designs1_11
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 43
+        width: 104
+        height: 170
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 244d5a44047a61b40800000000000000
+      internalID: 5410695896803693634
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy designs1_12
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 43
+        width: 137
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eca15ec038bcd36d0800000000000000
+      internalID: -3009025212296127794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy designs1_13
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 43
+        width: 78
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 131ef6178885005e0800000000000000
+      internalID: -1945457695982100175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Enemy designs1_14
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 43
+        width: 137
+        height: 149
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf2365a7fbab11e20800000000000000
+      internalID: 3319639731902755580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Enemy designs1_0: -47677686791688135
+      Enemy designs1_1: -129957047980891047
+      Enemy designs1_10: -7560441633457950266
+      Enemy designs1_11: 5410695896803693634
+      Enemy designs1_12: -3009025212296127794
+      Enemy designs1_13: -1945457695982100175
+      Enemy designs1_14: 3319639731902755580
+      Enemy designs1_2: -5942454342811339491
+      Enemy designs1_3: -1680636986229837777
+      Enemy designs1_4: -5177711461069624471
+      Enemy designs1_5: 5294934261195349360
+      Enemy designs1_6: 2120740121605040918
+      Enemy designs1_7: 1991099130415050572
+      Enemy designs1_8: 7298357912627542160
+      Enemy designs1_9: 7201067781695602338
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

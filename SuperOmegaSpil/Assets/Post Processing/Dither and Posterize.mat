@@ -57,8 +57,8 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Color_resolution: 16
-    - _Dither_spread: 0.19
+    - _Color_resolution: 7.25
+    - _Dither_spread: 0.56
     - _EnableExternalAlpha: 0
     - _Float: -0.01
     - _Glow_Intensity: 0
