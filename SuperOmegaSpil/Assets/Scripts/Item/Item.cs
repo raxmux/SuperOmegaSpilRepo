@@ -27,12 +27,21 @@ public struct Stats
         Speed = speed;
     }
 }
+public enum itemType
+{
+    Equipment,
+    Consumable,
+    relic
+}
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]
 public class Item : ScriptableObject
 {
     [SerializeField] private string itemName;
+    [SerializeField,TextArea(1, 15)] private string itemDesc;
     [SerializeField] private Sprite itemSprite;
+    [Header("")]
+    [SerializeField] private itemType itemType;
     [Header("")]
     [SerializeField] private Stats stats;
     [Header("")]
@@ -40,6 +49,13 @@ public class Item : ScriptableObject
 
     public virtual void Pickup()
     {
+        if(itemType == itemType.Equipment)
+        {
+            //check to see if other equipment is equipped and unequip it if it is, then equip this item
+
+
+        }
+
         //add the trigger to the trigger manager so that it can be called when the event happens
 
         if (trigger.triggerType != TriggerType.none && trigger.triggerAction != null && trigger.triggerAction.Count > 0)
