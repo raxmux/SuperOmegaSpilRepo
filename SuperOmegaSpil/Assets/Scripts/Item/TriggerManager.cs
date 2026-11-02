@@ -4,6 +4,10 @@ using UnityEngine;
 public enum TriggerType
 {
     none,
+
+    TimeclockPoint,
+    TimeclockReset,
+
     EnemyKilled,
     PlayerDamaged,
     playerHealed
@@ -27,7 +31,7 @@ public class TriggerManager : MonoBehaviour
 {
     public static TriggerManager Instance;
 
-    private Dictionary<TriggerType,List<Action<TriggerContext>>> listeners 
+    private Dictionary<TriggerType, List<Action<TriggerContext>>> listeners
         = new Dictionary<TriggerType, List<Action<TriggerContext>>>();
 
     private void Awake()
@@ -46,8 +50,7 @@ public class TriggerManager : MonoBehaviour
         // Check if the trigger type has any listeners
         if (listeners.ContainsKey(triggerType))
         {
-            // Invoke all registered functions for the specified trigger type
-            foreach (var listener in listeners[triggerType])
+            foreach (var listener in listeners[triggerType].ToArray())
             {
                 listener.Invoke(context);
             }
@@ -58,7 +61,7 @@ public class TriggerManager : MonoBehaviour
     {
         // Check if the trigger type already has a list of listeners, if not, create one
         if (!listeners.ContainsKey(triggerType)) listeners[triggerType] = new List<Action<TriggerContext>>();
-        
+
         //Add the function to the list of listeners for the specified trigger type
         listeners[triggerType].Add(function);
     }
@@ -71,8 +74,4 @@ public class TriggerManager : MonoBehaviour
             listeners[triggerType].Remove(function);
         }
     }
-
-
-
-
 }
