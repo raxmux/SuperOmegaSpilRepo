@@ -29,9 +29,30 @@ public struct Stats
 }
 public enum itemType
 {
+    relic,
     Equipment,
-    Consumable,
-    relic
+    Consumable
+}
+public enum itemRarity
+{
+    Common,
+    Uncommon,
+    Rare,
+    Epic,
+    Legendary
+}
+public enum equipmentType
+{
+    none,
+
+    weapon,
+
+    Head, 
+    Arms, 
+    Legs, 
+    Torso, 
+    Face, 
+    Ears
 }
 
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]
@@ -40,24 +61,35 @@ public class Item : ScriptableObject
     [SerializeField] private string itemName;
     [SerializeField,TextArea(1, 15)] private string itemDesc;
     [SerializeField] private Sprite itemSprite;
+    [SerializeField] private itemRarity itemRarity;
     [Header("")]
-    [SerializeField] private itemType itemType;
+    public itemType itemType;
+    public equipmentType equipmentType;
     [Header("")]
     [SerializeField] private Stats stats;
     [Header("")]
     [SerializeField] private Trigger trigger = new Trigger();
 
-    public virtual void Pickup()
+    public virtual bool Pickup()
     {
         if(itemType == itemType.Equipment)
         {
-            //check to see if other equipment is equipped and unequip it if it is, then equip this item
 
+            if(equipmentType != equipmentType.none)
+            {
+                //check to see if other equipment is equipped and unequip it if it is, then equip this item
+
+
+            }
+            else
+            {
+                return false;
+            }
 
         }
 
-        //add the trigger to the trigger manager so that it can be called when the event happens
 
+        //add the trigger to the trigger manager so that it can be called when the event happens
         if (trigger.triggerType != TriggerType.none && trigger.triggerAction != null && trigger.triggerAction.Count > 0)
         {
             TriggerManager.Instance.RegisterListener(trigger.triggerType, 
@@ -76,6 +108,7 @@ public class Item : ScriptableObject
         }
 
         OnPickup();
+        return true;
     }
     protected virtual void OnPickup()
     {
