@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class TimeClock : MonoBehaviour
 {
-    public float timeclockTime = 0f;
+    public float timeclockTime = 0f; //current time of the clock, in seconds
     float timeclockSpeed = 1f;
-    float timeclockResetTime = 100f;
+    float timeclockResetTime = 15f; 
 
     int nextTimeclockPoint = 0; //index of the next timeclock point to check against
     float[] timeclockPoints; //the lil points allong the clock yk
