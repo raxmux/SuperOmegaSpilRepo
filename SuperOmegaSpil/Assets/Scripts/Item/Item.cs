@@ -66,51 +66,12 @@ public class Item : ScriptableObject
     public itemType itemType;
     public equipmentType equipmentType;
     [Header("")]
-    [SerializeField] private Stats stats;
+    public Stats stats;
     [Header("")]
-    [SerializeField] private Trigger trigger = new Trigger();
+    public Trigger trigger = new Trigger();
 
-    public virtual bool Pickup()
-    {
-        if(itemType == itemType.Equipment)
-        {
-
-            if(equipmentType != equipmentType.none)
-            {
-                //check to see if other equipment is equipped and unequip it if it is, then equip this item
-
-
-            }
-            else
-            {
-                return false;
-            }
-
-        }
-
-
-        //add the trigger to the trigger manager so that it can be called when the event happens
-        if (trigger.triggerType != TriggerType.none && trigger.triggerAction != null && trigger.triggerAction.Count > 0)
-        {
-            TriggerManager.Instance.RegisterListener(trigger.triggerType, 
-                context =>
-                {
-                    foreach (TriggerActions action in trigger.triggerAction)
-                    {
-                        if (action != null) action.Execute(context);
-                    }
-                });
-        }
-        
-        if(stats.hasStats)
-        {
-            //change the stats of the player when the item is picked up
-        }
-
-        OnPickup();
-        return true;
-    }
-    protected virtual void OnPickup()
+    
+    public virtual void OnPickup()
     {
         //add functionality for when the item is picked up, Set in the child class
 
