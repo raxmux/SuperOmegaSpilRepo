@@ -4,6 +4,10 @@ using UnityEngine;
 public enum TriggerType
 {
     none,
+
+    TimeclockPoint,
+    TimeclockReset,
+
     EnemyKilled,
     PlayerDamaged,
     playerHealed
