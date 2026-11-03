@@ -288,11 +288,15 @@ MonoBehaviour:
   roomPrefabs:
   - {fileID: 8036673833102426025, guid: 9b32abcf003c76f4482b2c30299032cc, type: 3}
   - {fileID: 7029238354559564221, guid: 640d2bd5cf4f7ce4e8a3a61db826cb76, type: 3}
-  currentRooms:
-  - {fileID: 3237445434714056367}
+  startRoom: {fileID: 8036673833102426025, guid: bc307abc0807c99499e0d7e3abf005e2, type: 3}
+  endRoom: {fileID: 8036673833102426025, guid: 1b2d2995639550b439147af3026edb15, type: 3}
+  currentRooms: []
   mask:
     serializedVersion: 2
     m_Bits: 64
+  mapSize: 15
+  mapX: 7
+  mapY: 7
 --- !u!4 &569211957
 Transform:
   m_ObjectHideFlags: 0
@@ -761,11 +765,6 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
---- !u!1 &3237445434714056367 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8036673833102426025, guid: bc307abc0807c99499e0d7e3abf005e2, type: 3}
-  m_PrefabInstance: {fileID: 4367469894441947106}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4367469894441947106
 PrefabInstance:
   m_ObjectHideFlags: 0

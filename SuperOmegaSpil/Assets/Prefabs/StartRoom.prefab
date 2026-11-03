@@ -153,6 +153,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomSpawner
   roomPrefabs: []
+  startRoom: {fileID: 0}
+  endRoom: {fileID: 0}
   currentRooms: []
   mask:
     serializedVersion: 2
