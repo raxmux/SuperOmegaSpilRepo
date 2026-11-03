@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 28018580342447726}
   m_Layer: 6
   m_Name: RoomUnknown
-  m_TagString: Untagged
+  m_TagString: Room
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -154,3 +154,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::RoomSpawner
   roomPrefabs: []
   currentRooms: []
+  mask:
+    serializedVersion: 2
+    m_Bits: 0
