@@ -70,16 +70,20 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Damage: 0
+    - _Damage: 0.08
     - _EnableExternalAlpha: 0
+    - _Only_Inner_glow: 0
+    - _Switch_Colors: 0
     - _ZWrite: 0
     - _col_a: 1
-    - _col_b: 0
-    - _col_c: 0.02
-    - _col_d: 0.57
+    - _col_b: 0.92
+    - _col_c: 0.45
+    - _col_d: 0.09
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _MainColor: {r: 0.6528301, g: 0.08745461, b: 0.19561346, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+    - _SecoColor: {r: 0.3383054, g: 0.6040126, b: 0.83396226, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
