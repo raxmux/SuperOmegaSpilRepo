@@ -1,23 +1,17 @@
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
 
-    new List<Camera> cameras = new List<Camera>();
+    public new List<GameObject> cameras = new List<GameObject>();
 
     public void switchCam()
     {
-        foreach (Camera cam in cameras)
-        {
-            if (cam.enabled == true)
-            {
-                cam.enabled = false;
-            }
-            else
-            {
-                cam.enabled = true;
-            }
-        }
+        cameras[0].GetComponent<Camera>().enabled = !cameras[0].GetComponent<Camera>().enabled;
+        cameras[0].GetComponent<AudioListener>().enabled = !cameras[0].GetComponent<AudioListener>().enabled;
+        cameras[1].GetComponent<Camera>().enabled = !cameras[1].GetComponent<Camera>().enabled;
+        cameras[1].GetComponent<AudioListener>().enabled = !cameras[1].GetComponent<AudioListener>().enabled;
     }
 }
