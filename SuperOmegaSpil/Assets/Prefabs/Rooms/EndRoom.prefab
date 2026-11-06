@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4289911926023266150}
   - component: {fileID: 6625256302479117601}
+  - component: {fileID: -2452350252583394571}
   - component: {fileID: 4214006313920802668}
   m_Layer: 6
   m_Name: EndRoom
@@ -80,10 +81,10 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -7596529933580450520, guid: 45c8a233d40a3954193cd3e5f3891d29, type: 3}
-  m_Color: {r: 1, g: 0.031817645, b: 0, a: 1}
+  m_Sprite: {fileID: -7604091321716038233, guid: f02a0594818b02f419f3828409fbdd09, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -93,6 +94,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &-2452350252583394571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8036673833102426025}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d47489254ca6a4788d39210839439d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomType
+  roomType: 1
+  roomSprite: {fileID: -7604091321716038233, guid: f02a0594818b02f419f3828409fbdd09, type: 3}
 --- !u!61 &4214006313920802668
 BoxCollider2D:
   m_ObjectHideFlags: 0

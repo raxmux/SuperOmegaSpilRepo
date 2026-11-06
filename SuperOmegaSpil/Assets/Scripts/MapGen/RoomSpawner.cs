@@ -5,6 +5,7 @@ using System;
 using UnityEditor;
 using UnityEngine.Rendering;
 
+
 public class RoomSpawner : MonoBehaviour
 {
 
@@ -12,6 +13,9 @@ public class RoomSpawner : MonoBehaviour
     [SerializeField] GameObject startRoom;
     [SerializeField] GameObject endRoom;
     [SerializeField] List<GameObject> currentRooms = new List<GameObject>();
+
+    [SerializeField] Sprite unknownRoom;
+
     RaycastHit2D hit;
 
     [SerializeField] LayerMask mask;
@@ -46,17 +50,27 @@ public class RoomSpawner : MonoBehaviour
             {
                 Transform dir = currentRooms[randRoom].transform;
                 hit = Physics2D.Raycast(currentRooms[randRoom].transform.position + dir.up, dir.up, 0.1f, mask);
-                int rand = UnityEngine.Random.Range(0, 100);
+                int rand = UnityEngine.Random.Range(0, 11);
                 if (hit.collider == null)
                 {
                     int roomtype;
-                    if (rand > 80)
+                    if (rand > 8)
                     {
                         roomtype = 0;
                     }
                     else
                     {
-                        roomtype = 1;
+                        int roomrand = UnityEngine.Random.Range(0, 11);
+                        if (roomrand > 9)
+                        {
+                            //shoproom
+                            roomtype = 1;
+                        }
+                        else
+                        {
+                            //eventroom
+                            roomtype = 2;
+                        }
                     }
 
                     if (!(MathF.Abs((currentRooms[randRoom].transform.position + dir.up).y) > mapY || MathF.Abs((currentRooms[randRoom].transform.position + dir.up).x) > mapX+1))
@@ -64,20 +78,27 @@ public class RoomSpawner : MonoBehaviour
                         if (roomtype == 0)
                         {
                             Instantiate(roomPrefabs[roomtype], currentRooms[randRoom].transform.position + dir.up, Quaternion.identity, transform);
+                            
                         }
                         else
                         {
-                            currentRooms.Add(Instantiate(roomPrefabs[roomtype], currentRooms[randRoom].transform.position + dir.up, Quaternion.identity, transform));
-
+                           GameObject instantatedRoom = Instantiate(roomPrefabs[roomtype], currentRooms[randRoom].transform.position + dir.up, Quaternion.identity, transform);
+                           currentRooms.Add(instantatedRoom);
+                           instantatedRoom.GetComponent<SpriteRenderer>().sprite = unknownRoom;
                         }
                     }
                 }
                 dir.rotation = Quaternion.Euler(0, 0, dir.rotation.eulerAngles.z + 90);
             }
+            if (i == 0)
+            {
+                currentRooms.RemoveAt(0);
+            }
         }
         int endRoomRand = UnityEngine.Random.Range(1, currentRooms.Count);
         Vector2 endRoomPos = currentRooms[endRoomRand].transform.position;
-        Instantiate(endRoom, endRoomPos, Quaternion.identity, transform);
+        GameObject endRoomInstance = Instantiate(endRoom, endRoomPos, Quaternion.identity, transform);
+        endRoomInstance.GetComponent<SpriteRenderer>().sprite = unknownRoom;
         Destroy(currentRooms[endRoomRand]);
     }
 }

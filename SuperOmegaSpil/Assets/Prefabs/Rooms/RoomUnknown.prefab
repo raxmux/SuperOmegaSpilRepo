@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3853295607915675563}
   - component: {fileID: 1409933047572519548}
+  - component: {fileID: -787491295960589756}
   - component: {fileID: 6645200736145391935}
   m_Layer: 6
   m_Name: RoomUnknown
@@ -93,6 +94,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &-787491295960589756
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7029238354559564221}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 13d47489254ca6a4788d39210839439d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RoomType
+  roomType: 3
+  roomSprite: {fileID: -7596529933580450520, guid: 45c8a233d40a3954193cd3e5f3891d29, type: 3}
 --- !u!61 &6645200736145391935
 BoxCollider2D:
   m_ObjectHideFlags: 0
