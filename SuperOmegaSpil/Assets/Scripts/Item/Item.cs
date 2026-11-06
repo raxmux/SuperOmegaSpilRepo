@@ -47,11 +47,11 @@ public enum equipmentType
 
     weapon,
 
-    Head, 
-    Arms, 
-    Legs, 
-    Torso, 
-    Face, 
+    Head,
+    Arms,
+    Legs,
+    Torso,
+    Face,
     Ears
 }
 
@@ -59,7 +59,7 @@ public enum equipmentType
 public class Item : ScriptableObject
 {
     [SerializeField] private string itemName;
-    [SerializeField,TextArea(1, 15)] private string itemDesc;
+    [SerializeField, TextArea(1, 15)] private string itemDesc;
     [SerializeField] private Sprite itemSprite;
     [SerializeField] private itemRarity itemRarity;
     [SerializeField] public int value;
@@ -71,7 +71,8 @@ public class Item : ScriptableObject
     [Header("")]
     public Trigger trigger = new Trigger();
 
-    
+    public List<Move> moves = new List<Move>();
+
     public virtual void OnPickup()
     {
         //add functionality for when the item is picked up, Set in the child class
