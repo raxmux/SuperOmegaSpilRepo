@@ -1,3 +1,4 @@
+using System;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -10,8 +11,8 @@ public class MapMovement : MonoBehaviour
     Vector2 moveDirection;
 
     RaycastHit2D hit;
-    public LayerMask mask;
-    public RoomSpawner roomSpawner;
+    [SerializeField] LayerMask mask;
+    [SerializeField] RoomSpawner roomSpawner;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -34,11 +35,19 @@ public class MapMovement : MonoBehaviour
 
                     if (hit.collider.gameObject.GetComponent<RoomType>().roomType == RoomType.RoomTypes.EndRoom)
                     {
-                        transform.position = new Vector3(0,0,0);
+                        transform.position = new Vector3(0, 0, 0);
                         roomSpawner.SpawnRooms();
                     }
                 }
             }
         }
+    }
+
+    public void Interact(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+           
+        }           
     }
 }
