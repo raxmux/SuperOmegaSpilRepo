@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
-
+ 
     public new List<GameObject> cameras = new List<GameObject>();
 
     public void switchCam()

@@ -154,6 +154,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   roomSpawner: {fileID: 630334858}
+  cameraManager: {fileID: 1364166736}
 --- !u!114 &76300595
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1583,11 +1584,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2210244891373943920, guid: 8920333a9dc0d7548b1bfd24522f7270, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2210244891373943920, guid: 8920333a9dc0d7548b1bfd24522f7270, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.46875
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2501473627848669594, guid: 8920333a9dc0d7548b1bfd24522f7270, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1672,7 +1673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2210244891373943920, guid: 8920333a9dc0d7548b1bfd24522f7270, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.03125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2210244891373943920, guid: 8920333a9dc0d7548b1bfd24522f7270, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -1680,7 +1681,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2210244891373943920, guid: 8920333a9dc0d7548b1bfd24522f7270, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9375
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2501473627848669594, guid: 8920333a9dc0d7548b1bfd24522f7270, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1747,6 +1748,53 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2501473627848669594, guid: 8920333a9dc0d7548b1bfd24522f7270, type: 3}
   m_PrefabInstance: {fileID: 1337737211}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1364166735
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1364166737}
+  - component: {fileID: 1364166736}
+  m_Layer: 0
+  m_Name: CameraManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1364166736
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364166735}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08d2a7cf4d2e5a43910a1500e903abe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CameraManager
+  cameras:
+  - {fileID: 2145092082}
+  - {fileID: 1420212004}
+--- !u!4 &1364166737
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1364166735}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 22.58995, y: -1.63305, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1372355723
 GameObject:
   m_ObjectHideFlags: 0
@@ -1868,6 +1916,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1372355723}
   m_CullTransparentMesh: 1
+--- !u!1 &1420212004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8036673833102426025, guid: bc307abc0807c99499e0d7e3abf005e2, type: 3}
+  m_PrefabInstance: {fileID: 2039406553}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1467706398
 GameObject:
   m_ObjectHideFlags: 0
@@ -3700,6 +3753,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2142907626}
   m_CullTransparentMesh: 1
+--- !u!1 &2145092082 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1390180697885387941, guid: 8920333a9dc0d7548b1bfd24522f7270, type: 3}
+  m_PrefabInstance: {fileID: 1232079662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -3709,3 +3767,4 @@ SceneRoots:
   - {fileID: 76300597}
   - {fileID: 630334859}
   - {fileID: 1647153016}
+  - {fileID: 1364166737}
