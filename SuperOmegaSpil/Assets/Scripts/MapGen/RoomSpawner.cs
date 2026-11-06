@@ -22,11 +22,9 @@ public class RoomSpawner : MonoBehaviour
     [SerializeField] int mapSize;
     [SerializeField] int mapX;
     [SerializeField] int mapY;
-
-    // Update is called once per frame
-    void Update()
+    public void Start()
     {
-        //Invoke("SpawnRooms", 0.1f);
+        SpawnRooms();
     }
 
     public void SpawnRooms()
