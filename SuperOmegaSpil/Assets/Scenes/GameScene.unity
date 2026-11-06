@@ -153,7 +153,7 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 64
-  roomSpawner: {fileID: 0}
+  roomSpawner: {fileID: 630334858}
 --- !u!114 &76300595
 MonoBehaviour:
   m_ObjectHideFlags: 0
