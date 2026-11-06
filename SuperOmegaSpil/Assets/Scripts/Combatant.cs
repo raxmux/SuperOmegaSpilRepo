@@ -17,6 +17,13 @@ public class Combatant : MonoBehaviour
     {
         Hp = maxHp;
     }
+    public void ResetHp(float newMaxHp)
+    {
+        maxHp = newMaxHp;
+        Hp = maxHp;
+        IsDead = false;
+        HpChanged?.Invoke(this);
+    }
 
     public void TakeDamage(float amount, GameObject source = null)
     {
