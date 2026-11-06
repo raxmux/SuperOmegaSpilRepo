@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 4289911926023266150}
   - component: {fileID: 6625256302479117601}
   - component: {fileID: 4214006313920802668}
-  - component: {fileID: 4052083622701047861}
   m_Layer: 6
   m_Name: StartRoom
   m_TagString: Room
@@ -140,22 +139,3 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &4052083622701047861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8036673833102426025}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bf873f1acaa80764b975fc6ce965dfe2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::RoomSpawner
-  roomPrefabs: []
-  startRoom: {fileID: 0}
-  endRoom: {fileID: 0}
-  currentRooms: []
-  mask:
-    serializedVersion: 2
-    m_Bits: 0
