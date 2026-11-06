@@ -30,4 +30,8 @@ public class ShopEvent : Event
             Inventory.instance.AddItem(itemsForSale[buttonIndex]);
         }
     }
+    public void LeaveStore()
+    {
+        EventManager.instance.shopUI.SetActive(false);
+    }
 }
