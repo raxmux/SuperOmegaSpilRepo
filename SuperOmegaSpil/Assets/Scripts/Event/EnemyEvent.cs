@@ -1,5 +1,7 @@
 using UnityEngine;
 
+[CreateAssetMenu(fileName = "New Enemy Event", menuName = "Event/Enemy Event")]
+
 public class EnemyEvent : Event
 {
     protected override EventType EventType => EventType.Enemy;

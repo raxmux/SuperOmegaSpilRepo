@@ -62,6 +62,7 @@ public class Item : ScriptableObject
     [SerializeField,TextArea(1, 15)] private string itemDesc;
     [SerializeField] private Sprite itemSprite;
     [SerializeField] private itemRarity itemRarity;
+    [SerializeField] public int value;
     [Header("")]
     public itemType itemType;
     public equipmentType equipmentType;

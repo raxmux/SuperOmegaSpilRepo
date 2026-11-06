@@ -8,7 +8,9 @@ public enum EventType
     Dialogue,
     Other
 }
-public class Event : MonoBehaviour
+
+[CreateAssetMenu(fileName = "New Event", menuName = "Event/Other Event")]
+public class Event : ScriptableObject
 {
     private EventType eventType = EventType.Other;
     protected virtual EventType EventType => eventType;
@@ -25,7 +27,7 @@ public class Event : MonoBehaviour
     }
     protected virtual void EndEvent()
     {
-        //start the event
+        //end the event
 
         OnEventEnd();
     }

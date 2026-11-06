@@ -8,6 +8,9 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
+   public static Inventory instance;
+
+    public int money = 2;
     public List<Item> items = new List<Item>();
     public List<Item> equipment = new List<Item>();
     public List<Item> consumables = new List<Item>();
@@ -16,6 +19,20 @@ public class Inventory : MonoBehaviour
     [Header("")]
     public GameObject chooseEquipmentUI;
     public GameObject chooseConsumableUI;
+
+    void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("FUCK GUYS NOOO theres more than one instance of Inventory!!!");
+            return;
+        }
+        instance = this;
+    }
+    public void AddMoney(int amount)
+    {
+        money += amount;
+    }
 
     public void RemoveItem(Item item)
     {
@@ -31,9 +48,6 @@ public class Inventory : MonoBehaviour
         {
             consumables.Remove(item);
         }
-
-        // Remove the item from the inventory
-        Debug.Log($"Removed {item.name} from inventory : {item.itemType}.");
     }
 
     private bool? pickEquipment; //used to determine if the player wants to keep the new equipment or not, null means they haven't chosen yet
