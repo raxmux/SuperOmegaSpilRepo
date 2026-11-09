@@ -21,6 +21,13 @@ public class ShopEvent : Event
         EventManager.instance.shopUI.SetActive(true);
 
     }
+    public override void EndEvent()
+    {
+        base.EndEvent();
+
+        EventManager.instance.shopUI.SetActive(false);
+    }
+
 
     public void BuyItem(int buttonIndex)
     {

@@ -42,6 +42,11 @@ public class DialogueEvent : Event
 
         EndEvent();
     }
+    public override void EndEvent()
+    {
+        base.EndEvent();
 
+        EventManager.instance.dialogueUI.SetActive(false);
+    }
 
 }

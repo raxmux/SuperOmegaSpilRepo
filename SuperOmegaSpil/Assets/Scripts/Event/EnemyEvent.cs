@@ -21,5 +21,11 @@ public class EnemyEvent : Event
         EventManager.instance.enemyUI.SetActive(true);
 
     }
+    public override void EndEvent()
+    {
+        base.EndEvent();
+
+        EventManager.instance.enemyUI.SetActive(false);
+    }
 
 }
