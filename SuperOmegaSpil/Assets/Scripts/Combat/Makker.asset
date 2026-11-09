@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92477f39dbe46e84e84005fd9a9ed7a3, type: 3}
+  m_Name: Makker
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  enemyName: Makker
+  sprite: {fileID: -7560441633457950266, guid: 282d93401c6d21946a777070c5049e4b, type: 3}
+  maxHp: 50
+  attackTimes:
+  - 12
+  lowHpThreshold: 0.3
+  moves: []
