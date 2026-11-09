@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Move
   moveName: Suckabulla
   description: 
-  icon: {fileID: -8527568592950175283, guid: 829723014604bb44eb4e7668fb94f9fc, type: 3}
+  icon: {fileID: 5410695896803693634, guid: 282d93401c6d21946a777070c5049e4b, type: 3}
   timeCost: 1
   damage: 50
   heal: 0

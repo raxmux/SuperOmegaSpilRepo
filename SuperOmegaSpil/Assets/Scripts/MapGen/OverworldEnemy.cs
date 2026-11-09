@@ -1,5 +1,5 @@
 using System.Collections;
-using System.Runtime.CompilerServices;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class OverworldEnemy : MonoBehaviour
@@ -16,44 +16,24 @@ public class OverworldEnemy : MonoBehaviour
 
     public void Start()
     {
-        TriggerManager.Instance.RegisterListener(TriggerType.TimeclockPoint, EnemyMove);
+        TriggerManager.Instance.RegisterListener(TriggerType.TimeclockReset, EnemyMove);
     }
 
     void OnDestroy()
     {
         if (TriggerManager.Instance != null)
-            TriggerManager.Instance.UnregisterListener(TriggerType.TimeclockPoint, EnemyMove);
+            TriggerManager.Instance.UnregisterListener(TriggerType.TimeclockReset, EnemyMove);
     }
     public void EnemyMove(TriggerContext context)
     {
         moved = false;
-        int attempts = 0;
-        while (moved == false && attempts < 20)
+        List<Vector2> directions = new List<Vector2>() { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
+        for (int i = 0; i < 4 && !moved; i++)
         {
-            attempts++;
-            int rand = UnityEngine.Random.Range(0, 4);
-            switch (rand)
-            {
+            int rand = Random.Range(0, directions.Count);
+            Vector2 direction = directions[rand];
 
-                case 0:
-                    xdir = 1;
-                    ydir = 0;
-                    break;
-                case 1:
-                    xdir = -1;
-                    ydir = 0;
-                    break;
-                case 2:
-                    ydir = 1;
-                    xdir = 0;
-                    break;
-                case 3:
-                    ydir = -1;
-                    xdir = 0;
-                    break;
-            }
-
-            hit = Physics2D.Raycast(this.transform.position + new Vector3(xdir, ydir, transform.position.z), new Vector2(xdir, ydir), 0.1f, mask);
+            hit = Physics2D.Raycast(this.transform.position + new Vector3(direction.x, direction.y, transform.position.z), direction, 0.1f, mask);
 
             if (hit.collider != null)
             {
@@ -63,10 +43,13 @@ public class OverworldEnemy : MonoBehaviour
                     {
                         moved = true;
                         StartCoroutine(movewithLerp(hit.collider.gameObject.transform.position));
+                        break;
                     }
                 }
             }
-            else { }
+
+            directions.RemoveAt(rand);
+
         }
     }
 
