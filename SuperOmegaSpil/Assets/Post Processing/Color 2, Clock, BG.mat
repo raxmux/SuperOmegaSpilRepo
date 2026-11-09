@@ -76,15 +76,25 @@ Material:
     - _Outline: 0
     - _Switch_Colors: 0
     - _ZWrite: 0
+    - _borderWidth: 2.8
     - _col_a: 1
     - _col_b: 0.92
     - _col_c: 0.45
     - _col_d: 0.09
+    - _damage: 0
+    - _distNoiseSize: 1
+    - _distortionSpeed: 0
+    - _distortionStrength: 0.003
+    - _outline: 0
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _MainColor: {r: 0.30161715, g: 0.29534346, b: 0.3735848, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
     - _SecoColor: {r: 0.17233886, g: 0.41280523, b: 0.8867924, a: 1}
+    - _distDir: {r: 0, g: 0, b: 0, a: 0}
+    - _distOffset: {r: 0, g: 0, b: 0, a: 0}
+    - _mainColor: {r: 0.5698112, g: 0.119337775, b: 0.20392156, a: 1}
+    - _secoColor: {r: 0.7132074, g: 0.49020922, b: 0.14936987, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1
