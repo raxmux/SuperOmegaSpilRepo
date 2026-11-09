@@ -33,7 +33,12 @@ public class DialogueEvent : Event
         base.StartEvent();
 
         EventManager.instance.dialogueUI.SetActive(true);
+        EventManager.instance.dialoguePrompt.text = dialoguePromt;
 
+        for (int i = 0; i < dialogueOptions.Count; i++)
+        {
+            EventManager.instance.dialogueOptions[i].text = dialogueOptions[i];
+        }
     }
     public void ChooseOption(int buttonIndex)
     {
