@@ -145,12 +145,12 @@ TextureImporter:
       name: Enemy designs1_0
       rect:
         serializedVersion: 2
-        x: 49
-        y: 394
-        width: 86
-        height: 172
+        x: 42
+        y: 386
+        width: 96
+        height: 186
       alignment: 9
-      pivot: {x: 0.4296853, y: 0.5380872}
+      pivot: {x: 0.46160072, y: 0.030100623}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -167,12 +167,12 @@ TextureImporter:
       name: Enemy designs1_1
       rect:
         serializedVersion: 2
-        x: 164
-        y: 395
-        width: 124
-        height: 164
+        x: 159
+        y: 388
+        width: 135
+        height: 177
       alignment: 9
-      pivot: {x: 0.58000356, y: 0.5627307}
+      pivot: {x: 0.5766189, y: 0.040686257}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -189,12 +189,12 @@ TextureImporter:
       name: Enemy designs1_2
       rect:
         serializedVersion: 2
-        x: 320
-        y: 398
-        width: 101
-        height: 164
+        x: 315
+        y: 392
+        width: 113
+        height: 175
       alignment: 9
-      pivot: {x: 0.48181063, y: 0.5448078}
+      pivot: {x: 0.46934435, y: 0.040676583}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -211,12 +211,12 @@ TextureImporter:
       name: Enemy designs1_3
       rect:
         serializedVersion: 2
-        x: 474
-        y: 401
-        width: 74
-        height: 148
+        x: 467
+        y: 394
+        width: 87
+        height: 160
       alignment: 9
-      pivot: {x: 0.5496521, y: 0.5446866}
+      pivot: {x: 0.54965127, y: 0.031086277}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -233,12 +233,12 @@ TextureImporter:
       name: Enemy designs1_4
       rect:
         serializedVersion: 2
-        x: 44
-        y: 224
-        width: 73
-        height: 144
+        x: 39
+        y: 214
+        width: 86
+        height: 160
       alignment: 9
-      pivot: {x: 0.55536515, y: 0.55613434}
+      pivot: {x: 0.58269876, y: 0.037897322}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -255,12 +255,12 @@ TextureImporter:
       name: Enemy designs1_5
       rect:
         serializedVersion: 2
-        x: 181
-        y: 223
-        width: 97
-        height: 144
+        x: 170
+        y: 215
+        width: 115
+        height: 157
       alignment: 9
-      pivot: {x: 0.50378793, y: 0.5}
+      pivot: {x: 0.5037881, y: 0.05104616}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -277,12 +277,12 @@ TextureImporter:
       name: Enemy designs1_6
       rect:
         serializedVersion: 2
-        x: 311
-        y: 217
-        width: 115
-        height: 139
+        x: 304
+        y: 213
+        width: 130
+        height: 150
       alignment: 9
-      pivot: {x: 0.5990447, y: 0.47885352}
+      pivot: {x: 0.55393255, y: 0.06255719}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -299,12 +299,12 @@ TextureImporter:
       name: Enemy designs1_7
       rect:
         serializedVersion: 2
-        x: 464
-        y: 225
-        width: 100
-        height: 145
+        x: 454
+        y: 218
+        width: 119
+        height: 159
       alignment: 9
-      pivot: {x: 0.47795472, y: 0.50253403}
+      pivot: {x: 0.49391785, y: 0.051171876}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -321,12 +321,12 @@ TextureImporter:
       name: Enemy designs1_8
       rect:
         serializedVersion: 2
-        x: 620
-        y: 223
-        width: 52
-        height: 135
+        x: 611
+        y: 216
+        width: 69
+        height: 149
       alignment: 9
-      pivot: {x: 0.485868, y: 0.5517115}
+      pivot: {x: 0.51656634, y: 0.043266352}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -343,12 +343,12 @@ TextureImporter:
       name: Enemy designs1_9
       rect:
         serializedVersion: 2
-        x: 49
-        y: 44
-        width: 71
-        height: 118
+        x: 40
+        y: 38
+        width: 87
+        height: 129
       alignment: 9
-      pivot: {x: 0.5, y: 0.55604786}
+      pivot: {x: 0.51736087, y: 0.033750534}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -365,12 +365,12 @@ TextureImporter:
       name: Enemy designs1_10
       rect:
         serializedVersion: 2
-        x: 183
-        y: 42
-        width: 88
-        height: 117
+        x: 175
+        y: 35
+        width: 103
+        height: 130
       alignment: 9
-      pivot: {x: 0.5167011, y: 0.4968595}
+      pivot: {x: 0.49919215, y: 0.05701365}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -387,12 +387,12 @@ TextureImporter:
       name: Enemy designs1_11
       rect:
         serializedVersion: 2
-        x: 319
-        y: 43
-        width: 104
-        height: 170
+        x: 312
+        y: 36
+        width: 119
+        height: 181
       alignment: 9
-      pivot: {x: 0.39047945, y: 0.55619437}
+      pivot: {x: 0.38159004, y: 0.043206338}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -409,12 +409,12 @@ TextureImporter:
       name: Enemy designs1_12
       rect:
         serializedVersion: 2
-        x: 437
-        y: 44
-        width: 137
-        height: 157
+        x: 430
+        y: 36
+        width: 150
+        height: 171
       alignment: 9
-      pivot: {x: 0.59956616, y: 0.5071182}
+      pivot: {x: 0.63780403, y: 0.034089763}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -431,12 +431,12 @@ TextureImporter:
       name: Enemy designs1_13
       rect:
         serializedVersion: 2
-        x: 600
-        y: 43
-        width: 78
-        height: 156
+        x: 593
+        y: 36
+        width: 91
+        height: 169
       alignment: 9
-      pivot: {x: 0.59892154, y: 0.52826345}
+      pivot: {x: 0.5752164, y: 0.036400013}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -453,12 +453,12 @@ TextureImporter:
       name: Enemy designs1_14
       rect:
         serializedVersion: 2
-        x: 719
-        y: 43
-        width: 137
-        height: 149
+        x: 710
+        y: 35
+        width: 153
+        height: 160
       alignment: 9
-      pivot: {x: 0.62336856, y: 0.5419208}
+      pivot: {x: 0.6477652, y: 0.030803066}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
