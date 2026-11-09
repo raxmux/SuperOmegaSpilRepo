@@ -73,4 +73,16 @@ public class EventManager : MonoBehaviour
         }
         instance = this;
     }
+
+
+
+
+
+    public void DialogueChooseOption(int buttonIndex)
+    {
+        var dialogueEvent = currentEvent as DialogueEvent;
+        dialogueEvent.ChooseOption(buttonIndex);
+
+        EndEvent();
+    }
 }

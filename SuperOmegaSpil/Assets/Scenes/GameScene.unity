@@ -1629,7 +1629,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 669368289}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1977739084}
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
+        m_MethodName: DialogueChooseOption
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &669368289
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1750,7 +1762,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 760068970}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1977739084}
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
+        m_MethodName: DialogueChooseOption
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &760068970
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2845,7 +2869,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1467706401}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1977739084}
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
+        m_MethodName: DialogueChooseOption
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1467706401
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2966,7 +3002,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1489878359}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1977739084}
+        m_TargetAssemblyTypeName: EventManager, Assembly-CSharp
+        m_MethodName: DialogueChooseOption
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1489878359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3476,6 +3524,56 @@ Transform:
   - {fileID: 1984921057}
   - {fileID: 1204266353}
   - {fileID: 1824202211}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1653816461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1653816463}
+  - component: {fileID: 1653816462}
+  m_Layer: 0
+  m_Name: inventory
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1653816462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653816461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 12884c1061f63684cbd2545a1e50890b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Inventory
+  money: 2
+  items: []
+  equipment: []
+  consumables: []
+  chooseEquipmentUI: {fileID: 0}
+  chooseConsumableUI: {fileID: 0}
+--- !u!4 &1653816463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1653816461}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 43.26784, y: -4.27116, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1673374554
@@ -5721,3 +5819,4 @@ SceneRoots:
   - {fileID: 1977739085}
   - {fileID: 578322096}
   - {fileID: 1758919343}
+  - {fileID: 1653816463}
