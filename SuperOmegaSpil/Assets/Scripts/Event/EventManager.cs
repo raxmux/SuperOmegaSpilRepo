@@ -16,7 +16,7 @@ public class EventManager : MonoBehaviour
     public GameObject dialogueUI;
 
     public TMP_Text dialoguePrompt;
-    public List<TMP_Text> dialogueOptions = new List<TMP_Text>();
+    public List<GameObject> dialogueOptions = new List<GameObject>();
 
     [Header("-- enemy")]
     public GameObject enemyUI;
