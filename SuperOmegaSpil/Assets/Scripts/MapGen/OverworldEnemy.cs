@@ -18,11 +18,19 @@ public class OverworldEnemy : MonoBehaviour
     {
         TriggerManager.Instance.RegisterListener(TriggerType.TimeclockPoint, EnemyMove);
     }
+
+    void OnDestroy()
+    {
+        if (TriggerManager.Instance != null)
+            TriggerManager.Instance.UnregisterListener(TriggerType.TimeclockPoint, EnemyMove);
+    }
     public void EnemyMove(TriggerContext context)
     {
         moved = false;
-        while (moved == false)
+        int attempts = 0;
+        while (moved == false && attempts < 20)
         {
+            attempts++;
             int rand = UnityEngine.Random.Range(0, 4);
             switch (rand)
             {

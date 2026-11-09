@@ -46,18 +46,15 @@ public class RoomSpawner : MonoBehaviour
             }
         }
 
-        foreach (GameObject enemy in enemies)
+        foreach (GameObject enemy in GameObject.FindGameObjectsWithTag("EnemyMap"))
         {
             Destroy(enemy);
-            if (enemies.Count > 0)
-            {
-                enemies.RemoveAt(0);
-            }
         }
+        enemies.Clear();
 
         currentRooms.Add(Instantiate(startRoom, transform.position, Quaternion.identity, transform));
 
-        for (int i = 0; i < mapSize ; i++)
+        for (int i = 0; i < mapSize; i++)
         {
             int randRoom = UnityEngine.Random.Range(0, currentRooms.Count);
             for (int zoop = 0; zoop < 4; zoop++)
@@ -87,18 +84,18 @@ public class RoomSpawner : MonoBehaviour
                         }
                     }
 
-                    if (!(MathF.Abs((currentRooms[randRoom].transform.position + dir.up).y) > mapY || MathF.Abs((currentRooms[randRoom].transform.position + dir.up).x) > mapX+1))
+                    if (!(MathF.Abs((currentRooms[randRoom].transform.position + dir.up).y) > mapY || MathF.Abs((currentRooms[randRoom].transform.position + dir.up).x) > mapX + 1))
                     {
                         if (roomtype == 0)
                         {
                             Instantiate(roomPrefabs[roomtype], currentRooms[randRoom].transform.position + dir.up, Quaternion.identity, transform);
-                            
+
                         }
                         else
                         {
-                           GameObject instantatedRoom = Instantiate(roomPrefabs[roomtype], currentRooms[randRoom].transform.position + dir.up, Quaternion.identity, transform);
-                           currentRooms.Add(instantatedRoom);
-                           //instantatedRoom.GetComponent<SpriteRenderer>().sprite = unknownRoom;
+                            GameObject instantatedRoom = Instantiate(roomPrefabs[roomtype], currentRooms[randRoom].transform.position + dir.up, Quaternion.identity, transform);
+                            currentRooms.Add(instantatedRoom);
+                            instantatedRoom.GetComponent<SpriteRenderer>().sprite = unknownRoom;
                         }
                     }
                 }
@@ -133,18 +130,18 @@ public class RoomSpawner : MonoBehaviour
                 }
                 else
                 {
-                        if (hit.collider.gameObject.GetComponent<RoomType>().roomType == RoomType.RoomTypes.StartRoom)
-                        {
-                            successes = 0;
-                            Debug.Log("failed");
-                        }
-                        else
-                        {
-                            successes++;
-                            Debug.Log("success");
-                        }
+                    if (hit.collider.gameObject.GetComponent<RoomType>().roomType == RoomType.RoomTypes.StartRoom)
+                    {
+                        successes = 0;
+                        Debug.Log("failed");
+                    }
+                    else
+                    {
+                        successes++;
+                        Debug.Log("success");
+                    }
                 }
-                
+
                 dir.rotation = Quaternion.Euler(0, 0, dir.rotation.eulerAngles.z + 90);
             }
         }

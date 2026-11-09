@@ -12,6 +12,8 @@ public class TimeClock : MonoBehaviour
     public float LoopLength => loopLength;
     public bool Paused { get; set; }
 
+    [SerializeField] List<float> overworldPoints = new List<float> { 3f, 6f, 9f, 12f };
+
     // The lil points along the clock
     readonly List<float> points = new List<float>();
     public IReadOnlyList<float> Points => points;
@@ -22,13 +24,13 @@ public class TimeClock : MonoBehaviour
 
     void Awake()
     {
-        SetPoints(new float[] { 3f, 6f, 9f, 12f });
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);
             return;
         }
         Instance = this;
+        ResetPoints();
     }
 
     void Update()
@@ -36,6 +38,8 @@ public class TimeClock : MonoBehaviour
         if (Paused) return;
         AdvanceTime(Time.deltaTime * speed);
     }
+
+    public void ResetPoints() => SetPoints(overworldPoints);
 
     public void SetPoints(IEnumerable<float> times)
     {

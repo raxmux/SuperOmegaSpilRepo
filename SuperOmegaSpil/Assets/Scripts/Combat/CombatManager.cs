@@ -102,7 +102,7 @@ public class CombatManager : MonoBehaviour
         if (!InCombat) return;
 
         InCombat = false;
-        TimeClock.Instance.ClearPoints();
+        TimeClock.Instance.ResetPoints(); // back to the overworld points, so map enemies keep moving
         CombatEnded?.Invoke(playerWon);
         CurrentEnemy = null;
     }
