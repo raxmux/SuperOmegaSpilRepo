@@ -22,6 +22,7 @@ public class TimeClock : MonoBehaviour
 
     void Awake()
     {
+        SetPoints(new float[] { 3f, 6f, 9f, 12f });
         if (Instance != null && Instance != this)
         {
             Destroy(gameObject);

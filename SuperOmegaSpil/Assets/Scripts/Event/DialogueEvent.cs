@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using TMPro;
 
 [Serializable]
 struct Consequence
@@ -37,7 +38,8 @@ public class DialogueEvent : Event
 
         for (int i = 0; i < dialogueOptions.Count; i++)
         {
-            EventManager.instance.dialogueOptions[i].text = dialogueOptions[i];
+            EventManager.instance.dialogueOptions[i].SetActive(true);
+            EventManager.instance.dialogueOptions[i].GetComponentInChildren<TMP_Text>().text = dialogueOptions[i];
         }
     }
     public void ChooseOption(int buttonIndex)
@@ -50,6 +52,11 @@ public class DialogueEvent : Event
     public override void EndEvent()
     {
         base.EndEvent();
+
+        for (int i = 0; i < dialogueOptions.Count; i++)
+        {
+            EventManager.instance.dialogueOptions[i].SetActive(false);
+        }
 
         EventManager.instance.dialogueUI.SetActive(false);
     }
