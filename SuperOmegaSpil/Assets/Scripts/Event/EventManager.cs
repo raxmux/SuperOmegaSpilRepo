@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class EventManager : MonoBehaviour
@@ -10,21 +11,47 @@ public class EventManager : MonoBehaviour
     [Header("")]
     public GameObject shopUI;
     public GameObject dialogueUI;
+    public GameObject enemyUI;
+    [Header("")]
+    [SerializeField] MapMovement mapMovement;
+
+
+    Event currentEvent = null;
 
     public void StartEvent(EventType type)
     {
-        
+        switch (type)
+        {
+            case EventType.Shop:
 
+                Event[] shopEvents = new List<Event>(allEvents).FindAll(e => e.EventType == EventType.Shop).ToArray();
 
+                currentEvent = shopEvents[Random.Range(0, shopEvents.Length)];
+                currentEvent.StartEvent();
+                break;
+            case EventType.Dialogue:
 
+                Event[] dialogueEvents = new List<Event>(allEvents).FindAll(e => e.EventType == EventType.Dialogue).ToArray();
+
+                currentEvent = dialogueEvents[Random.Range(0, dialogueEvents.Length)];
+                currentEvent.StartEvent();
+                break;
+            case EventType.Enemy:
+
+                Event[] enemyEvents = new List<Event>(allEvents).FindAll(e => e.EventType == EventType.Enemy).ToArray();
+
+                currentEvent = enemyEvents[Random.Range(0, enemyEvents.Length)];
+                currentEvent.StartEvent();
+                break;
+        }
     }
 
     public void EndEvent()
     {
+        mapMovement.ExitRoom();
+        currentEvent.EndEvent();
 
-
-
-
+        currentEvent = null;
     }
 
     private void Awake()

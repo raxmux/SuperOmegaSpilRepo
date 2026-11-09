@@ -39,7 +39,7 @@ public class MapMovement : MonoBehaviour
 
 
                     
-                    StartCoroutine(MoveToNextRoom(hit.collider.gameObject.transform.position, hit.collider.gameObject.GetComponent<SpriteRenderer>().sprite.name == "Rom_0"));
+                    StartCoroutine(MoveToNextRoom(hit.collider.gameObject.transform.position, hit.collider.gameObject.GetComponent<SpriteRenderer>().sprite.name == "Rom_0", hit.collider.gameObject.GetComponent<RoomType>().roomType));
 
                     hit.collider.gameObject.GetComponent<SpriteRenderer>().sprite = hit.collider.gameObject.GetComponent<RoomType>().roomSprite;
 
@@ -52,7 +52,7 @@ public class MapMovement : MonoBehaviour
             }
         }
     }
-    public IEnumerator MoveToNextRoom(Vector3 targetPosition, bool isUnknown)
+    public IEnumerator MoveToNextRoom(Vector3 targetPosition, bool isUnknown, RoomType.RoomTypes type)
     {
         while (Vector3.Distance(transform.position, targetPosition) > 0.01f)
         {
@@ -64,7 +64,7 @@ public class MapMovement : MonoBehaviour
 
         if(isUnknown)
         {
-            EnterRoom();
+            EnterRoom(type);
         }
         else
         {
@@ -72,11 +72,37 @@ public class MapMovement : MonoBehaviour
         }
     }
 
-    void EnterRoom()
+    void EnterRoom(RoomType.RoomTypes type)
     {
         cameraManager.switchCam();
+
+        switch (type)
+        {
+            case RoomType.RoomTypes.ShopRoom:
+
+                EventManager.instance.StartEvent(EventType.Shop);
+                break;
+            case RoomType.RoomTypes.EventRoom:
+
+                int randomEvent = UnityEngine.Random.Range(0, 2);
+                if (randomEvent == 0) EventManager.instance.StartEvent(EventType.Dialogue);
+                else EventManager.instance.StartEvent(EventType.Enemy);
+                break;
+            case RoomType.RoomTypes.EndRoom:
+                //do nothing
+                break;
+            default:
+
+                EventManager.instance.StartEvent(EventType.Dialogue);
+                break;
+        }
         //more logic needed ye
 
+    }
+    public void ExitRoom()
+    {
+        cameraManager.switchCam();
+        moving = false;
     }
 
     public void Interact(InputAction.CallbackContext context)

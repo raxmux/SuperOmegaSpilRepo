@@ -18,7 +18,7 @@ struct Consequence
 [CreateAssetMenu(fileName = "New Dialogue Event", menuName = "Event/Dialogue Event")]
 public class DialogueEvent : Event
 {
-    protected override EventType EventType => EventType.Dialogue;
+    public override EventType EventType => EventType.Dialogue;
 
     [Header("Dialogue settings")]
 
@@ -28,7 +28,7 @@ public class DialogueEvent : Event
     [Header("Consequence settings")]
     [SerializeField] List<Consequence> consequences = new List<Consequence>();
 
-    protected override void StartEvent()
+    public override void StartEvent()
     {
         base.StartEvent();
 

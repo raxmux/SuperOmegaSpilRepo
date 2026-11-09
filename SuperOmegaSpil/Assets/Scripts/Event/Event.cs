@@ -13,9 +13,9 @@ public enum EventType
 public class Event : ScriptableObject
 {
     private EventType eventType = EventType.Other;
-    protected virtual EventType EventType => eventType;
+    public virtual EventType EventType => eventType;
 
-    protected virtual void StartEvent()
+    public virtual void StartEvent()
     {
         //start the event
 
@@ -25,7 +25,7 @@ public class Event : ScriptableObject
     {
         //everything you want to do when the event starts, like setting variables, etc. Set in the child class
     }
-    protected virtual void EndEvent()
+    public virtual void EndEvent()
     {
         //end the event
 

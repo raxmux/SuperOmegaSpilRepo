@@ -5,7 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "New Shop Event", menuName = "Event/Shop Event")]
 public class ShopEvent : Event
 {
-    protected override EventType EventType => EventType.Shop;
+    public override EventType EventType => EventType.Shop;
 
     [Header("Shop settings")]
     [SerializeField] List<Item> itemsForSale = new List<Item>();
@@ -14,7 +14,7 @@ public class ShopEvent : Event
     //list of rewards to give the player after the event is completed
     
 
-    protected override void StartEvent()
+    public override void StartEvent()
     {
         base.StartEvent();
 

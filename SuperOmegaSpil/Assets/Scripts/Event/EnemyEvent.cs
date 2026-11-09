@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class EnemyEvent : Event
 {
-    protected override EventType EventType => EventType.Enemy;
+    public override EventType EventType => EventType.Enemy;
 
     [Header("Fight settings")]
     //list enemies to spawn in the event
@@ -12,15 +12,13 @@ public class EnemyEvent : Event
 
     [Header("reward settings")]
     //list of rewards to give the player after the event is completed
+    int stopComplainingWanker;
 
-    [Header("EventUI")]
-    [SerializeField] protected GameObject EnemyUI;
-
-    protected override void StartEvent()
+    public override void StartEvent()
     {
         base.StartEvent();
         
-        EnemyUI.SetActive(true);
+        EventManager.instance.enemyUI.SetActive(true);
 
     }
 
