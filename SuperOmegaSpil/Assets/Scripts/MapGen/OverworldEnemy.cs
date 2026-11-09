@@ -53,9 +53,6 @@ public class OverworldEnemy : MonoBehaviour
                 {
                     if (hit.collider.gameObject.GetComponent<RoomType>().roomType != RoomType.RoomTypes.EmptyRoom)
                     {
-                        Debug.Log("larping!");
-                        Debug.Log(hit.collider.gameObject.transform.position);
-                        //transform.position = hit.collider.gameObject.transform.position;
                         moved = true;
                         StartCoroutine(movewithLerp(hit.collider.gameObject.transform.position));
                     }
