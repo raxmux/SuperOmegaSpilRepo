@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -8,10 +9,19 @@ public class EventManager : MonoBehaviour
 
     public List<Event> allEvents = new List<Event>();
 
-    [Header("")]
+    [Header("-- shop")]
     public GameObject shopUI;
+
+    [Header("-- dialogue")]
     public GameObject dialogueUI;
+
+    public TMP_Text dialoguePrompt;
+    public List<TMP_Text> dialogueOptions = new List<TMP_Text>();
+
+    [Header("-- enemy")]
     public GameObject enemyUI;
+
+
     [Header("")]
     [SerializeField] MapMovement mapMovement;
 
