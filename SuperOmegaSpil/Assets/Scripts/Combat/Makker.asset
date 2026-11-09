@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   enemyName: Makker
   sprite: {fileID: -7560441633457950266, guid: 282d93401c6d21946a777070c5049e4b, type: 3}
-  maxHp: 50
+  maxHp: 125
   attackTimes:
   - 12
   - 6

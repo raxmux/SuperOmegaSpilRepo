@@ -83,7 +83,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _Border_Width: 1.91
-    - _Damage: 0.23
+    - _Damage: 0
     - _EnableExternalAlpha: 0
     - _Only_Inner_glow: 0
     - _Outline: 1
