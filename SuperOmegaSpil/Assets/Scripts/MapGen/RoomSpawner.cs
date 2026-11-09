@@ -10,21 +10,26 @@ using UnityEngine.UI;
 
 public class RoomSpawner : MonoBehaviour
 {
-
-    [SerializeField] List<GameObject> roomPrefabs = new List<GameObject>();
     [SerializeField] GameObject startRoom;
     [SerializeField] GameObject endRoom;
-    public List<GameObject> currentRooms = new List<GameObject>();
 
+    [SerializeField] Sprite unknownRoom;
+    [Header("")]
+
+    [SerializeField] List<GameObject> roomPrefabs = new List<GameObject>();
+
+    public List<GameObject> currentRooms = new List<GameObject>();
+    [Header("")]
     public List<GameObject> enemies = new List<GameObject>();
     [SerializeField] GameObject overworldEnemy;
+    [SerializeField] GameObject enemyParent;
 
     int enemyCount = 0;
 
-    [SerializeField] Sprite unknownRoom;
+
 
     RaycastHit2D hit;
-
+    [Header("")]
     [SerializeField] LayerMask mask;
     [SerializeField] int mapSize;
     [SerializeField] int mapX;
@@ -197,7 +202,7 @@ public class RoomSpawner : MonoBehaviour
                 }
             }
 
-            enemies.Add(Instantiate(overworldEnemy, currentRooms[enemyPosRand].transform.position, Quaternion.identity));
+            enemies.Add(Instantiate(overworldEnemy, currentRooms[enemyPosRand].transform.position, Quaternion.identity, enemyParent.transform));
             currentRooms.RemoveAt(enemyPosRand);
         }
     }
