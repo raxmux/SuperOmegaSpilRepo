@@ -60,6 +60,7 @@ public class MapMovement : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, targetPosition, 0.2f);
             yield return new WaitForSeconds(0.01f);
         }
+        transform.position = targetPosition;
 
         yield return new WaitForSeconds(0.2f);
 
