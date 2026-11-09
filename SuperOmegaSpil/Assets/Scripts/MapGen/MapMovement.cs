@@ -44,11 +44,11 @@ public class MapMovement : MonoBehaviour
 
                     hit.collider.gameObject.GetComponent<SpriteRenderer>().sprite = hit.collider.gameObject.GetComponent<RoomType>().roomSprite;
 
-                    if (hit.collider.gameObject.GetComponent<RoomType>().roomType == RoomType.RoomTypes.EndRoom)
+                    /*if (hit.collider.gameObject.GetComponent<RoomType>().roomType == RoomType.RoomTypes.EndRoom)
                     {
                         transform.position = new Vector3(0, 0, 0);
                         roomSpawner.SpawnRooms();
-                    }
+                    }*/
                 }
             }
         }
@@ -60,10 +60,11 @@ public class MapMovement : MonoBehaviour
             transform.position = Vector3.Lerp(transform.position, targetPosition, 0.2f);
             yield return new WaitForSeconds(0.01f);
         }
+        transform.position = targetPosition;
 
         yield return new WaitForSeconds(0.2f);
 
-        if (isUnknown)
+        if (isUnknown && hit.collider.gameObject.GetComponent<RoomType>().roomType != RoomType.RoomTypes.EndRoom)
         {
             EnterRoom(type);
         }
