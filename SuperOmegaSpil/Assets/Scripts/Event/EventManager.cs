@@ -11,6 +11,21 @@ public class EventManager : MonoBehaviour
     public GameObject shopUI;
     public GameObject dialogueUI;
 
+    public void StartEvent(EventType type)
+    {
+        
+
+
+
+    }
+
+    public void EndEvent()
+    {
+
+
+
+
+    }
 
     private void Awake()
     {
