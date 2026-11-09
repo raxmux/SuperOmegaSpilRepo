@@ -1,10 +1,11 @@
-using UnityEngine;
-using System.Collections.Generic;
-using UnityEngine.UI;
 using System;
-using UnityEditor;
-using UnityEngine.Rendering;
+using System.Collections.Generic;
+using Unity.Mathematics;
 using Unity.VisualScripting;
+using UnityEditor;
+using UnityEngine;
+using UnityEngine.Rendering;
+using UnityEngine.UI;
 
 
 public class RoomSpawner : MonoBehaviour
@@ -97,7 +98,7 @@ public class RoomSpawner : MonoBehaviour
                         {
                            GameObject instantatedRoom = Instantiate(roomPrefabs[roomtype], currentRooms[randRoom].transform.position + dir.up, Quaternion.identity, transform);
                            currentRooms.Add(instantatedRoom);
-                           instantatedRoom.GetComponent<SpriteRenderer>().sprite = unknownRoom;
+                           //instantatedRoom.GetComponent<SpriteRenderer>().sprite = unknownRoom;
                         }
                     }
                 }
@@ -108,8 +109,47 @@ public class RoomSpawner : MonoBehaviour
                 currentRooms.RemoveAt(0);
             }
         }
-        int endRoomRand = UnityEngine.Random.Range(1, currentRooms.Count);
-        Vector2 endRoomPos = currentRooms[endRoomRand].transform.position;
+
+
+        int endRoomRand = 0;
+        Vector2 endRoomPos = Vector2.zero;
+
+        int successes = 0;
+        while (successes != 4)
+        {
+            successes = 0;
+            endRoomRand = UnityEngine.Random.Range(0, currentRooms.Count);
+            endRoomPos = currentRooms[endRoomRand].transform.position;
+
+            for (int zoop = 0; zoop < 4; zoop++)
+            {
+                Transform dir = currentRooms[endRoomRand].transform;
+                hit = Physics2D.Raycast(currentRooms[endRoomRand].transform.position + dir.up, dir.up, 0.1f, mask);
+
+                if (hit.collider == null)
+                {
+                    successes++;
+                    Debug.Log("hit null");
+                }
+                else
+                {
+                        if (hit.collider.gameObject.GetComponent<RoomType>().roomType == RoomType.RoomTypes.StartRoom)
+                        {
+                            successes = 0;
+                            Debug.Log("failed");
+                        }
+                        else
+                        {
+                            successes++;
+                            Debug.Log("success");
+                        }
+                }
+                
+                dir.rotation = Quaternion.Euler(0, 0, dir.rotation.eulerAngles.z + 90);
+            }
+        }
+
+
         GameObject endRoomInstance = Instantiate(endRoom, endRoomPos, Quaternion.identity, transform);
         endRoomInstance.GetComponent<SpriteRenderer>().sprite = unknownRoom;
         Destroy(currentRooms[endRoomRand]);
