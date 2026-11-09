@@ -159,8 +159,44 @@ public class RoomSpawner : MonoBehaviour
         enemyCount = Mathf.RoundToInt(currentRooms.Count / 6);
         for (int i = 0; i < enemyCount; i++)
         {
-            int enemyPosRand = UnityEngine.Random.Range(1, currentRooms.Count);
-            Vector2 enemyPos = currentRooms[enemyPosRand].transform.position;
+            int enemyPosRand = 0;
+            Vector2 enemyPos = Vector2.zero;
+
+            int successes = 0;
+            while (successes != 4)
+            {
+                successes = 0;
+                enemyPosRand = UnityEngine.Random.Range(0, currentRooms.Count);
+                enemyPos = currentRooms[enemyPosRand].transform.position;
+
+                for (int zoop = 0; zoop < 4; zoop++)
+                {
+                    Transform dir = currentRooms[enemyPosRand].transform;
+                    hit = Physics2D.Raycast(currentRooms[enemyPosRand].transform.position + dir.up, dir.up, 0.1f, mask);
+
+                    if (hit.collider == null)
+                    {
+                        successes++;
+                        Debug.Log("hit null");
+                    }
+                    else
+                    {
+                        if (hit.collider.gameObject.GetComponent<RoomType>().roomType == RoomType.RoomTypes.StartRoom)
+                        {
+                            successes = 0;
+                            Debug.Log("failed");
+                        }
+                        else
+                        {
+                            successes++;
+                            Debug.Log("success");
+                        }
+                    }
+
+                    dir.rotation = Quaternion.Euler(0, 0, dir.rotation.eulerAngles.z + 90);
+                }
+            }
+
             enemies.Add(Instantiate(overworldEnemy, currentRooms[enemyPosRand].transform.position, Quaternion.identity));
             currentRooms.RemoveAt(enemyPosRand);
         }
