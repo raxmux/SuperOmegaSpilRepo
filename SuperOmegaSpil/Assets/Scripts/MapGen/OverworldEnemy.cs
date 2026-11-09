@@ -1,0 +1,67 @@
+using System.Collections;
+using System.Xml;
+using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.U2D;
+using static UnityEngine.RuleTile.TilingRuleOutput;
+using System.Collections.Generic;
+
+public class OverworldEnemy : MonoBehaviour
+{
+
+    RaycastHit2D hit;
+    [SerializeField] LayerMask mask;
+
+    int xdir = 0;
+    int ydir = 0;
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public void Start()
+    {
+   //     TriggerManager.Instance.RegisterListener(TriggerType.TimeclockPoint, EnemyMove);
+    }
+    public void EnemyMove(TriggerContext context)
+    {
+        int rand = UnityEngine.Random.Range(0, 4);
+        switch (rand)
+        {
+
+            case 0:
+                xdir = 1;
+                ydir = 0;
+                break;
+            case 1:
+                xdir = -1;
+                ydir = 0;
+                break;
+            case 2:
+                ydir = 1;
+                xdir = 0;
+                break;
+            case 3:
+                ydir = -1;
+                xdir = 0;
+                break;
+        }
+
+        hit = Physics2D.Raycast(this.transform.position + new Vector3(xdir, ydir, transform.position.z), new Vector2(xdir, ydir), 0.1f, mask);
+        if (hit.collider.tag == "Room")
+        {
+            if (hit.collider.gameObject.GetComponent<RoomType>().roomType != RoomType.RoomTypes.EmptyRoom)
+            {
+                Lerp(hit.collider.gameObject.transform.position);
+            }
+        }
+    }
+
+    public IEnumerator Lerp(Vector3 targetPos)
+    {
+        while (Vector3.Distance(transform.position, targetPos) > 0.01f)
+        {
+            transform.position = Vector3.Lerp(transform.position, targetPos, 0.2f);
+            yield return new WaitForSeconds(0.01f);
+        }
+        transform.position = targetPos;
+    }
+}
