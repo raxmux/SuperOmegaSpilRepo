@@ -36,7 +36,7 @@ public class RoomSpawner : MonoBehaviour
     public void SpawnRooms()
     {
 
-        /*foreach (GameObject room in GameObject.FindGameObjectsWithTag("Room"))
+        foreach (GameObject room in GameObject.FindGameObjectsWithTag("Room"))
         {
             Destroy(room);
             if (currentRooms.Count > 0)
@@ -52,7 +52,7 @@ public class RoomSpawner : MonoBehaviour
             {
                 enemies.RemoveAt(0);
             }
-        }*/
+        }
 
         currentRooms.Add(Instantiate(startRoom, transform.position, Quaternion.identity, transform));
 
