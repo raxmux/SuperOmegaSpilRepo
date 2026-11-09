@@ -31,14 +31,15 @@ public class MapMovement : MonoBehaviour
 
             moveDirection = context.ReadValue<Vector2>();
             hit = Physics2D.Raycast(this.transform.position + new Vector3(moveDirection.x, moveDirection.y, this.transform.position.z), new Vector2(moveDirection.x, moveDirection.y), 0.1f, mask);
-            if (hit.collider.tag == "Room")
+
+            if (hit.collider != null && hit.collider.CompareTag("Room"))
             {
                 if (hit.collider.gameObject.GetComponent<RoomType>().roomType != RoomType.RoomTypes.EmptyRoom)
                 {
                     moving = true;
 
 
-                    
+
                     StartCoroutine(MoveToNextRoom(hit.collider.gameObject.transform.position, hit.collider.gameObject.GetComponent<SpriteRenderer>().sprite.name == "Rom_0", hit.collider.gameObject.GetComponent<RoomType>().roomType));
 
                     hit.collider.gameObject.GetComponent<SpriteRenderer>().sprite = hit.collider.gameObject.GetComponent<RoomType>().roomSprite;
@@ -62,7 +63,7 @@ public class MapMovement : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
 
-        if(isUnknown)
+        if (isUnknown)
         {
             EnterRoom(type);
         }
@@ -109,7 +110,7 @@ public class MapMovement : MonoBehaviour
     {
         if (context.performed)
         {
-           
-        }           
+
+        }
     }
 }
