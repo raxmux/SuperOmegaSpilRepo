@@ -1941,6 +1941,7 @@ GameObject:
   - component: {fileID: 898561591}
   - component: {fileID: 898561594}
   - component: {fileID: 898561593}
+  - component: {fileID: 898561595}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2015,7 +2016,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 6802ae325dd2103458239b3e38bbf014, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -2049,6 +2050,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &898561595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898561590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f651587aa9d8e104982a1da15f047f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HpOutline
+  combatant: {fileID: 898561591}
 --- !u!1 &916413140
 GameObject:
   m_ObjectHideFlags: 0
