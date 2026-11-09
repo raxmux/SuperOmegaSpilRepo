@@ -17,5 +17,6 @@ MonoBehaviour:
   maxHp: 50
   attackTimes:
   - 12
+  - 6
   lowHpThreshold: 0.3
   moves: []
