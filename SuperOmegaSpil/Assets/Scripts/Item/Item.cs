@@ -45,13 +45,13 @@ public enum equipmentType
 {
     none,
 
-    weapon,
+    weapon, //Equip
 
-    Head,
+    Head, //Equip
     Arms,
-    Legs,
-    Torso,
-    Face,
+    Legs, //Equip
+    Torso, 
+    Face, //Equip
     Ears
 }
 
