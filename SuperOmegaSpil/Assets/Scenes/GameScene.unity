@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 76300594}
   m_Layer: 0
   m_Name: PlayerMap
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -519,6 +519,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &183874609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 183874610}
+  m_Layer: 0
+  m_Name: WorldEnemies
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &183874610
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 183874609}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.07816, y: 1.43852, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &220346843
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,7 +1394,7 @@ GameObject:
   - component: {fileID: 630334858}
   m_Layer: 0
   m_Name: RoomGen
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1380,16 +1411,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf873f1acaa80764b975fc6ce965dfe2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomSpawner
+  startRoom: {fileID: 8036673833102426025, guid: bc307abc0807c99499e0d7e3abf005e2, type: 3}
+  endRoom: {fileID: 8036673833102426025, guid: 1b2d2995639550b439147af3026edb15, type: 3}
+  unknownRoom: {fileID: -7596529933580450520, guid: 45c8a233d40a3954193cd3e5f3891d29, type: 3}
   roomPrefabs:
   - {fileID: 8036673833102426025, guid: 9b32abcf003c76f4482b2c30299032cc, type: 3}
   - {fileID: 8036673833102426025, guid: f75f023c32cd03e4da2bb32e37962cf8, type: 3}
   - {fileID: 8036673833102426025, guid: f21d544ac3473d4459417d9504aa067c, type: 3}
-  startRoom: {fileID: 8036673833102426025, guid: bc307abc0807c99499e0d7e3abf005e2, type: 3}
-  endRoom: {fileID: 8036673833102426025, guid: 1b2d2995639550b439147af3026edb15, type: 3}
   currentRooms: []
   enemies: []
   overworldEnemy: {fileID: 3646567800450276102, guid: d27f312c9c24eea45b3918415e514d0f, type: 3}
-  unknownRoom: {fileID: -7596529933580450520, guid: 45c8a233d40a3954193cd3e5f3891d29, type: 3}
+  enemyParent: {fileID: 183874609}
   mask:
     serializedVersion: 2
     m_Bits: 64
@@ -6141,6 +6173,7 @@ SceneRoots:
   - {fileID: 76300597}
   - {fileID: 630334859}
   - {fileID: 1647153016}
+  - {fileID: 183874610}
   - {fileID: 1364166737}
   - {fileID: 1977739085}
   - {fileID: 578322096}

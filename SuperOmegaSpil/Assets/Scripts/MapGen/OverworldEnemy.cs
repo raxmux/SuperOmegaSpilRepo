@@ -8,6 +8,8 @@ public class OverworldEnemy : MonoBehaviour
     RaycastHit2D hit;
     [SerializeField] LayerMask mask;
 
+    GameObject player;
+
     int xdir = 0;
     int ydir = 0;
 
@@ -16,6 +18,7 @@ public class OverworldEnemy : MonoBehaviour
 
     public void Start()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         TriggerManager.Instance.RegisterListener(TriggerType.TimeclockReset, EnemyMove);
     }
 
@@ -26,6 +29,15 @@ public class OverworldEnemy : MonoBehaviour
     }
     public void EnemyMove(TriggerContext context)
     {
+        if (Vector3.Distance(transform.position, player.transform.position) < 1.1f)
+        {
+            Vector2 vec = GetClosestDirection(player.transform.position - transform.position);
+
+            StartCoroutine(movewithLerp(transform.position + new Vector3(vec.x, vec.y, transform.position.z)));
+
+            return;
+        }
+
         moved = false;
         List<Vector2> directions = new List<Vector2>() { Vector2.up, Vector2.down, Vector2.left, Vector2.right };
         for (int i = 0; i < 4 && !moved; i++)
@@ -64,4 +76,17 @@ public class OverworldEnemy : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
     }
+
+    public Vector2 GetClosestDirection(Vector2 direction)
+    {
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+            return direction.x > 0 ? Vector2.right : Vector2.left;
+        }
+        else
+        {
+            return direction.y > 0 ? Vector2.up : Vector2.down;
+        }
+    }
+
 }
