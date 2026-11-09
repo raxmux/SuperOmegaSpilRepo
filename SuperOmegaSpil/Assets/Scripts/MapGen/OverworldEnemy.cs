@@ -1,11 +1,6 @@
 using System.Collections;
-using System.Xml;
-using TMPro;
+using System.Runtime.CompilerServices;
 using UnityEngine;
-using UnityEngine.EventSystems;
-using UnityEngine.U2D;
-using static UnityEngine.RuleTile.TilingRuleOutput;
-using System.Collections.Generic;
 
 public class OverworldEnemy : MonoBehaviour
 {
@@ -19,43 +14,61 @@ public class OverworldEnemy : MonoBehaviour
 
     public void Start()
     {
-   //     TriggerManager.Instance.RegisterListener(TriggerType.TimeclockPoint, EnemyMove);
+        //TriggerManager.Instance.RegisterListener(TriggerType.TimeclockPoint, EnemyMove);
     }
-    public void EnemyMove(TriggerContext context)
+    public void EnemyMove(/*TriggerContext context*/)
     {
-        int rand = UnityEngine.Random.Range(0, 4);
-        switch (rand)
+        while (true)
         {
-
-            case 0:
-                xdir = 1;
-                ydir = 0;
-                break;
-            case 1:
-                xdir = -1;
-                ydir = 0;
-                break;
-            case 2:
-                ydir = 1;
-                xdir = 0;
-                break;
-            case 3:
-                ydir = -1;
-                xdir = 0;
-                break;
-        }
-
-        hit = Physics2D.Raycast(this.transform.position + new Vector3(xdir, ydir, transform.position.z), new Vector2(xdir, ydir), 0.1f, mask);
-        if (hit.collider.tag == "Room")
-        {
-            if (hit.collider.gameObject.GetComponent<RoomType>().roomType != RoomType.RoomTypes.EmptyRoom)
+            int rand = UnityEngine.Random.Range(0, 4);
+            switch (rand)
             {
-                Lerp(hit.collider.gameObject.transform.position);
+
+                case 0:
+                    xdir = 1;
+                    ydir = 0;
+                    break;
+                case 1:
+                    xdir = -1;
+                    ydir = 0;
+                    break;
+                case 2:
+                    ydir = 1;
+                    xdir = 0;
+                    break;
+                case 3:
+                    ydir = -1;
+                    xdir = 0;
+                    break;
+            }
+
+            hit = Physics2D.Raycast(this.transform.position + new Vector3(xdir, ydir, transform.position.z), new Vector2(xdir, ydir), 0.1f, mask);
+
+            Debug.Log(xdir +" -- " +ydir);
+
+            if (hit.collider == null) continue;
+
+            if (hit.collider.tag == "Room")
+            {
+                if (hit.collider.gameObject.GetComponent<RoomType>().roomType != RoomType.RoomTypes.EmptyRoom)
+                {
+                    Debug.Log("larping!");
+                    Debug.Log(hit.collider.gameObject.transform.position);
+                    StartCoroutine(movewithLerp(hit.collider.gameObject.transform.position));
+                }
+                else
+                {
+                    continue;
+                }
+            }
+            else
+            {
+                continue;
             }
         }
     }
 
-    public IEnumerator Lerp(Vector3 targetPos)
+    public IEnumerator movewithLerp(Vector3 targetPos)
     {
         while (Vector3.Distance(transform.position, targetPos) > 0.01f)
         {
@@ -63,5 +76,7 @@ public class OverworldEnemy : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
         transform.position = targetPos;
+
+        yield return new WaitForSeconds(0.2f);
     }
 }
