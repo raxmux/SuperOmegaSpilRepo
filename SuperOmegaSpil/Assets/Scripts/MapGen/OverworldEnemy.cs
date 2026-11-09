@@ -10,15 +10,18 @@ public class OverworldEnemy : MonoBehaviour
 
     int xdir = 0;
     int ydir = 0;
+
+    bool moved;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public void Start()
     {
-        //TriggerManager.Instance.RegisterListener(TriggerType.TimeclockPoint, EnemyMove);
+        TriggerManager.Instance.RegisterListener(TriggerType.TimeclockPoint, EnemyMove);
     }
-    public void EnemyMove(/*TriggerContext context*/)
+    public void EnemyMove(TriggerContext context)
     {
-        while (true)
+        moved = false;
+        while (moved == false)
         {
             int rand = UnityEngine.Random.Range(0, 4);
             switch (rand)
@@ -44,27 +47,21 @@ public class OverworldEnemy : MonoBehaviour
 
             hit = Physics2D.Raycast(this.transform.position + new Vector3(xdir, ydir, transform.position.z), new Vector2(xdir, ydir), 0.1f, mask);
 
-            Debug.Log(xdir +" -- " +ydir);
-
-            if (hit.collider == null) continue;
-
-            if (hit.collider.tag == "Room")
+            if (hit.collider != null)
             {
-                if (hit.collider.gameObject.GetComponent<RoomType>().roomType != RoomType.RoomTypes.EmptyRoom)
+                if (hit.collider.tag == "Room")
                 {
-                    Debug.Log("larping!");
-                    Debug.Log(hit.collider.gameObject.transform.position);
-                    StartCoroutine(movewithLerp(hit.collider.gameObject.transform.position));
-                }
-                else
-                {
-                    continue;
+                    if (hit.collider.gameObject.GetComponent<RoomType>().roomType != RoomType.RoomTypes.EmptyRoom)
+                    {
+                        Debug.Log("larping!");
+                        Debug.Log(hit.collider.gameObject.transform.position);
+                        //transform.position = hit.collider.gameObject.transform.position;
+                        moved = true;
+                        StartCoroutine(movewithLerp(hit.collider.gameObject.transform.position));
+                    }
                 }
             }
-            else
-            {
-                continue;
-            }
+            else { }
         }
     }
 

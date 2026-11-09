@@ -124,7 +124,7 @@ public class RoomSpawner : MonoBehaviour
         {
             int enemyPosRand = UnityEngine.Random.Range(1, currentRooms.Count);
             Vector2 enemyPos = currentRooms[enemyPosRand].transform.position;
-            enemies.Add(Instantiate(overworldEnemy, enemyPos, Quaternion.identity, currentRooms[enemyPosRand].transform));
+            enemies.Add(Instantiate(overworldEnemy, currentRooms[enemyPosRand].transform.position, Quaternion.identity));
             currentRooms.RemoveAt(enemyPosRand);
         }
     }
