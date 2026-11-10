@@ -8,12 +8,13 @@ public class HpOutline : MonoBehaviour
     [SerializeField] Combatant combatant;
 
     static readonly int DamageId = Shader.PropertyToID("_damage");
-    Material material;
+    Renderer rend;
+    MaterialPropertyBlock block;
 
     void Awake()
     {
-        // .material makes a copy, so the enemy and player outlines don't share one value.
-        material = GetComponent<Renderer>().material;
+        rend = GetComponent<Renderer>();
+        block = new MaterialPropertyBlock();
     }
 
     void OnEnable()
@@ -34,6 +35,8 @@ public class HpOutline : MonoBehaviour
     void Refresh(Combatant c)
     {
         float damage = c.MaxHp > 0f ? 1f - c.Hp / c.MaxHp : 1f;
-        material.SetFloat(DamageId, damage);
+        rend.GetPropertyBlock(block);
+        block.SetFloat(DamageId, damage);
+        rend.SetPropertyBlock(block);
     }
 }

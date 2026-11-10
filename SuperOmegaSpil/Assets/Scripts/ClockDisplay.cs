@@ -43,13 +43,30 @@ public class ClockDisplay : MonoBehaviour
     void Awake()
     {
         block = new MaterialPropertyBlock();
-        mainColor = markerMaterial.GetColor(MainColorId);
-        secoColor = markerMaterial.GetColor(SecoColorId);
+        ReadColors();
+        PaletteManager.PaletteChanged += OnPaletteChanged;
 
         for (int second = 1; second <= 12; second++)
             markers[second] = SpawnMarker(second);
 
         hand = SpawnHand();
+    }
+
+    void OnDestroy()
+    {
+        PaletteManager.PaletteChanged -= OnPaletteChanged;
+    }
+
+    void ReadColors()
+    {
+        mainColor = markerMaterial.GetColor(MainColorId);
+        secoColor = markerMaterial.GetColor(SecoColorId);
+    }
+
+    void OnPaletteChanged()
+    {
+        ReadColors();
+        for (int s = 1; s <= 12; s++) SetMarker(s, isAttack[s], true);
     }
 
     Transform SpawnHand()

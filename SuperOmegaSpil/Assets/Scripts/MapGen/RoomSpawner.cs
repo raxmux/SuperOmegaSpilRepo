@@ -41,6 +41,7 @@ public class RoomSpawner : MonoBehaviour
 
     public void SpawnRooms()
     {
+        if (PaletteManager.Instance != null) PaletteManager.Instance.RandomizePalette();
 
         foreach (GameObject room in GameObject.FindGameObjectsWithTag("Room"))
         {
