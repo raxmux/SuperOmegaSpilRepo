@@ -7,7 +7,7 @@ public class HpOutline : MonoBehaviour
 {
     [SerializeField] Combatant combatant;
 
-    static readonly int DamageId = Shader.PropertyToID("_Damage");
+    static readonly int DamageId = Shader.PropertyToID("_damage");
     Material material;
 
     void Awake()
