@@ -32,6 +32,7 @@ public class EventManager : MonoBehaviour
     public void StartEvent(EventType type)
     {
         mapMovement.moving = true;
+        Debug.Log("Starting event of type: " + type.ToString());
         switch (type)
         {
             case EventType.Shop:

@@ -38,10 +38,10 @@ public class MapMovement : MonoBehaviour
                 {
                     moving = true;
 
+                    StartCoroutine(MoveToNextRoom(hit.collider.gameObject.transform.position, !hit.collider.gameObject.GetComponent<RoomType>().discovered, hit.collider.gameObject.GetComponent<RoomType>().roomType));
 
 
-                    StartCoroutine(MoveToNextRoom(hit.collider.gameObject.transform.position, hit.collider.gameObject.GetComponent<SpriteRenderer>().sprite.name == "Rom_0", hit.collider.gameObject.GetComponent<RoomType>().roomType));
-
+                    hit.collider.gameObject.GetComponent<RoomType>().discovered = true;
                     hit.collider.gameObject.GetComponent<SpriteRenderer>().sprite = hit.collider.gameObject.GetComponent<RoomType>().roomSprite;
 
                     /*if (hit.collider.gameObject.GetComponent<RoomType>().roomType == RoomType.RoomTypes.EndRoom)
@@ -66,6 +66,7 @@ public class MapMovement : MonoBehaviour
 
         if (isUnknown && hit.collider.gameObject.GetComponent<RoomType>().roomType != RoomType.RoomTypes.EndRoom)
         {
+            Debug.Log("Moving to unknown room of type: " + type.ToString());
             EnterRoom(type);
         }
         else
@@ -77,7 +78,7 @@ public class MapMovement : MonoBehaviour
     void EnterRoom(RoomType.RoomTypes type)
     {
         cameraManager.switchCam();
-
+        Debug.Log("Entering room of type: " + type.ToString());
         switch (type)
         {
             case RoomType.RoomTypes.ShopRoom:

@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class RoomType : MonoBehaviour
 {
-        public enum RoomTypes
+    public bool discovered = false;
+    public enum RoomTypes
         {
             StartRoom,
             EndRoom,
