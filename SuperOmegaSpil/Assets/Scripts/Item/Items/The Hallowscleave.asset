@@ -19,7 +19,7 @@ MonoBehaviour:
   itemSprite: {fileID: 0}
   itemRarity: 0
   value: 0
-  itemType: 0
+  itemType: 1
   equipmentType: 1
   stats:
     hasStats: 0
