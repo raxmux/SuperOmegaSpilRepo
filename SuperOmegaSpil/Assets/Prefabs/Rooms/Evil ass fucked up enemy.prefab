@@ -108,3 +108,4 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 64
+  enemyEvent: {fileID: 11400000, guid: 17986724e52021e4bb690f86a28ec85c, type: 2}
