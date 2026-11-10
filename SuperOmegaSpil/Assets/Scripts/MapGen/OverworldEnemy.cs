@@ -46,7 +46,7 @@ public class OverworldEnemy : MonoBehaviour
 
             if (hit.collider != null)
             {
-                if (hit.collider.tag == "Room")
+                if (hit.collider.tag == "Room" && hit.collider.gameObject.GetComponent<RoomType>().roomType != RoomType.RoomTypes.EmptyRoom)
                 {
                     if (hit.collider.gameObject.GetComponent<RoomType>().roomType != RoomType.RoomTypes.EmptyRoom)
                     {
