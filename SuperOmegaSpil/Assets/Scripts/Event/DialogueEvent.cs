@@ -45,7 +45,7 @@ public class DialogueEvent : Event
     public void ChooseOption(int buttonIndex)
     {
         Inventory.instance.AddMoney(consequences[buttonIndex].moneyToAdd);
-        Inventory.instance.AddItem(consequences[buttonIndex].itemToAdd);
+        Inventory.instance.GiveItem(consequences[buttonIndex].itemToAdd);
 
         EndEvent();
     }

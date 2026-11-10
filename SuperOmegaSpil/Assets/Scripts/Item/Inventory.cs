@@ -1,24 +1,28 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-   public static Inventory instance;
+    public static Inventory instance;
 
     public int money = 2;
-    public List<Item> items = new List<Item>();
+    public List<Item> items = new List<Item>();       // relics
     public List<Item> equipment = new List<Item>();
     public List<Item> consumables = new List<Item>();
-    int maxConsumables = 2;
+    [SerializeField] int maxConsumables = 2;
 
     [Header("")]
     public GameObject chooseEquipmentUI;
     public GameObject chooseConsumableUI;
+
+    readonly List<(Item item, TriggerType type, Action<TriggerContext> listener)> triggerListeners
+        = new List<(Item, TriggerType, Action<TriggerContext>)>();
+
+    bool choosing;          // true while a choose screen is open
+    bool? pickEquipment;    // null = the player hasn't chosen yet
+    int? pickConsumable;    // null = the player hasn't chosen yet
 
     void Awake()
     {
@@ -29,133 +33,149 @@ public class Inventory : MonoBehaviour
         }
         instance = this;
     }
+
     public void AddMoney(int amount)
     {
         money += amount;
     }
 
-    public void RemoveItem(Item item)
+    // Use this to give the player an item (shop, dialogue, rewards...).
+    // AddItem is a coroutine, so it only runs when started like this.
+    public void GiveItem(Item item)
     {
-        if (item.itemType == itemType.relic)
-        {
-            items.Remove(item);
-        }
-        else if (item.itemType == itemType.Equipment)
-        {
-            equipment.Remove(item);
-        }
-        else if (item.itemType == itemType.Consumable)
-        {
-            consumables.Remove(item);
-        }
+        if (item == null) return;
+        StartCoroutine(AddItem(item));
     }
 
-    private bool? pickEquipment; //used to determine if the player wants to keep the new equipment or not, null means they haven't chosen yet
-    private int? pickConsumable; //used to determine which consumable the player wants to keep, null means they haven't chosen yet
     public IEnumerator AddItem(Item item_)
     {
-        if (item_.itemType == itemType.Equipment)
+        if (item_ == null) yield break;
+
+        // Only one choose screen at a time. If two items arrive together, the second one waits.
+        while (choosing) yield return null;
+
+        switch (item_.itemType)
         {
-            if (item_.equipmentType != equipmentType.none)
-            {
-                //unequip the other equipment
-                foreach (Item item in equipment)
+            case itemType.Equipment:
+                // Is something already in this slot?
+                Item old = item_.equipmentType == equipmentType.none
+                    ? null
+                    : equipment.Find(e => e != null && e.equipmentType == item_.equipmentType);
+
+                if (old != null)
                 {
-                    if (item.equipmentType == item_.equipmentType)
-                    {
-                        //pick an item to keep
-                        chooseEquipmentUI.SetActive(true);
+                    pickEquipment = null;
+                    yield return Choose(chooseEquipmentUI, () => pickEquipment.HasValue,
+                        () => pickEquipment = true);
 
-                        pickEquipment = null;
+                    if (pickEquipment == false) yield break; // kept the old one, new one is thrown away
 
-                        // Wait until the player makes a choice
-                        yield return new WaitUntil(() => pickEquipment.HasValue);
-
-                        if(pickEquipment == true)
-                        {
-                            // Keep the new item
-                            equipment.Add(item_);
-                            equipment.Remove(item);
-                        }
-                        else
-                        {
-                            // Remove the new item
-                            equipment.Add(item);
-                            equipment.Remove(item_);
-                        }
-
-                        break;
-                    }
+                    RemoveItem(old);
                 }
+
                 equipment.Add(item_);
-            }
-        }
-        else if (item_.itemType == itemType.Consumable)
-        {
-            if(consumables.Count < maxConsumables)
-            {
-                consumables.Add(item_);
-            }
-            else
-            {
+                break;
+
+            case itemType.Consumable:
+                if (consumables.Count < maxConsumables)
+                {
+                    consumables.Add(item_);
+                    break;
+                }
+
                 pickConsumable = null;
+                yield return Choose(chooseConsumableUI, () => pickConsumable.HasValue,
+                    () => pickConsumable = maxConsumables);
 
-                // Wait until the player makes a choice
-                yield return new WaitUntil(() => pickConsumable.HasValue);
+                int slot = pickConsumable.Value;
+                if (slot < 0 || slot >= consumables.Count) yield break; // dropped the new one
 
-                if (pickConsumable == 0)
-                {
-                    consumables.RemoveAt(0);
-                    consumables.Add(item_);
-                }
-                else if(pickConsumable == 1)
-                {
-                    consumables.RemoveAt(1);
-                    consumables.Add(item_);
-                }
-                else if(pickConsumable == 2)
-                {
-                    consumables.RemoveAt(2);
-                    consumables.Add(item_);
-                }
-            }
-        }
-        else if (item_.itemType == itemType.relic)
-        {
-            items.Add(item_);
+                // The new consumable takes the dropped one's slot.
+                UnregisterTrigger(consumables[slot]);
+                consumables[slot] = item_;
+                break;
+
+            case itemType.relic:
+                items.Add(item_);
+                break;
         }
 
-        //add the trigger to the trigger manager so that it can be called when the event happens
-        if (item_.trigger.triggerType != TriggerType.none && item_.trigger.triggerAction != null && item_.trigger.triggerAction.Count > 0)
-        {
-            TriggerManager.Instance.RegisterListener(item_.trigger.triggerType,
-                context =>
-                {
-                    foreach (TriggerActions action in item_.trigger.triggerAction) 
-                    { 
-                        if (action != null) action.Execute(context); 
-                    }
-                });
-        }
+        // Only reached if the item was actually kept.
+        RegisterTrigger(item_);
 
         if (item_.stats.hasStats)
         {
             //change the stats of the player when the item is picked up
 
-
         }
 
         item_.OnPickup();
-
-        yield return new WaitForEndOfFrame();
     }
 
-    public void PickEquipmentButton(bool keepItem)
+    // Removes an item from the inventory and stops its trigger.
+    public void RemoveItem(Item item)
     {
-        pickEquipment = keepItem;
+        bool removed = false;
+
+        if (item.itemType == itemType.relic) removed = items.Remove(item);
+        else if (item.itemType == itemType.Equipment) removed = equipment.Remove(item);
+        else if (item.itemType == itemType.Consumable) removed = consumables.Remove(item);
+
+        if (removed) UnregisterTrigger(item);
     }
+
+    public void PickEquipmentButton(bool keepNewItem)
+    {
+        pickEquipment = keepNewItem;
+    }
+
     public void PickConsumableButton(int index)
     {
         pickConsumable = index;
+    }
+
+    // Opens a choose screen and waits until the player has picked.
+    IEnumerator Choose(GameObject ui, Func<bool> hasPicked, Action fallback)
+    {
+        if (ui == null)
+        {
+            Debug.LogWarning("Inventory: choose UI isn't set up, picking automatically.");
+            fallback();
+            yield break;
+        }
+
+        choosing = true;
+        ui.SetActive(true);
+        yield return new WaitUntil(hasPicked);
+        ui.SetActive(false);
+        choosing = false;
+    }
+
+    void RegisterTrigger(Item item)
+    {
+        if (item.trigger == null || item.trigger.triggerType == TriggerType.none) return;
+        if (item.trigger.triggerAction == null || item.trigger.triggerAction.Count == 0) return;
+
+        Action<TriggerContext> listener = context =>
+        {
+            foreach (TriggerActions action in item.trigger.triggerAction)
+            {
+                if (action != null) action.Execute(context);
+            }
+        };
+
+        TriggerManager.Instance.RegisterListener(item.trigger.triggerType, listener);
+        triggerListeners.Add((item, item.trigger.triggerType, listener));
+    }
+
+    void UnregisterTrigger(Item item)
+    {
+        // Only removes one, in case you're holding two of the same item.
+        int index = triggerListeners.FindIndex(t => t.item == item);
+        if (index < 0) return;
+
+        var entry = triggerListeners[index];
+        TriggerManager.Instance.UnregisterListener(entry.type, entry.listener);
+        triggerListeners.RemoveAt(index);
     }
 }

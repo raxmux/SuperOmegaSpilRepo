@@ -14,7 +14,7 @@ public class ShopEvent : Event
 
     //[Header("reward settings")]
     //list of rewards to give the player after the event is completed
-    
+
 
     public override void StartEvent()
     {
@@ -54,7 +54,7 @@ public class ShopEvent : Event
         if (Inventory.instance.money >= itemsForSale[buttonIndex].value)
         {
             Inventory.instance.AddMoney(itemsForSale[buttonIndex].value * -1);
-            Inventory.instance.AddItem(itemsForSale[buttonIndex]);
+            Inventory.instance.GiveItem(itemsForSale[buttonIndex]);
         }
     }
 }

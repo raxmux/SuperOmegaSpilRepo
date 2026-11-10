@@ -22,6 +22,9 @@ public class CombatManager : MonoBehaviour
 
     readonly List<Move> playerMoves = new List<Move>();
 
+    static readonly equipmentType[] MoveSlots =
+        { equipmentType.weapon, equipmentType.Head, equipmentType.Legs, equipmentType.Face };
+
     void Awake()
     {
         if (Instance != null && Instance != this)
@@ -58,17 +61,41 @@ public class CombatManager : MonoBehaviour
         CombatStarted?.Invoke();
     }
 
-    // Base moves + moves from everything equipped. Use this to build the move buttons.
+    // Base moves + one move from each of the 4 move slots. Use this to build the move buttons.
     public IReadOnlyList<Move> GetPlayerMoves()
     {
         playerMoves.Clear();
         AddMoves(baseMoves);
 
         if (Inventory.instance != null)
-            foreach (Item item in Inventory.instance.equipment)
-                if (item != null) AddMoves(item.moves);
+        {
+            foreach (equipmentType slot in MoveSlots)
+            {
+                Item item = Inventory.instance.equipment.Find(e => e != null && e.equipmentType == slot);
+                Move move = FirstMove(item);
+                if (move != null && !playerMoves.Contains(move)) playerMoves.Add(move);
+            }
+        }
 
         return playerMoves;
+    }
+    public static Move FirstMove(Item item)
+    {
+        if (item == null || item.moves == null || item.moves.Count == 0) return null;
+        return item.moves[0];
+    }
+    public bool UseConsumable(Item item)
+    {
+        if (!InCombat || item == null || player.IsDead) return false;
+        if (Inventory.instance == null || !Inventory.instance.consumables.Contains(item)) return false;
+
+        Move move = FirstMove(item);
+        if (move == null) return false;
+
+        Inventory.instance.RemoveItem(item); // used up
+        move.Use(player, enemy);
+        TimeClock.Instance.AdvanceTime(move.timeCost);
+        return true;
     }
 
     // The move happens first, then the clock moves forward.
