@@ -11,6 +11,7 @@ public class OverworldEnemy : MonoBehaviour
     GameObject player;
 
     bool moved;
+    [SerializeField] EnemyEvent enemyEvent;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     public void Start()
@@ -85,5 +86,16 @@ public class OverworldEnemy : MonoBehaviour
             return direction.y > 0 ? Vector2.up : Vector2.down;
         }
     }
-
+    public void Update()
+    {
+        if (transform.position == player.transform.position)
+        {
+            if (player.GetComponent<MapMovement>().moving == false)
+            {
+                enemyEvent.StartEvent();
+                CameraManager.instance.switchCam();
+                Destroy(this.gameObject);
+            }
+        }
+    }
 }
