@@ -26,6 +26,7 @@ public class CombatUI : MonoBehaviour
     [SerializeField] string emptySlotText = "-";
 
     readonly List<Move> shownMoves = new List<Move>();
+    readonly List<Item> shownConsumables = new List<Item>();
     GameObject currentPanel;
 
     void Awake()
@@ -37,6 +38,12 @@ public class CombatUI : MonoBehaviour
         {
             int index = i; // copy, so each button remembers its own number
             moveButtons[i].onClick.AddListener(() => OnMoveClicked(index));
+        }
+
+        for (int i = 0; i < consumableButtons.Length; i++)
+        {
+            int index = i;
+            consumableButtons[i].onClick.AddListener(() => OnConsumableClicked(index));
         }
     }
 
@@ -84,11 +91,22 @@ public class CombatUI : MonoBehaviour
 
     public void ShowConsumables()
     {
-        // David er fucking langsom! :c
-        foreach (var button in consumableButtons)
+        shownConsumables.Clear();
+        if (Inventory.instance != null)
+            foreach (Item item in Inventory.instance.consumables)
+                if (shownConsumables.Count < consumableButtons.Length) shownConsumables.Add(item);
+
+        for (int i = 0; i < consumableButtons.Length; i++)
         {
-            button.interactable = false;
-            SetLabel(button, emptySlotText);
+            Item item = i < shownConsumables.Count ? shownConsumables[i] : null;
+            Move move = CombatManager.FirstMove(item);
+
+            // Greyed out if the slot is empty, or the item has no move set up.
+            consumableButtons[i].interactable = move != null;
+            SetLabel(consumableButtons[i],
+                item == null ? emptySlotText
+                : move == null ? item.itemName
+                : $"{item.itemName} ({move.timeCost:0.#}s)");
         }
 
         ShowPanel(consumablesPanel);
@@ -110,6 +128,16 @@ public class CombatUI : MonoBehaviour
         CombatManager.Instance.UseMove(shownMoves[index]);
 
         // The move might have ended the fight and turned this UI off.
+        if (isActiveAndEnabled)
+            ShowSelection();
+    }
+
+    void OnConsumableClicked(int index)
+    {
+        if (index >= shownConsumables.Count) return;
+
+        CombatManager.Instance.UseConsumable(shownConsumables[index]);
+
         if (isActiveAndEnabled)
             ShowSelection();
     }
