@@ -48,7 +48,13 @@ public class DialogueEvent : Event
     public void ChooseOption(int buttonIndex)
     {
         EventManager.instance.dialoguePrompt.text = consequences[buttonIndex].ConsequencePrompt;
+        
         EventManager.instance.continueOption.SetActive(true);
+
+        for (int i = 0; i < dialogueOptions.Count; i++)
+        {
+            EventManager.instance.dialogueOptions[i].SetActive(false);
+        }
 
         Inventory.instance.AddMoney(consequences[buttonIndex].moneyToAdd);
         Inventory.instance.GiveItem(consequences[buttonIndex].itemToAdd);

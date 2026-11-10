@@ -12,14 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17acbeeb489be944db5aafffcc513b4e, type: 3}
   m_Name: New Dialogue Event
   m_EditorClassIdentifier: Assembly-CSharp::DialogueEvent
-  dialoguePromt: do you wanna build a snowman?
+  dialoguePrompt: Do you want the golden cheese?
   dialogueOptions:
-  - do i wanna?
-  - probably
+  - Hell yeah!
+  - nah
   consequences:
-  - itemToAdd: {fileID: 11400000, guid: 4e4c4ed338645514e987825d31b42382, type: 2}
-    moneyToAdd: 5
-    healthloss: 0
-  - itemToAdd: {fileID: 0}
-    moneyToAdd: 2
+  - ConsequencePrompt: oh ho ho dumbass
+    itemToAdd: {fileID: 11400000, guid: 4e4c4ed338645514e987825d31b42382, type: 2}
+    moneyToAdd: 0
+    healthloss: 20000000
+  - ConsequencePrompt: you're missing out loser
+    itemToAdd: {fileID: 0}
+    moneyToAdd: 0
     healthloss: 0
