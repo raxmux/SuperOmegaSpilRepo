@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f06b1cd9fb26a3744af8d28914eb283a, type: 3}
+  m_Name: WitchHealthOption
+  m_EditorClassIdentifier: Assembly-CSharp::CustomConsequences
+  effects:
+  - rid: 6178563991598530854
+  references:
+    version: 2
+    RefIds:
+    - rid: 6178563991598530854
+      type: {class: ExtraMaxHealthConsequence, ns: , asm: Assembly-CSharp}
+      data:
+        healthToAdd: 50

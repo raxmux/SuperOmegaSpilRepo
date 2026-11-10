@@ -16,6 +16,8 @@ struct Consequence
     [Header("")]
     [SerializeField] public int healthloss;
 
+    [Header("Custom Consequence")]
+    [SerializeField] public CustomConsequences customConsequence;
 
 }
 
@@ -58,6 +60,8 @@ public class DialogueEvent : Event
 
         Inventory.instance.AddMoney(consequences[buttonIndex].moneyToAdd);
         Inventory.instance.GiveItem(consequences[buttonIndex].itemToAdd);
+
+        consequences[buttonIndex].customConsequence?.Execute();
     }
     public override void EndEvent()
     {

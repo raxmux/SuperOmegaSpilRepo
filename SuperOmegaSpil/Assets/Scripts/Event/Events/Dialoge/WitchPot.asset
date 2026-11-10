@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17acbeeb489be944db5aafffcc513b4e, type: 3}
+  m_Name: WitchPot
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueEvent
+  dialoguePrompt: '*you''re approached by a witch* I command you drink my potion!'
+  dialogueOptions:
+  - Stronger
+  - Faster
+  - Poison
+  consequences:
+  - ConsequencePrompt: '*you feel your skin hardening* ahh good choice:D'
+    itemToAdd: {fileID: 0}
+    moneyToAdd: 0
+    healthloss: 0
+    customConsequence: {fileID: 11400000, guid: 09468a5cb155d7c4fa0557a87aee3d44, type: 2}
+  - ConsequencePrompt: "hehehe \U0001F44C"
+    itemToAdd: {fileID: 0}
+    moneyToAdd: 0
+    healthloss: 0
+    customConsequence: {fileID: 11400000, guid: a48f77ba50b086f47992ee066f15d1cb, type: 2}
+  - ConsequencePrompt: shit..
+    itemToAdd: {fileID: 0}
+    moneyToAdd: 0
+    healthloss: 559
+    customConsequence: {fileID: 0}
