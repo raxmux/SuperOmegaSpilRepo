@@ -1,6 +1,8 @@
 using Unity.VisualScripting;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "New Shop Event", menuName = "Event/Shop Event")]
 public class ShopEvent : Event
@@ -19,7 +21,22 @@ public class ShopEvent : Event
         base.StartEvent();
 
         EventManager.instance.shopUI.SetActive(true);
+        for (int i = 0; i < EventManager.instance.ShopButtons.Count; i++)
+        {
+            if (i < itemsForSale.Count)
+            {
+                EventManager.instance.ShopButtons[i].SetActive(true);
 
+                EventManager.instance.ShopButtons[i].transform.GetChild(1).GetComponent<RawImage>().texture = itemsForSale[i].itemSprite.texture;
+
+                EventManager.instance.ShopButtons[i].transform.GetChild(2).GetComponent<TMP_Text>().text = itemsForSale[i].name;
+                EventManager.instance.ShopButtons[i].transform.GetChild(3).GetComponent<TMP_Text>().text = itemsForSale[i].itemDesc;
+            }
+            else
+            {
+                EventManager.instance.ShopButtons[i].SetActive(false);
+            }
+        }
     }
     public override void EndEvent()
     {

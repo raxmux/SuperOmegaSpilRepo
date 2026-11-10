@@ -58,10 +58,10 @@ public enum equipmentType
 [CreateAssetMenu(fileName = "New Item", menuName = "Item")]
 public class Item : ScriptableObject
 {
-    [SerializeField] private string itemName;
-    [SerializeField, TextArea(1, 15)] private string itemDesc;
-    [SerializeField] private Sprite itemSprite;
-    [SerializeField] private itemRarity itemRarity;
+    [SerializeField] public string itemName;
+    [SerializeField, TextArea(1, 15)] public string itemDesc;
+    [SerializeField] public Sprite itemSprite;
+    [SerializeField] public itemRarity itemRarity;
     [SerializeField] public int value;
     [Header("")]
     public itemType itemType;

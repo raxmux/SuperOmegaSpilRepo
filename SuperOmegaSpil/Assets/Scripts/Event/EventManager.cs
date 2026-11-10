@@ -11,10 +11,10 @@ public class EventManager : MonoBehaviour
 
     [Header("-- shop")]
     public GameObject shopUI;
+    public List<GameObject> ShopButtons = new List<GameObject>();
 
     [Header("-- dialogue")]
     public GameObject dialogueUI;
-
     public TMP_Text dialoguePrompt;
     public List<GameObject> dialogueOptions = new List<GameObject>();
 
