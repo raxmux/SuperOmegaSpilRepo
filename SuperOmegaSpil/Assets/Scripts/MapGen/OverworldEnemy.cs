@@ -10,9 +10,6 @@ public class OverworldEnemy : MonoBehaviour
 
     GameObject player;
 
-    int xdir = 0;
-    int ydir = 0;
-
     bool moved;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 

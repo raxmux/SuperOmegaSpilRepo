@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ShopEvent
   itemsForSale:
   - {fileID: 11400000, guid: 4e4c4ed338645514e987825d31b42382, type: 2}
+  - {fileID: 11400000, guid: 8bdf8bf0453312b4dac93dcf29b9b7c8, type: 2}
+  - {fileID: 11400000, guid: 89e8a250ddb144d4f930ff7347f6a893, type: 2}

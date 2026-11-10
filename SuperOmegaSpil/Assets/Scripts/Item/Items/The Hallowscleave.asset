@@ -10,10 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
-  m_Name: New Item
+  m_Name: The Hallowscleave
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: 
+  itemName: The Hallowscleave
+  itemDesc: A blade said to be fashioned by the Spellhardt family to settle disputes
+    in a festive style. It's bound to catch an odd gaze at a standard tavern, but
+    one must simply express their Hallowtide spirit.
   itemSprite: {fileID: 0}
+  itemRarity: 0
+  value: 0
+  itemType: 0
+  equipmentType: 1
   stats:
     hasStats: 0
     Health: 0
@@ -21,3 +28,7 @@ MonoBehaviour:
   trigger:
     triggerType: 0
     triggerAction: []
+  moves: []
+  references:
+    version: 2
+    RefIds: []

@@ -27,9 +27,12 @@ public class ShopEvent : Event
             {
                 EventManager.instance.ShopButtons[i].SetActive(true);
 
-                EventManager.instance.ShopButtons[i].transform.GetChild(1).GetComponent<RawImage>().texture = itemsForSale[i].itemSprite.texture;
+                if (itemsForSale[i].itemSprite)
+                {
+                    EventManager.instance.ShopButtons[i].transform.GetChild(1).GetComponent<RawImage>().texture = itemsForSale[i].itemSprite.texture;
+                }
 
-                EventManager.instance.ShopButtons[i].transform.GetChild(2).GetComponent<TMP_Text>().text = itemsForSale[i].name;
+                EventManager.instance.ShopButtons[i].transform.GetChild(2).GetComponent<TMP_Text>().text = itemsForSale[i].itemName;
                 EventManager.instance.ShopButtons[i].transform.GetChild(3).GetComponent<TMP_Text>().text = itemsForSale[i].itemDesc;
             }
             else

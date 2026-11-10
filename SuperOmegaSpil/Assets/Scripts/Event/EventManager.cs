@@ -76,7 +76,11 @@ public class EventManager : MonoBehaviour
 
 
 
-
+    public void ShopBuyItem(int buttonIndex)
+    {
+        var shopEvent = currentEvent as ShopEvent;
+        shopEvent.BuyItem(buttonIndex);
+    }
 
     public void DialogueChooseOption(int buttonIndex)
     {
