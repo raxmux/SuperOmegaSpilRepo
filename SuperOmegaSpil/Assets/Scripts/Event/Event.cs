@@ -18,6 +18,7 @@ public class Event : ScriptableObject
     public virtual void StartEvent()
     {
         //start the event
+        
 
         OnEventStart();
     }
