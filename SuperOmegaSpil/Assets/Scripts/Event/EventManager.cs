@@ -31,6 +31,7 @@ public class EventManager : MonoBehaviour
 
     public void StartEvent(EventType type)
     {
+        mapMovement.moving = true;
         switch (type)
         {
             case EventType.Shop:

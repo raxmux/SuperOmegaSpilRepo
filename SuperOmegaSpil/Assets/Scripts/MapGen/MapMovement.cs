@@ -15,7 +15,7 @@ public class MapMovement : MonoBehaviour
     [SerializeField] LayerMask mask;
     [SerializeField] RoomSpawner roomSpawner;
     [SerializeField] CameraManager cameraManager;
-    bool moving = false;
+    public bool moving = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
