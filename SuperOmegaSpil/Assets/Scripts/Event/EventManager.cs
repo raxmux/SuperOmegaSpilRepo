@@ -17,6 +17,7 @@ public class EventManager : MonoBehaviour
     public GameObject dialogueUI;
     public TMP_Text dialoguePrompt;
     public List<GameObject> dialogueOptions = new List<GameObject>();
+    public GameObject continueOption;
 
     [Header("-- enemy")]
     public GameObject enemyUI;
@@ -86,7 +87,5 @@ public class EventManager : MonoBehaviour
     {
         var dialogueEvent = currentEvent as DialogueEvent;
         dialogueEvent.ChooseOption(buttonIndex);
-
-        EndEvent();
     }
 }

@@ -6,6 +6,9 @@ using TMPro;
 [Serializable]
 struct Consequence
 {
+
+    [SerializeField, TextArea(0, 10)] public string ConsequencePrompt;
+
     [Header("")]
     [SerializeField] public Item itemToAdd;
     [SerializeField] public int moneyToAdd;
@@ -23,7 +26,7 @@ public class DialogueEvent : Event
 
     [Header("Dialogue settings")]
 
-    [SerializeField, TextArea(0, 10)] string dialoguePromt;
+    [SerializeField, TextArea(0, 10)] string dialoguePrompt;
     [SerializeField] List<string> dialogueOptions = new List<string>() { "Yes", "No" };
 
     [Header("Consequence settings")]
@@ -34,7 +37,7 @@ public class DialogueEvent : Event
         base.StartEvent();
 
         EventManager.instance.dialogueUI.SetActive(true);
-        EventManager.instance.dialoguePrompt.text = dialoguePromt;
+        EventManager.instance.dialoguePrompt.text = dialoguePrompt;
 
         for (int i = 0; i < dialogueOptions.Count; i++)
         {
@@ -44,10 +47,11 @@ public class DialogueEvent : Event
     }
     public void ChooseOption(int buttonIndex)
     {
+        EventManager.instance.dialoguePrompt.text = consequences[buttonIndex].ConsequencePrompt;
+        EventManager.instance.continueOption.SetActive(true);
+
         Inventory.instance.AddMoney(consequences[buttonIndex].moneyToAdd);
         Inventory.instance.GiveItem(consequences[buttonIndex].itemToAdd);
-
-        EndEvent();
     }
     public override void EndEvent()
     {
@@ -58,6 +62,7 @@ public class DialogueEvent : Event
             EventManager.instance.dialogueOptions[i].SetActive(false);
         }
 
+        EventManager.instance.continueOption.SetActive(false);
         EventManager.instance.dialogueUI.SetActive(false);
     }
 
