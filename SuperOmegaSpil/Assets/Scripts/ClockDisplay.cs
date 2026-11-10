@@ -20,7 +20,6 @@ public class ClockDisplay : MonoBehaviour
 
     [Header("Screen position")]
     [SerializeField] List<Camera> cameras = new List<Camera>();
-    [SerializeField] Vector2 cornerOffset = new Vector2(2f, -2f);
 
     static readonly int MainColorId = Shader.PropertyToID("_mainColor");
     static readonly int SecoColorId = Shader.PropertyToID("_secoColor");
@@ -39,6 +38,7 @@ public class ClockDisplay : MonoBehaviour
     // Scaling between cameras
     Vector3 baseScale;
     float baseCameraSize;
+    Vector2 cornerOffset;
 
     void Awake()
     {
@@ -69,6 +69,7 @@ public class ClockDisplay : MonoBehaviour
         baseScale = transform.localScale;
         Camera cam = ActiveCamera();
         baseCameraSize = cam != null ? cam.orthographicSize : 1f;
+        if (cam != null) cornerOffset = transform.position - TopLeft(cam);
 
         lastSecond = CurrentSecond();
         shownAngle = fromAngle = toAngle = lastSecond * 30f;
@@ -190,9 +191,14 @@ public class ClockDisplay : MonoBehaviour
         float scale = cam.orthographicSize / baseCameraSize;
         transform.localScale = baseScale * scale;
 
-        Vector3 corner = cam.ViewportToWorldPoint(new Vector3(0f, 1f, -cam.transform.position.z));
-        Vector3 pos = corner + (Vector3)(cornerOffset * scale);
-        pos.z = 0f;
+        Vector3 pos = TopLeft(cam) + (Vector3)(cornerOffset * scale);
+        pos.z = transform.position.z;
         transform.position = pos;
+    }
+
+    Vector3 TopLeft(Camera cam)
+    {
+        float depth = transform.position.z - cam.transform.position.z;
+        return cam.ViewportToWorldPoint(new Vector3(0f, 1f, depth));
     }
 }
