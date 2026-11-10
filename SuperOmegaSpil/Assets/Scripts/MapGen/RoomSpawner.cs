@@ -183,19 +183,19 @@ public class RoomSpawner : MonoBehaviour
                     if (hit.collider == null)
                     {
                         successes++;
-                        Debug.Log("hit null");
+                        //Debug.Log("hit null");
                     }
                     else
                     {
                         if (hit.collider.gameObject.GetComponent<RoomType>().roomType == RoomType.RoomTypes.StartRoom)
                         {
                             successes = 0;
-                            Debug.Log("failed");
+                            //Debug.Log("failed");
                         }
                         else
                         {
                             successes++;
-                            Debug.Log("success");
+                            //Debug.Log("success");
                         }
                     }
 
