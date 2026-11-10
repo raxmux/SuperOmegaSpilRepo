@@ -37,9 +37,7 @@ public class ExtraMaxHealthConsequence : ConsequenceEffect
     public int healthToAdd;
     public override void Execute()
     {
-        Combatant player = GameObject.FindGameObjectWithTag("Player").GetComponent<Combatant>();
-
-
-        Debug.Log("Extra Max Health!");
+        Combatant player = GameObject.FindGameObjectWithTag("CombatPlayer").GetComponent<Combatant>();
+        player.maxHp += healthToAdd;
     }
 }

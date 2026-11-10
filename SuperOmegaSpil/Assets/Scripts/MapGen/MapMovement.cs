@@ -66,7 +66,6 @@ public class MapMovement : MonoBehaviour
 
         if (isUnknown && hit.collider.gameObject.GetComponent<RoomType>().roomType != RoomType.RoomTypes.EndRoom)
         {
-            Debug.Log("Moving to unknown room of type: " + type.ToString());
             EnterRoom(type);
         }
         else
@@ -78,7 +77,6 @@ public class MapMovement : MonoBehaviour
     void EnterRoom(RoomType.RoomTypes type)
     {
         cameraManager.switchCam();
-        Debug.Log("Entering room of type: " + type.ToString());
         switch (type)
         {
             case RoomType.RoomTypes.ShopRoom:

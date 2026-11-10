@@ -7347,6 +7347,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 36e15ac34ea4b4349867923e447d661a, type: 2}
   - {fileID: 11400000, guid: 17986724e52021e4bb690f86a28ec85c, type: 2}
   - {fileID: 11400000, guid: e769b47dba2cbdb41a6d82885ae6c422, type: 2}
+  - {fileID: 11400000, guid: 7b0571df4ce4e9449a4f8a471648a693, type: 2}
   shopUI: {fileID: 1851248999}
   ShopButtons:
   - {fileID: 2007299694}

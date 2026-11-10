@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 public class Combatant : MonoBehaviour
 {
-    [SerializeField] float maxHp = 100f;
+    [SerializeField] public float maxHp = 100f;
     [SerializeField] bool isPlayer;
 
     public float MaxHp => maxHp;
