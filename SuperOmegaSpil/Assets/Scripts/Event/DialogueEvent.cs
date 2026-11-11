@@ -41,6 +41,8 @@ public class DialogueEvent : Event
         EventManager.instance.dialogueUI.SetActive(true);
         EventManager.instance.dialoguePrompt.text = dialoguePrompt;
 
+        UIMovement.instance.SetSelectedUIElement(EventManager.instance.dialogueOptions[0]);
+
         for (int i = 0; i < dialogueOptions.Count; i++)
         {
             EventManager.instance.dialogueOptions[i].SetActive(true);
@@ -52,6 +54,7 @@ public class DialogueEvent : Event
         EventManager.instance.dialoguePrompt.text = consequences[buttonIndex].ConsequencePrompt;
         
         EventManager.instance.continueOption.SetActive(true);
+        UIMovement.instance.SetSelectedUIElement(EventManager.instance.continueOption);
 
         for (int i = 0; i < dialogueOptions.Count; i++)
         {

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class EventManager : MonoBehaviour
 {
@@ -21,6 +22,7 @@ public class EventManager : MonoBehaviour
 
     [Header("-- enemy")]
     public GameObject enemyUI;
+    public GameObject enemyOptionButton;
 
 
     [Header("")]

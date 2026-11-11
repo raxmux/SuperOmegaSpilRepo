@@ -27,6 +27,8 @@ public class ShopEvent : Event
             {
                 EventManager.instance.ShopButtons[i].SetActive(true);
 
+                UIMovement.instance.SetSelectedUIElement(EventManager.instance.ShopButtons[0]);
+
                 if (itemsForSale[i].itemSprite)
                 {
                     EventManager.instance.ShopButtons[i].transform.GetChild(1).GetComponent<RawImage>().texture = itemsForSale[i].itemSprite.texture;

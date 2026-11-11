@@ -19,6 +19,8 @@ public class EnemyEvent : Event
 
         EventManager.instance.enemyUI.SetActive(true);
         CombatManager.Instance.StartCombat(enemy);
+
+        UIMovement.instance.SetSelectedUIElement(EventManager.instance.enemyOptionButton);
     }
     public override void EndEvent()
     {
