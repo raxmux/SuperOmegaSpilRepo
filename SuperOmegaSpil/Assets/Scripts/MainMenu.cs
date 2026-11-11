@@ -1,20 +1,26 @@
-using System;
+
+using System.Collections;
+using System.Collections.Generic;
 using TMPro;
-using UnityEditor.UI;
 using UnityEngine;
-using UnityEngine.Assemblies;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using UnityEngine.UI;
-using static UnityEngine.RuleTile.TilingRuleOutput;
+
 
 public class MainMenu : MonoBehaviour
 {
-    GameObject currentButton;
-    GameObject prevButton;
+
 
     [SerializeField] Color selectedColor;
     [SerializeField] Color unselectedColor;
+
+    GameObject currentButton;
+    GameObject prevButton;
+    Vector3 goHere = Vector3.one;
+    Vector3 buttonStartPos;
+    //float goToThisPosition = -3.5f;
+    float goBackToThisPosition = -5f;
+    bool buttonIsCurrent = false;
 
 
     public void GoGameScene()
@@ -29,11 +35,6 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
-        Vector3 buttonGoHere = Vector3.one;
-        Vector3 buttonStartPos;
-
-        bool buttonIsCurrent = false;
-
         if (currentButton == null)
         {
             currentButton = EventSystem.current.currentSelectedGameObject;
@@ -43,25 +44,38 @@ public class MainMenu : MonoBehaviour
         {
             prevButton = currentButton;
             buttonIsCurrent = false;
+            StartCoroutine(Larp(buttonStartPos, prevButton));
         }
-        else if (buttonIsCurrent == false)
+        
+        if (buttonIsCurrent == false)
         {
             currentButton = EventSystem.current.currentSelectedGameObject;
-            buttonStartPos = currentButton.transform.position;
-            buttonGoHere = currentButton.transform.position + new Vector3(30, 0, 0);
+            buttonStartPos = currentButton.GetComponent<RectTransform>().position;
+            goHere = currentButton.GetComponent<RectTransform>().position + new Vector3(1.5f,0,0);
+            currentButton.GetComponentInChildren<TMP_Text>().color = selectedColor;
             buttonIsCurrent = true;
+
+            StartCoroutine(Larp(goHere, currentButton));
         }
 
-        currentButton.GetComponentInChildren<TMP_Text>().color = selectedColor;
-        prevButton.GetComponentInChildren<TMP_Text>().color = unselectedColor;
 
-        while (currentButton.transform.position != buttonGoHere)
+        if (prevButton != null)
         {
-            Vector3.Lerp(currentButton.transform.position, buttonGoHere, 5);
-            if (Vector3.Distance(currentButton.transform.position, buttonGoHere) < 0.1f)
-            {
-                currentButton.transform.position = buttonGoHere;
-            }
+            prevButton.GetComponentInChildren<TMP_Text>().color = unselectedColor;
         }
+    }
+
+    public IEnumerator Larp(Vector3 lerpGoHere, GameObject button)
+    {
+            while (button.GetComponent<RectTransform>().position != lerpGoHere)
+            {
+                button.GetComponent<RectTransform>().position = Vector3.Lerp(button.GetComponent<RectTransform>().position, lerpGoHere, 0.1f);
+                yield return new WaitForSeconds(0.01f);
+
+                if (Vector3.Distance(button.GetComponent<RectTransform>().position, lerpGoHere) < 0.01f)
+                {
+                    button.GetComponent<RectTransform>().position = lerpGoHere;
+                }
+            }
     }
 }
