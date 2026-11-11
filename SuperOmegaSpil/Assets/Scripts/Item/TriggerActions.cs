@@ -16,3 +16,16 @@ public class DebugLogAction : TriggerActions
         Debug.Log(message);
     }
 }
+[Serializable]
+public class TakeDmgAction : TriggerActions
+{
+    [SerializeField] private int dmg;
+
+    public override void Execute(TriggerContext context = default)
+    {
+        Combatant player = GameObject.FindGameObjectWithTag("CombatPlayer").GetComponent<Combatant>();
+        player.TakeDamage(dmg);
+
+        Debug.Log($"Taking {dmg} damage.");
+    }
+}

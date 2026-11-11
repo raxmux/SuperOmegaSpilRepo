@@ -15,14 +15,16 @@ MonoBehaviour:
   dialoguePrompt: '*you stumble upon a shining golden piece of cheese* Do you want
     the golden cheese?'
   dialogueOptions:
-  - Hell yeah!
-  - nah
+  - Hell yeah! (die)
+  - nah (nothin)
   consequences:
   - ConsequencePrompt: oh ho ho dumbass
-    itemToAdd: {fileID: 11400000, guid: 4e4c4ed338645514e987825d31b42382, type: 2}
+    itemToAdd: {fileID: 0}
     moneyToAdd: 0
     healthloss: 20000000
+    customConsequence: {fileID: 0}
   - ConsequencePrompt: you're missing out loser
     itemToAdd: {fileID: 0}
     moneyToAdd: 0
     healthloss: 0
+    customConsequence: {fileID: 0}

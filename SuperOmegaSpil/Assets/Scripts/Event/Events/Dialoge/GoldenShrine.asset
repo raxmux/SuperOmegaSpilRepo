@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17acbeeb489be944db5aafffcc513b4e, type: 3}
+  m_Name: GoldenShrine
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueEvent
+  dialoguePrompt: You see a shrine made of pure gold
+  dialogueOptions:
+  - Pray (gain 10 gold)
+  - Desecrate (gain 50 gold but take more dmg when damaged)
+  consequences:
+  - ConsequencePrompt: As your hand touches the shrine, gold rains from the ceiling
+      showering you in riches.
+    itemToAdd: {fileID: 0}
+    moneyToAdd: 10
+    healthloss: 0
+    customConsequence: {fileID: 0}
+  - ConsequencePrompt: 'Your pockets feel as full as ever.. your conscience much
+      the same '
+    itemToAdd: {fileID: 0}
+    moneyToAdd: 50
+    healthloss: 0
+    customConsequence: {fileID: 11400000, guid: d94b4d88e6031a84da6ebdcd8a91b218, type: 2}

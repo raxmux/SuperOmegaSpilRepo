@@ -61,3 +61,12 @@ public class ExtraMaxHealthConsequence : ConsequenceEffect
         player.maxHp += healthToAdd;
     }
 }
+[Serializable]
+public class GoldenShrineCurseConsequence : ConsequenceEffect
+{
+    public Item cursedItem;
+    public override void Execute()
+    {
+        Inventory.instance.GiveItem(cursedItem);
+    }
+}

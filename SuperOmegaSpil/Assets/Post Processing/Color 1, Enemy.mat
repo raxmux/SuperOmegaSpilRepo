@@ -108,7 +108,7 @@ Material:
     - _SecoColor: {r: 0.19896752, g: 0.78113204, b: 0.20743872, a: 1}
     - _distDir: {r: 0, g: 0, b: 0, a: 0}
     - _distOffset: {r: 0, g: 0, b: 0, a: 0}
-    - _mainColor: {r: 0.12460592, g: 0.554717, b: 0.06593756, a: 1}
-    - _secoColor: {r: 0.7132074, g: 0.49020916, b: 0.14936927, a: 1}
+    - _mainColor: {r: 0.12460584, g: 0.554717, b: 0.06593751, a: 1}
+    - _secoColor: {r: 0.7132074, g: 0.49020916, b: 0.14936921, a: 1}
   m_BuildTextureStacks: []
   m_AllowLocking: 1

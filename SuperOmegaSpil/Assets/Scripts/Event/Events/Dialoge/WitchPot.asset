@@ -14,16 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DialogueEvent
   dialoguePrompt: '*you''re approached by a witch* I command you drink my potion!'
   dialogueOptions:
-  - Stronger
-  - Faster
-  - Poison
+  - Stronger (gain 50 max hp)
+  - Faster (one of your moves is 1.5x faster)
+  - Poison (die)
   consequences:
   - ConsequencePrompt: '*you feel your skin hardening* ahh good choice:D'
     itemToAdd: {fileID: 0}
     moneyToAdd: 0
     healthloss: 0
     customConsequence: {fileID: 11400000, guid: 09468a5cb155d7c4fa0557a87aee3d44, type: 2}
-  - ConsequencePrompt: "hehehe \U0001F44C"
+  - ConsequencePrompt: 'hehehe '
     itemToAdd: {fileID: 0}
     moneyToAdd: 0
     healthloss: 0
