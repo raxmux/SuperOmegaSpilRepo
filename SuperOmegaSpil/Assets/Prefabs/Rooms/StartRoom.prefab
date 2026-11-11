@@ -106,6 +106,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13d47489254ca6a4788d39210839439d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomType
+  discovered: 1
   roomType: 0
   roomSprite: {fileID: 5976165292184884635, guid: 779782044f6c71f48b8fe94475998cc4, type: 3}
 --- !u!61 &4214006313920802668
