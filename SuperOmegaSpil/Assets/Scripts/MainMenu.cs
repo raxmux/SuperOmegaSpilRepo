@@ -1,24 +1,21 @@
-
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.EventSystems;
+using TMPro;
 
 public class MainMenu : MonoBehaviour
 {
-
-
     [SerializeField] Color selectedColor;
     [SerializeField] Color unselectedColor;
 
     GameObject currentButton;
-    GameObject prevButton;
-    Vector3 goHere = Vector3.one;
-    Vector3 buttonStartPos;
-    bool buttonIsCurrent = false;
+
+    int goHere = -4;
+    int buttonStartPos = -5;
+
+    private Dictionary<RectTransform, Coroutine> buttonAnimations = new Dictionary<RectTransform, Coroutine>();
 
     public void GoGameScene()
     {
@@ -32,47 +29,73 @@ public class MainMenu : MonoBehaviour
 
     private void Update()
     {
-        if (currentButton == null)
+        GameObject selectedButton = EventSystem.current.currentSelectedGameObject;
+
+        if (selectedButton == currentButton) return;
+
+        if (currentButton != null) //go back (currentbutton is currently not selected)
         {
-            currentButton = EventSystem.current.currentSelectedGameObject;
+            SetButtonColor(currentButton, unselectedColor);
+            Larp(buttonStartPos, currentButton);
         }
 
-        if (currentButton != EventSystem.current.currentSelectedGameObject)
-        {
-            prevButton = currentButton;
-            buttonIsCurrent = false;
-            StartCoroutine(Larp(buttonStartPos, prevButton));
-        }
-        
-        if (buttonIsCurrent == false)
-        {
-            currentButton = EventSystem.current.currentSelectedGameObject;
-            buttonStartPos = currentButton.GetComponent<RectTransform>().position;
-            goHere = currentButton.GetComponent<RectTransform>().position + new Vector3(1.5f,0,0);
-            currentButton.GetComponentInChildren<TMP_Text>().color = selectedColor;
-            buttonIsCurrent = true;
+        currentButton = selectedButton;
 
-            StartCoroutine(Larp(goHere, currentButton));
-        }
-
-
-        if (prevButton != null)
+        if (currentButton != null) //go forward (currentbutton is currently selected)
         {
-            prevButton.GetComponentInChildren<TMP_Text>().color = unselectedColor;
+            SetButtonColor(currentButton, selectedColor);
+            Larp(goHere, currentButton);
         }
     }
 
-    public IEnumerator Larp(Vector3 lerpGoHere, GameObject button)
+    private void SetButtonColor(GameObject button, Color color)
     {
-            while (button.GetComponent<RectTransform>().position != lerpGoHere)
-            {
-                button.GetComponent<RectTransform>().position = Vector3.Lerp(button.GetComponent<RectTransform>().position, lerpGoHere, 0.1f);
-                yield return new WaitForSeconds(0.01f);
+        TMP_Text text = button.GetComponentInChildren<TMP_Text>();
 
-                if (Vector3.Distance(button.GetComponent<RectTransform>().position, lerpGoHere) < 0.01f)
-                {
-                    button.GetComponent<RectTransform>().position = lerpGoHere;
-                }
-            }
+        if (text != null) text.color = color;
+    }
+
+    private void Larp(float targetX, GameObject button)
+    {
+        RectTransform rect = button.GetComponent<RectTransform>();
+
+        if (buttonAnimations.TryGetValue(rect, out Coroutine existingAnimation))
+        {
+            StopCoroutine(existingAnimation);
+            buttonAnimations.Remove(rect);
+        }
+
+        if (Mathf.Abs(rect.position.x - targetX) <= 0.01f)
+        {
+            Vector3 position = rect.position;
+            position.x = targetX;
+            rect.position = position;
+            return;
+        }
+
+        buttonAnimations[rect] = StartCoroutine(MoveButton(rect, targetX));
+    }
+
+    private IEnumerator MoveButton(RectTransform rect, float targetX)
+    {
+        while (rect != null && Mathf.Abs(rect.position.x - targetX) > 0.01f)
+        {
+            Vector3 position = rect.position;
+
+            position.x = Mathf.Lerp(position.x, targetX, 10f * Time.unscaledDeltaTime);
+
+            rect.position = position;
+
+            yield return null;
+        }
+
+        if (rect != null)
+        {
+            Vector3 position = rect.position;
+            position.x = targetX;
+            rect.position = position;
+
+            buttonAnimations.Remove(rect);
+        }
     }
 }
