@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7e6d25ca8ed25e4c8c92bd4a91b34ae, type: 3}
   m_Name: Longer move
   m_EditorClassIdentifier: Assembly-CSharp::Move
-  moveName: Suckabulla
+  moveName: LONGBULLA
   description: 
   icon: {fileID: 5410695896803693634, guid: 282d93401c6d21946a777070c5049e4b, type: 3}
-  timeCost: 1
+  timeCost: 5
   damage: 50
   heal: 0
