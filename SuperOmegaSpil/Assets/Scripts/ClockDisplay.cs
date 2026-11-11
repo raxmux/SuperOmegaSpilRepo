@@ -18,6 +18,12 @@ public class ClockDisplay : MonoBehaviour
     [SerializeField] int handSortingOrder = 21;
     [SerializeField] float tickDuration = 0.25f;
 
+    [Header("Ghost hand")]
+    [SerializeField] CombatUI combatUI;
+    [SerializeField] Material ghostMaterial;
+    [SerializeField, Range(0f, 1f)] float ghostOpacity = 0.4f;
+    [SerializeField] int ghostSortingOrder = 20;
+
     [Header("Screen position")]
     [SerializeField] List<Camera> cameras = new List<Camera>();
 
@@ -35,6 +41,10 @@ public class ClockDisplay : MonoBehaviour
     int lastSecond;
     float shownAngle, fromAngle, toAngle, tweenTime;
 
+    SpriteRenderer ghost;
+    bool ghostVisible;
+    float ghostAngle, ghostFrom, ghostTo, ghostTime;
+
     // Scaling between cameras
     Vector3 baseScale;
     float baseCameraSize;
@@ -50,6 +60,7 @@ public class ClockDisplay : MonoBehaviour
             markers[second] = SpawnMarker(second);
 
         hand = SpawnHand();
+        ghost = SpawnGhost();
     }
 
     void OnDestroy()
@@ -67,6 +78,19 @@ public class ClockDisplay : MonoBehaviour
     {
         ReadColors();
         for (int s = 1; s <= 12; s++) SetMarker(s, isAttack[s], true);
+    }
+
+    SpriteRenderer SpawnGhost()
+    {
+        var go = new GameObject("Ghost Hand");
+        go.transform.SetParent(transform, false);
+
+        var sr = go.AddComponent<SpriteRenderer>();
+        sr.sprite = handSprite;
+        sr.sharedMaterial = ghostMaterial != null ? ghostMaterial : markerMaterial;
+        sr.sortingOrder = ghostSortingOrder;
+        sr.enabled = false;
+        return sr;
     }
 
     Transform SpawnHand()
@@ -188,10 +212,65 @@ public class ClockDisplay : MonoBehaviour
                 toAngle -= 360f;
                 fromAngle -= 360f;
                 shownAngle = toAngle;
+                ghostTo -= 360f;
+                ghostFrom -= 360f;
+                ghostAngle -= 360f;
             }
         }
 
         hand.localRotation = Quaternion.Euler(0f, 0f, -shownAngle);
+        UpdateGhost();
+    }
+
+    void UpdateGhost()
+    {
+        float cost = 0f;
+        bool show = combatUI != null
+            && TimeClock.Instance != null
+            && CombatManager.Instance != null && CombatManager.Instance.InCombat
+            && combatUI.TryGetHoveredTimeCost(out cost);
+
+        if (!show)
+        {
+            ghostVisible = false;
+            ghost.enabled = false;
+            return;
+        }
+
+        // Where the real hand will land: the same whole second it would tick to.
+        float now = TimeClock.Instance.CurrentTime;
+        int steps = Mathf.FloorToInt(now + cost) - Mathf.FloorToInt(now);
+        float target = toAngle + steps * 30f;
+
+        if (!ghostVisible)
+        {
+            ghostVisible = true;
+            ghost.enabled = true;
+            ghostAngle = ghostFrom = ghostTo = shownAngle;
+            ghostTime = tickDuration;
+        }
+
+        if (!Mathf.Approximately(target, ghostTo))
+        {
+            ghostFrom = ghostAngle;
+            ghostTo = target;
+            ghostTime = 0f;
+        }
+
+        if (ghostTime < tickDuration)
+        {
+            ghostTime += Time.deltaTime;
+            float t = Mathf.Clamp01(ghostTime / tickDuration);
+            t = t * t * (3f - 2f * t);
+            ghostAngle = Mathf.Lerp(ghostFrom, ghostTo, t);
+        }
+        else
+        {
+            ghostAngle = ghostTo;
+        }
+
+        ghost.transform.localRotation = Quaternion.Euler(0f, 0f, -ghostAngle);
+        ghost.color = new Color(mainColor.r, mainColor.g, mainColor.b, ghostOpacity);
     }
     Camera ActiveCamera()
     {

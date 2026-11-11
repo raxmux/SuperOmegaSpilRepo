@@ -3104,6 +3104,10 @@ MonoBehaviour:
   handSprite: {fileID: -1241031782, guid: 5ae8cbb4b3daba64cba1dff44b1784ac, type: 3}
   handSortingOrder: 502
   tickDuration: 0.1
+  combatUI: {fileID: 1491052708}
+  ghostMaterial: {fileID: 2100000, guid: bcfe88a4a888d094bbcf3f501e78acb1, type: 2}
+  ghostOpacity: 0.15
+  ghostSortingOrder: 501
   cameras:
   - {fileID: 2145092087}
   - {fileID: 1337737222}

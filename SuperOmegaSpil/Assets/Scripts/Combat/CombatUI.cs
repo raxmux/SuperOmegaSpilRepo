@@ -53,7 +53,7 @@ public class CombatUI : MonoBehaviour
             consumablesPanel.SetActive(false);
             movesPanel.SetActive(false);
             selectionPanel.SetActive(true);
-            
+
             UIMovement.instance.SetSelectedUIElement(selectionPanel.GetComponentInChildren<Button>().gameObject);
         }
     }
@@ -158,6 +158,35 @@ public class CombatUI : MonoBehaviour
             EventManager.instance.EndEvent(); // back to the map
         else
             Debug.Log("Player died. No game over screen yet.");
+    }
+
+    public bool TryGetHoveredTimeCost(out float cost)
+    {
+        cost = 0f;
+        if (!isActiveAndEnabled || EventSystem.current == null) return false;
+
+        GameObject selected = EventSystem.current.currentSelectedGameObject;
+        if (selected == null) return false;
+
+        if (movesPanel.activeInHierarchy)
+            for (int i = 0; i < moveButtons.Length && i < shownMoves.Count; i++)
+                if (moveButtons[i].gameObject == selected)
+                {
+                    cost = shownMoves[i].timeCost;
+                    return true;
+                }
+
+        if (consumablesPanel.activeInHierarchy)
+            for (int i = 0; i < consumableButtons.Length && i < shownConsumables.Count; i++)
+                if (consumableButtons[i].gameObject == selected)
+                {
+                    Move move = CombatManager.FirstMove(shownConsumables[i]);
+                    if (move == null) return false;
+                    cost = move.timeCost;
+                    return true;
+                }
+
+        return false;
     }
 
     void ShowPanel(GameObject panel)
