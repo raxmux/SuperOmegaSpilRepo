@@ -34,6 +34,11 @@ public class MainMenu : MonoBehaviour
 
         bool buttonIsCurrent = false;
 
+        if (currentButton == null)
+        {
+            currentButton = EventSystem.current.currentSelectedGameObject;
+        }
+
         if (currentButton != EventSystem.current.currentSelectedGameObject)
         {
             prevButton = currentButton;
