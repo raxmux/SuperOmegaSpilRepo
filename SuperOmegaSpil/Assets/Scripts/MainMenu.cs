@@ -18,10 +18,7 @@ public class MainMenu : MonoBehaviour
     GameObject prevButton;
     Vector3 goHere = Vector3.one;
     Vector3 buttonStartPos;
-    //float goToThisPosition = -3.5f;
-    float goBackToThisPosition = -5f;
     bool buttonIsCurrent = false;
-
 
     public void GoGameScene()
     {
