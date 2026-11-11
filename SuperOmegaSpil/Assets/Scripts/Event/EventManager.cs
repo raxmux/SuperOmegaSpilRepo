@@ -23,6 +23,7 @@ public class EventManager : MonoBehaviour
     [Header("-- enemy")]
     public GameObject enemyUI;
 
+    public GameObject enemyOptionButton;
 
     [Header("")]
     [SerializeField] MapMovement mapMovement;
