@@ -46,7 +46,17 @@ public class CombatUI : MonoBehaviour
             consumableButtons[i].onClick.AddListener(() => OnConsumableClicked(index));
         }
     }
-
+    private void Update()
+    {
+        if (Keyboard.current != null && Keyboard.current.spaceKey.wasPressedThisFrame)
+        {
+            consumablesPanel.SetActive(false);
+            movesPanel.SetActive(false);
+            selectionPanel.SetActive(true);
+            
+            UIMovement.instance.SetSelectedUIElement(selectionPanel.GetComponentInChildren<Button>().gameObject);
+        }
+    }
     // EnemyEvent turns this object on when a fight starts, so always open on the selection menu.
     void OnEnable()
     {
