@@ -19,6 +19,8 @@ public class CombatManager : MonoBehaviour
     public event Action CombatStarted;      // set up the enemy sprite, move buttons etc.
     public event Action<bool> CombatEnded;  // true = player won
     public event Action<Move> EnemyUsedMove; // for showing what the enemy did
+    public event Action<Move> PlayerUsedMove;
+    public event Action<Item> PlayerUsedConsumable;
 
     readonly List<Move> playerMoves = new List<Move>();
 
@@ -93,6 +95,7 @@ public class CombatManager : MonoBehaviour
         if (move == null) return false;
 
         Inventory.instance.RemoveItem(item); // used up
+        PlayerUsedConsumable?.Invoke(item);
         move.Use(player, enemy);
         TimeClock.Instance.AdvanceTime(move.timeCost);
         return true;
@@ -105,6 +108,7 @@ public class CombatManager : MonoBehaviour
         if (!InCombat || move == null || player.IsDead) return false;
         if (!GetPlayerMoves().Contains(move)) return false;
 
+        PlayerUsedMove?.Invoke(move);
         move.Use(player, enemy);
         TimeClock.Instance.AdvanceTime(move.timeCost);
         return true;

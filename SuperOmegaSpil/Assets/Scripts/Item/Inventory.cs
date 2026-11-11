@@ -2,7 +2,6 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
@@ -35,9 +34,13 @@ public class Inventory : MonoBehaviour
         instance = this;
     }
 
+    public event Action<int> MoneyChanged;
+    public event Action<Item> ItemAdded;
+
     public void AddMoney(int amount)
     {
         money += amount;
+        MoneyChanged?.Invoke(amount);
     }
 
     // Use this to give the player an item (shop, dialogue, rewards...).
@@ -68,9 +71,6 @@ public class Inventory : MonoBehaviour
                     pickEquipment = null;
                     yield return Choose(chooseEquipmentUI, () => pickEquipment.HasValue,
                         () => pickEquipment = true);
-
-                    UIMovement.instance.SetRandomSelectedUIElement();
-                    Debug.Log("dd");
 
                     if (pickEquipment == false) yield break; // kept the old one, new one is thrown away
 
@@ -106,6 +106,7 @@ public class Inventory : MonoBehaviour
 
         // Only reached if the item was actually kept.
         RegisterTrigger(item_);
+        ItemAdded?.Invoke(item_);
 
         if (item_.stats.hasStats)
         {
@@ -150,7 +151,6 @@ public class Inventory : MonoBehaviour
 
         choosing = true;
         ui.SetActive(true);
-        UIMovement.instance.SetSelectedUIElement(ui.GetComponentInChildren<Button>().gameObject);
         yield return new WaitUntil(hasPicked);
         ui.SetActive(false);
         choosing = false;

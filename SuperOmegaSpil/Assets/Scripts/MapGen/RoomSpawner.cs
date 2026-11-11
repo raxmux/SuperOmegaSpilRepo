@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
@@ -10,6 +9,7 @@ using UnityEngine.UI;
 
 public class RoomSpawner : MonoBehaviour
 {
+    public static event Action FloorSpawned;
     [SerializeField] GameObject startRoom;
     [SerializeField] GameObject endRoom;
 
@@ -42,6 +42,7 @@ public class RoomSpawner : MonoBehaviour
     public void SpawnRooms()
     {
         if (PaletteManager.Instance != null) PaletteManager.Instance.RandomizePalette();
+        FloorSpawned?.Invoke();
 
         foreach (GameObject room in GameObject.FindGameObjectsWithTag("Room"))
         {

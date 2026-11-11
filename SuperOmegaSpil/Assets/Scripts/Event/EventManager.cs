@@ -1,8 +1,8 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.Rendering;
 
 public class EventManager : MonoBehaviour
 {
@@ -22,7 +22,6 @@ public class EventManager : MonoBehaviour
 
     [Header("-- enemy")]
     public GameObject enemyUI;
-    public GameObject enemyOptionButton;
 
 
     [Header("")]
@@ -30,6 +29,8 @@ public class EventManager : MonoBehaviour
 
 
     Event currentEvent = null;
+
+    public event Action EventEnded;
 
     public void StartEvent(EventType type)
     {
@@ -40,21 +41,21 @@ public class EventManager : MonoBehaviour
 
                 Event[] shopEvents = new List<Event>(allEvents).FindAll(e => e.EventType == EventType.Shop).ToArray();
 
-                currentEvent = shopEvents[Random.Range(0, shopEvents.Length)];
+                currentEvent = shopEvents[UnityEngine.Random.Range(0, shopEvents.Length)];
                 currentEvent.StartEvent();
                 break;
             case EventType.Dialogue:
 
                 Event[] dialogueEvents = new List<Event>(allEvents).FindAll(e => e.EventType == EventType.Dialogue).ToArray();
 
-                currentEvent = dialogueEvents[Random.Range(0, dialogueEvents.Length)];
+                currentEvent = dialogueEvents[UnityEngine.Random.Range(0, dialogueEvents.Length)];
                 currentEvent.StartEvent();
                 break;
             case EventType.Enemy:
 
                 Event[] enemyEvents = new List<Event>(allEvents).FindAll(e => e.EventType == EventType.Enemy).ToArray();
 
-                currentEvent = enemyEvents[Random.Range(0, enemyEvents.Length)];
+                currentEvent = enemyEvents[UnityEngine.Random.Range(0, enemyEvents.Length)];
                 currentEvent.StartEvent();
                 break;
         }
@@ -66,6 +67,7 @@ public class EventManager : MonoBehaviour
         currentEvent.EndEvent();
 
         currentEvent = null;
+        EventEnded?.Invoke();
     }
 
     private void Awake()
