@@ -88,4 +88,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d67ab5963d888141a8254e3b783a091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScreenTrans
-  transitionScreen: {fileID: 4032293808934191965}
+  transitionScreen: {fileID: 7661966484209259108}

@@ -1,31 +1,28 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.UI;
 
 public class ScreenTrans : MonoBehaviour
 {
-    [SerializeField] GameObject transitionScreen;
+    [SerializeField] Image transitionScreen;
 
 
     public void Fade()
     {
-        Debug.Log("playeuuu");
         StartCoroutine(FadeEnumerator());
     }
     public IEnumerator FadeEnumerator()
     {
-        Debug.Log("plye");
         bool faded = false;
-        int alpha = 0;
+        byte alpha = 0;
+        bool fadein = false;
 
         while (faded == false)
         {
-            bool fadein = false;
-            transitionScreen.GetComponent<Image>().tintColor = new Vector4(0,0,0,alpha);
-            yield return new WaitForSeconds(0.01f);
+            transitionScreen.GetComponent<Image>().color = new Color32(255,255,255,alpha);
             if (alpha < 255 && fadein == false)
             {
-                alpha++;
+                alpha += 15;
             }
 
             if (alpha == 255 && fadein == false)
@@ -33,16 +30,27 @@ public class ScreenTrans : MonoBehaviour
                 fadein = true;
             }
 
-            if (fadein == true)
+
+            bool waitasecbro = true;
+
+            if (waitasecbro == true && alpha == 255)
             {
-                alpha--;
+                yield return new WaitForSeconds(0.2f);
+                waitasecbro = false;
             }
 
             if (fadein == true && alpha == 0)
             {
                 faded = true;
             }
-            
+
+            if (fadein == true)
+            {
+                alpha -= 15;
+            }
+
+
+            yield return new WaitForSeconds(0.01f);
         }
     }
 }
