@@ -14,6 +14,9 @@ public class Inventory : MonoBehaviour
     [SerializeField] int maxConsumables = 2;
 
     [Header("")]
+    [SerializeField] Combatant playerCombatant;
+
+    [Header("")]
     public GameObject chooseEquipmentUI;
     public GameObject chooseConsumableUI;
 
@@ -111,7 +114,8 @@ public class Inventory : MonoBehaviour
         if (item_.stats.hasStats)
         {
             //change the stats of the player when the item is picked up
-
+            playerCombatant.maxHp += item_.stats.MaxHealth;
+            playerCombatant.armor += item_.stats.Armor;
         }
 
         item_.OnPickup();

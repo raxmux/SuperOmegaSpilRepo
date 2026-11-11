@@ -18,13 +18,13 @@ public struct Stats
 {
     public bool hasStats;
     [Header("Stats")]
-    public float Health;
-    public float Speed;
-    public Stats(bool hasStats, float health, float speed)
+    public float MaxHealth;
+    public float Armor;
+    public Stats(bool hasStats, float health, float armor)
     {
         this.hasStats = hasStats;
-        Health = health;
-        Speed = speed;
+        MaxHealth = health;
+        Armor = armor;
     }
 }
 public enum itemType

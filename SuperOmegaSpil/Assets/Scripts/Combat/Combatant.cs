@@ -3,6 +3,7 @@ using UnityEngine;
 public class Combatant : MonoBehaviour
 {
     [SerializeField] public float maxHp = 100f;
+    [SerializeField] public float armor = 0f;
     [SerializeField] bool isPlayer;
 
     public float MaxHp => maxHp;
