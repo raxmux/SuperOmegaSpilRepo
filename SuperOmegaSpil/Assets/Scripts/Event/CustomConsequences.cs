@@ -26,9 +26,29 @@ public abstract class ConsequenceEffect
 [Serializable]
 public class SpeedyMoveConsequence : ConsequenceEffect
 {
+    static readonly equipmentType[] MoveSlots =
+    { equipmentType.weapon, equipmentType.Head, equipmentType.Legs, equipmentType.Face };
     public override void Execute()
     {
-        Debug.Log("Speedy Move!");
+        if (Inventory.instance != null)
+        {
+            foreach (equipmentType slot in MoveSlots)
+            {
+                Item item = Inventory.instance.equipment.Find(e => e != null && e.equipmentType == slot);
+                Move move = FirstMove(item);
+                if (move != null)
+                {
+                    move.timeCost /= 1.5f;
+                    Debug.Log($"SpeedyMoveConsequence applied to move: {move.moveName}, new timeCost: {move.timeCost}");
+                    break;
+                }
+            }
+        }
+    }
+    public static Move FirstMove(Item item)
+    {
+        if (item == null || item.moves == null || item.moves.Count == 0) return null;
+        return item.moves[0];
     }
 }
 [Serializable]
