@@ -153,6 +153,16 @@ public class RoomSpawner : MonoBehaviour
             }
         }
 
+        int shopRoomRand = 0;
+        Vector2 shopRoomPos = Vector2.zero;
+
+        shopRoomRand = UnityEngine.Random.Range(0, currentRooms.Count);
+        shopRoomPos = currentRooms[shopRoomRand].transform.position;
+
+        GameObject shopRoomInstance = Instantiate(endRoom, endRoomPos, Quaternion.identity, transform);
+        shopRoomInstance.GetComponent<SpriteRenderer>().sprite = unknownRoom;
+        Destroy(currentRooms[shopRoomRand]);
+
 
         GameObject endRoomInstance = Instantiate(endRoom, endRoomPos, Quaternion.identity, transform);
         endRoomInstance.GetComponent<SpriteRenderer>().sprite = unknownRoom;
