@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
+  m_Name: Tiny Idol
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: Tiny Idol
+  itemDesc: It watches over you. It judges you too.
+  itemSprite: {fileID: 6788886400022293475, guid: 8896dc10b6699e94cb8698da120fa7f4, type: 3}
+  itemRarity: 2
+  value: 35
+  itemType: 0
+  equipmentType: 0
+  stats:
+    hasStats: 1
+    MaxHealth: 10
+    Armor: 0
+  trigger:
+    triggerType: 3
+    triggerAction:
+    - rid: 1702588519639679049
+  moves: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 1702588519639679049
+      type: {class: HealAction, ns: , asm: Assembly-CSharp}
+      data:
+        healAmount: 10
