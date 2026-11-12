@@ -17,8 +17,8 @@ MonoBehaviour:
   itemSprite: {fileID: 4278120580491971516, guid: fe0760a2665f2374b8e842d5e4f32101, type: 3}
   itemRarity: 1
   value: 15
-  itemType: 0
-  equipmentType: 0
+  itemType: 1
+  equipmentType: 3
   stats:
     hasStats: 1
     MaxHealth: 0
