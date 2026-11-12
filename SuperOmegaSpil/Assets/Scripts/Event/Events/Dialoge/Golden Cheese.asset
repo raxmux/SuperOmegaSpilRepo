@@ -18,7 +18,7 @@ MonoBehaviour:
   - Hell yeah! (Gain 5 maxhp whenever healed, lose 5 maxhp whenever damaged)
   - nah (-5 health)
   consequences:
-  - ConsequencePrompt: oh ho ho dumbass
+  - ConsequencePrompt: OHHH you are blessed!!
     itemToAdd: {fileID: 0}
     moneyToAdd: 0
     healthloss: 0
