@@ -745,7 +745,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1170891788
 RectTransform:
   m_ObjectHideFlags: 0
@@ -762,7 +762,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 450, y: 200}
+  m_AnchoredPosition: {x: 300, y: 200}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1170891789
@@ -1296,7 +1296,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2210244891373943920, guid: 8920333a9dc0d7548b1bfd24522f7270, type: 3}
       propertyPath: m_NormalizedViewPortRect.y
-      value: 0.03125
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2210244891373943920, guid: 8920333a9dc0d7548b1bfd24522f7270, type: 3}
       propertyPath: m_NormalizedViewPortRect.width
@@ -1304,7 +1304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2210244891373943920, guid: 8920333a9dc0d7548b1bfd24522f7270, type: 3}
       propertyPath: m_NormalizedViewPortRect.height
-      value: 0.9375
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2501473627848669594, guid: 8920333a9dc0d7548b1bfd24522f7270, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1663,6 +1663,10 @@ MonoBehaviour:
   globalText: {fileID: 1170891789}
   count: 10
   newScoreColor: {r: 1, g: 0.85, b: 0.2, a: 1}
+  startOnDaily: 1
+  switchButtonText: {fileID: 1665305630}
+  dailyButtonLabel: Daily
+  globalButtonLabel: All Time
 --- !u!4 &1682996508
 Transform:
   m_ObjectHideFlags: 0
@@ -1776,7 +1780,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1747664501}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1682996507}
+        m_TargetAssemblyTypeName: LeaderboardDisplay, Assembly-CSharp
+        m_MethodName: SwitchBoard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1747664501
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1986,7 +2002,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 125, y: 200}
+  m_AnchoredPosition: {x: 300, y: 200}
   m_SizeDelta: {x: 300, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2038592519
