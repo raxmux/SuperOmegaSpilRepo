@@ -11,6 +11,14 @@ public class CombatManager : MonoBehaviour
     [SerializeField] Combatant enemy;
     [SerializeField] List<Move> baseMoves = new List<Move>();
 
+    [Header("Enemy scaling per floor")]
+    [SerializeField] float enemyHpPerFloor = 0.15f;
+    [SerializeField] float enemyDamagePerFloor = 0.1f;
+
+    public int Floor { get; private set; }
+    public float EnemyHpMultiplier => 1f + enemyHpPerFloor * Mathf.Max(0, Floor - 1);
+    public float EnemyDamageMultiplier => 1f + enemyDamagePerFloor * Mathf.Max(0, Floor - 1);
+
     public bool InCombat { get; private set; }
     public EnemyData CurrentEnemy { get; private set; }
     public Combatant Player => player;
@@ -37,6 +45,18 @@ public class CombatManager : MonoBehaviour
         Instance = this;
     }
 
+    void OnEnable()
+    {
+        RoomSpawner.FloorSpawned += OnFloorSpawned;
+    }
+
+    void OnDisable()
+    {
+        RoomSpawner.FloorSpawned -= OnFloorSpawned;
+    }
+
+    void OnFloorSpawned() => Floor++;
+
     void Start()
     {
         TriggerManager.Instance.RegisterListener(TriggerType.TimeclockPoint, OnClockPoint);
@@ -57,7 +77,7 @@ public class CombatManager : MonoBehaviour
         if (InCombat || data == null) return;
 
         CurrentEnemy = data;
-        enemy.ResetHp(data.maxHp);
+        enemy.ResetHp(data.maxHp * EnemyHpMultiplier);
         InCombat = true;
         TimeClock.Instance.SetPoints(data.attackTimes);
         CombatStarted?.Invoke();
@@ -133,10 +153,10 @@ public class CombatManager : MonoBehaviour
         Move move = CurrentEnemy.PickMove(enemy.Hp / enemy.MaxHp);
         if (move == null) return;
 
-        move.Use(enemy, player);
+        move.Use(enemy, player, EnemyDamageMultiplier, EnemyHpMultiplier);
         EnemyUsedMove?.Invoke(move);
         string log = $"{enemy.name} used {move.moveName}!";
-        if(move.damage > 0)
+        if (move.damage > 0)
         {
             log += $"\nit did {move.damage} damage.";
         }
