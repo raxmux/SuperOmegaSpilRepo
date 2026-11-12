@@ -26,14 +26,14 @@ public class Combatant : MonoBehaviour
         HpChanged?.Invoke(this);
     }
 
-    public void TakeDamage(float amount, GameObject source = null)
+    public void TakeDamage(float amount, GameObject source = null, bool notify = true)
     {
         if (IsDead || amount <= 0f) return;
 
         Hp = Mathf.Max(0f, Hp - amount);
         HpChanged?.Invoke(this);
 
-        if (isPlayer)
+        if (isPlayer && notify)
             TriggerManager.Instance.TriggerEvent(TriggerType.PlayerDamaged,
                 new TriggerContext(source, gameObject, amount));
 
