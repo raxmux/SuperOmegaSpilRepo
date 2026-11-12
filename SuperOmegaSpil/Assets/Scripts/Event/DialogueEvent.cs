@@ -64,6 +64,9 @@ public class DialogueEvent : Event
         Inventory.instance.AddMoney(consequences[buttonIndex].moneyToAdd);
         Inventory.instance.GiveItem(consequences[buttonIndex].itemToAdd);
 
+        Combatant player = GameObject.FindGameObjectWithTag("CombatPlayer").GetComponent<Combatant>();
+        player.maxHp += consequences[buttonIndex].healthloss;
+
         consequences[buttonIndex].customConsequence?.Execute();
     }
     public override void EndEvent()
