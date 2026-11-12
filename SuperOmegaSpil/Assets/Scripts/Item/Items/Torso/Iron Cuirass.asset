@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
+  m_Name: Iron Cuirass
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: Iron Cuirass
+  itemDesc: "Heavy, honest and dented from someone else\u2019s bad day."
+  itemSprite: {fileID: 5300818424534992302, guid: 1c8bf4a9d1977f0428f16a37b9dc7f18, type: 3}
+  itemRarity: 1
+  value: 15
+  itemType: 1
+  equipmentType: 5
+  stats:
+    hasStats: 1
+    MaxHealth: 5
+    Armor: 3
+  trigger:
+    triggerType: 0
+    triggerAction: []
+  moves: []
+  references:
+    version: 2
+    RefIds: []

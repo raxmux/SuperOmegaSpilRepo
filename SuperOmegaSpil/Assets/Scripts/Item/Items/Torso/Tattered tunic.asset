@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
+  m_Name: Tattered tunic
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: Tattered tunic
+  itemDesc: "More holes than shirt, but it\u2019s better than nothing. Slightly.\n"
+  itemSprite: {fileID: 7262119653502517537, guid: 1c8bf4a9d1977f0428f16a37b9dc7f18, type: 3}
+  itemRarity: 0
+  value: 5
+  itemType: 1
+  equipmentType: 5
+  stats:
+    hasStats: 1
+    MaxHealth: 10
+    Armor: 0
+  trigger:
+    triggerType: 0
+    triggerAction: []
+  moves: []
+  references:
+    version: 2
+    RefIds: []
