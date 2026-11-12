@@ -15,16 +15,16 @@ MonoBehaviour:
   dialoguePrompt: '*you stumble upon a shining golden piece of cheese* Do you want
     the golden cheese?'
   dialogueOptions:
-  - Hell yeah! (die)
-  - nah (nothin)
+  - Hell yeah! (Gain 5 maxhp whenever healed, lose 5 maxhp whenever damaged)
+  - nah (-5 health)
   consequences:
-  - ConsequencePrompt: oh ho ho dumbass
+  - ConsequencePrompt: OHHH you are blessed!!
     itemToAdd: {fileID: 0}
     moneyToAdd: 0
     healthloss: 0
-    customConsequence: {fileID: 0}
+    customConsequence: {fileID: 11400000, guid: de211114f6831274a90846766ada12d4, type: 2}
   - ConsequencePrompt: you're missing out loser
     itemToAdd: {fileID: 0}
     moneyToAdd: 0
-    healthloss: 0
+    healthloss: 5
     customConsequence: {fileID: 0}

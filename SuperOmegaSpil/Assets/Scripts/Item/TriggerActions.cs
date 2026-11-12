@@ -29,6 +29,7 @@ public class TakeDmgAction : TriggerActions
         Debug.Log($"Taking {dmg} damage.");
     }
 }
+[Serializable]
 public class ChangeMaxHpAction : TriggerActions
 {
     [SerializeField] private int changeAmmount;
