@@ -16,7 +16,7 @@ MonoBehaviour:
   itemDesc: Warm, thick, and possibly still breathing
   itemSprite: {fileID: -1897174555545292015, guid: fe0760a2665f2374b8e842d5e4f32101, type: 3}
   itemRarity: 0
-  value: 0
+  value: 5
   itemType: 1
   equipmentType: 3
   stats:

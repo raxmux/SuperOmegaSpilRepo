@@ -16,7 +16,7 @@ MonoBehaviour:
   itemDesc: "Hugging is no longer an option. Hitting you isn\u2019t either."
   itemSprite: {fileID: -5739067391630183118, guid: fe0760a2665f2374b8e842d5e4f32101, type: 3}
   itemRarity: 2
-  value: 35
+  value: 25
   itemType: 1
   equipmentType: 3
   stats:
