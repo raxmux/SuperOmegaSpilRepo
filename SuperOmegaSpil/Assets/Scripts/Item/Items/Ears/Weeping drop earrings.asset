@@ -20,7 +20,7 @@ MonoBehaviour:
   itemType: 1
   equipmentType: 7
   stats:
-    hasStats: 0
+    hasStats: 1
     MaxHealth: 15
     Armor: 0
   trigger:
