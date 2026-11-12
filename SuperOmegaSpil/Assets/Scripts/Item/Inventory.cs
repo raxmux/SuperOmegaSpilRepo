@@ -99,6 +99,7 @@ public class Inventory : MonoBehaviour
                         text[1].text = $"<b>{item_.itemName}</b>\n{item_.GetFullDescription()}";
                         text[2].text = $"<b>{old.itemName}</b>\n{old.GetFullDescription()}";
                     }
+                    UIMovement.instance.SetSelectedUIElement(chooseEquipmentUI.GetComponentInChildren<Button>().gameObject);
 
                     yield return Choose(chooseEquipmentUI, () => pickEquipment.HasValue,
                         () => pickEquipment = true);
