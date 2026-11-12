@@ -63,10 +63,10 @@ public class EventManager : MonoBehaviour
         }
     }
 
-    public void EndEvent()
+    public void EndEvent(bool end = false)
     {
         mapMovement.ExitRoom();
-        currentEvent.EndEvent();
+        if(!end) currentEvent.EndEvent();
 
         currentEvent = null;
         EventEnded?.Invoke();
@@ -95,4 +95,23 @@ public class EventManager : MonoBehaviour
         var dialogueEvent = currentEvent as DialogueEvent;
         dialogueEvent.ChooseOption(buttonIndex);
     }
+
+
+    #region end
+    public void BackButton()
+    {
+        endUI.SetActive(false);
+
+        EndEvent(true);
+    }
+    public void EndButton()
+    {
+        endUI.SetActive(false);
+        MapMovement.instance.gameObject.transform.position = new Vector3(0, 0, 0);
+        MapMovement.instance.roomSpawner.SpawnRooms();
+
+        EndEvent(true);
+    }
+
+    #endregion
 }
