@@ -59,7 +59,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 6802ae325dd2103458239b3e38bbf014, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -82,7 +82,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 9
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9187060388643061105, guid: 286eec8faba95a644875e384041ab69f, type: 3}
+  m_Sprite: {fileID: 2799480531627507908, guid: e9a925b0ff1741c4d8c6e2cab05ee952, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -108,4 +108,3 @@ MonoBehaviour:
   mask:
     serializedVersion: 2
     m_Bits: 64
-  enemyEvent: {fileID: 11400000, guid: b995d72d7c20cee4ead494d9c1594f09, type: 2}
