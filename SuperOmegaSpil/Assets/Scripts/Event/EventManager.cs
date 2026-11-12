@@ -60,6 +60,12 @@ public class EventManager : MonoBehaviour
                 currentEvent = enemyEvents[UnityEngine.Random.Range(0, enemyEvents.Length)];
                 currentEvent.StartEvent();
                 break;
+            case EventType.end:
+                Event[] endEvents = new List<Event>(allEvents).FindAll(e => e.EventType == EventType.end).ToArray();
+                currentEvent = endEvents[UnityEngine.Random.Range(0, endEvents.Length)];
+                currentEvent.StartEvent();
+                break;
+
         }
     }
 

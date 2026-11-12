@@ -83,9 +83,7 @@ public class MapMovement : MonoBehaviour
                 break;
             case RoomType.RoomTypes.EventRoom:
 
-                int randomEvent = UnityEngine.Random.Range(0, 4);
-                if (randomEvent == 0) EventManager.instance.StartEvent(EventType.Enemy); 
-                else EventManager.instance.StartEvent(EventType.Dialogue);
+                EventManager.instance.StartEvent(EventType.Dialogue);
                 break;
             case RoomType.RoomTypes.EndRoom:
 
