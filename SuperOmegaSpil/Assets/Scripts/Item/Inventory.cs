@@ -104,7 +104,7 @@ public class Inventory : MonoBehaviour
                     yield return Choose(chooseEquipmentUI, () => pickEquipment.HasValue,
                         () => pickEquipment = true);
 
-                    UIMovement.instance.SetRandomSelectedUIElement();
+                    //UIMovement.instance.SetRandomSelectedUIElement();
 
                     if (pickEquipment == false) yield break; // kept the old one, new one is thrown away
 
