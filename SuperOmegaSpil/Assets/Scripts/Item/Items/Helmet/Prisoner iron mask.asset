@@ -21,12 +21,13 @@ MonoBehaviour:
   equipmentType: 2
   stats:
     hasStats: 1
-    MaxHealth: 25
+    MaxHealth: 20
     Armor: 5
   trigger:
     triggerType: 0
     triggerAction: []
-  moves: []
+  moves:
+  - {fileID: 11400000, guid: d5a29c8a87211a249898e884b8f16ecd, type: 2}
   references:
     version: 2
     RefIds: []

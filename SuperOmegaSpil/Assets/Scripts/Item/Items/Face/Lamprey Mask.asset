@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
+  m_Name: Lamprey Mask
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: Lamprey Mask
+  itemDesc: Its mouth goes all the way down. Whatever it bites, you get to keep.
+  itemSprite: {fileID: 2758417646226223635, guid: 761a810b605e00544bbd2f903ccab0f5, type: 3}
+  itemRarity: 4
+  value: 100
+  itemType: 1
+  equipmentType: 6
+  stats:
+    hasStats: 1
+    MaxHealth: 50
+    Armor: 0
+  trigger:
+    triggerType: 0
+    triggerAction: []
+  moves:
+  - {fileID: 11400000, guid: 2b71facd29a0c0b49a233d21db29126c, type: 2}
+  references:
+    version: 2
+    RefIds: []

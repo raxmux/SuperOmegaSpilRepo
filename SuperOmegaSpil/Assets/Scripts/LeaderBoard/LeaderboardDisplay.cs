@@ -11,9 +11,31 @@ public class LeaderboardDisplay : MonoBehaviour
     [SerializeField] int count = 10;
     [SerializeField] Color newScoreColor = new Color(1f, 0.85f, 0.2f);
 
+    [Header("Switching")]
+    [SerializeField] bool startOnDaily = true;
+    [SerializeField] TMP_Text switchButtonText;
+    [SerializeField] string dailyButtonLabel = "Daily";
+    [SerializeField] string globalButtonLabel = "All Time";
+
+    bool showingDaily;
+
     void OnEnable()
     {
         Refresh();
+        ShowBoard(startOnDaily);
+    }
+
+    public void SwitchBoard()
+    {
+        ShowBoard(!showingDaily);
+    }
+
+    void ShowBoard(bool daily)
+    {
+        showingDaily = daily;
+        if (dailyText != null) dailyText.gameObject.SetActive(daily);
+        if (globalText != null) globalText.gameObject.SetActive(!daily);
+        if (switchButtonText != null) switchButtonText.text = daily ? dailyButtonLabel : globalButtonLabel;
     }
 
     public void Refresh()
