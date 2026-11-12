@@ -10,27 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
-  m_Name: Reciprocal Bonecharm
+  m_Name: Health potion
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Reciprocal Bonecharm
-  itemDesc: A fleshbound Kyrsan effigy of Ethironal worship. As their minds and focuses
-    were robbed, their precise artisanry was twisted into a feverish production of
-    foul convolutions of the organic. Peering into the beady eyes of the bonecharm,
-    you see an early Ethironal shrine; unfinished, misshapen taxidermies lining the
-    walls like an abattoir.
+  itemName: 
+  itemDesc: 
   itemSprite: {fileID: 0}
   itemRarity: 0
   value: 0
-  itemType: 0
+  itemType: 2
   equipmentType: 0
   stats:
     hasStats: 0
-    Health: 0
-    Speed: 0
+    MaxHealth: 0
+    Armor: 0
   trigger:
     triggerType: 0
     triggerAction: []
-  moves: []
+  moves:
+  - {fileID: 11400000, guid: ce1e0e5610443674bad6d0820b018219, type: 2}
   references:
     version: 2
     RefIds: []

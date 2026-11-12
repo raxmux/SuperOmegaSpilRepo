@@ -10,25 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
-  m_Name: The Hallowscleave
+  m_Name: Monk's hood
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: The Hallowscleave
-  itemDesc: A blade said to be fashioned by the Spellhardt family to settle disputes
-    in a festive style. It's bound to catch an odd gaze at a standard tavern, but
-    one must simply express their Hallowtide spirit.
-  itemSprite: {fileID: 0}
+  itemName: Monk's hood
+  itemDesc: Breathe in, Breathe out, Ignore the goblin
+  itemSprite: {fileID: -9121000342766900201, guid: 6947421eff43dc041ac9d99322f1d6af, type: 3}
   itemRarity: 0
-  value: 0
+  value: 20
   itemType: 1
-  equipmentType: 1
+  equipmentType: 2
   stats:
-    hasStats: 0
-    Health: 0
-    Speed: 0
+    hasStats: 1
+    MaxHealth: 15
+    Armor: 0
   trigger:
     triggerType: 0
     triggerAction: []
-  moves: []
+  moves:
+  - {fileID: 11400000, guid: 99116d97cb312254195657dcca27193a, type: 2}
   references:
     version: 2
     RefIds: []

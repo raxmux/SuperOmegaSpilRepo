@@ -10,22 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
-  m_Name: Harvestman's Halo
+  m_Name: Iron helmet
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Harvestman's Halo
-  itemDesc: The steel-wrought crown of the Harvestman, a folklore figure among the
-    peoples of Lumen. He is seen as a patron figure of harvests, a protector of crops,
-    and is often associated with the Ardenstar - a brilliant star of the night sky,
-    believed to be the Harvestman's home...
-  itemSprite: {fileID: 0}
-  itemRarity: 0
-  value: 0
+  itemName: Iron helmet
+  itemDesc: Bucket with ambition
+  itemSprite: {fileID: 2358521161833651127, guid: 6947421eff43dc041ac9d99322f1d6af, type: 3}
+  itemRarity: 1
+  value: 10
   itemType: 1
   equipmentType: 2
   stats:
-    hasStats: 0
-    Health: 0
-    Speed: 0
+    hasStats: 1
+    MaxHealth: 10
+    Armor: 2
   trigger:
     triggerType: 0
     triggerAction: []
