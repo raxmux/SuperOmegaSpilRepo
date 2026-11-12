@@ -24,9 +24,14 @@ MonoBehaviour:
     MaxHealth: 0
     Armor: 0
   trigger:
-    triggerType: 0
-    triggerAction: []
+    triggerType: 2
+    triggerAction:
+    - rid: 1702588519639679048
   moves: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1702588519639679048
+      type: {class: HealAction, ns: , asm: Assembly-CSharp}
+      data:
+        healAmount: 5
