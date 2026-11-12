@@ -60,7 +60,8 @@ public class MapMovement : MonoBehaviour
         }
         transform.position = targetPosition;
 
-        yield return new WaitForSeconds(0.2f);
+        //yield return new WaitForSeconds(0.2f);
+        
 
         if (isUnknown)
         {
