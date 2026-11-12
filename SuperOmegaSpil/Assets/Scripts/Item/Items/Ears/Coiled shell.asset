@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
   m_Name: Coiled shell
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Coiled shell
+  itemName: Coiled shell earrings
   itemDesc: 
   itemSprite: {fileID: -6292618842688738765, guid: 8896dc10b6699e94cb8698da120fa7f4, type: 3}
   itemRarity: 0
