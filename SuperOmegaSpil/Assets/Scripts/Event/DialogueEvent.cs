@@ -65,7 +65,7 @@ public class DialogueEvent : Event
         Inventory.instance.GiveItem(consequences[buttonIndex].itemToAdd);
 
         Combatant player = GameObject.FindGameObjectWithTag("CombatPlayer").GetComponent<Combatant>();
-        player.maxHp += consequences[buttonIndex].healthloss;
+        player.TakeDamage(consequences[buttonIndex].healthloss);
 
         consequences[buttonIndex].customConsequence?.Execute();
     }
