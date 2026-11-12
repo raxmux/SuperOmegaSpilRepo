@@ -26,6 +26,9 @@ public class Inventory : MonoBehaviour
     [SerializeField] GameObject moneytxtRoom;
     [SerializeField] GameObject moneytxtWorld;
 
+    [Header("")]
+    [SerializeField] Transform itembar;
+    [SerializeField] GameObject itemSlotPrefab;
 
 
 
@@ -146,6 +149,28 @@ public class Inventory : MonoBehaviour
         }
 
         item_.OnPickup();
+        AddVisual();
+    }
+
+    void AddVisual()
+    {
+        foreach (Transform child in itembar)
+        {
+            Destroy(child.gameObject);
+        }
+        int j = 0;
+        for(int i = 0; i < items.Count; i++)
+        {
+            j++;
+            GameObject slot = Instantiate(itemSlotPrefab, itembar.position + new Vector3(j, 0, 0), Quaternion.identity, itembar);
+            slot.GetComponent<Image>().sprite = items[i].itemSprite;
+        }
+        for (int i = 0; i < equipment.Count; i++)
+        {
+            j++;
+            GameObject slot = Instantiate(itemSlotPrefab, itembar.position + new Vector3(j, 0, 0), Quaternion.identity, itembar);
+            slot.GetComponent<Image>().sprite = equipment[i].itemSprite;
+        }
     }
 
     // Removes an item from the inventory and stops its trigger.
@@ -160,6 +185,8 @@ public class Inventory : MonoBehaviour
         if (removed) UnregisterTrigger(item);
         if (removed) playerCombatant.maxHp -= item.stats.MaxHealth;
         if (removed) playerCombatant.armor -= item.stats.Armor;
+
+        AddVisual();
     }
 
     public void PickEquipmentButton(bool keepNewItem)
