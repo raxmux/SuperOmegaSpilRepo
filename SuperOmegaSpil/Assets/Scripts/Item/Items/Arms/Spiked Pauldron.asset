@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
+  m_Name: Spiked Pauldron
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: Spiked Pauldron
+  itemDesc: "Hugging is no longer an option. Hitting you isn\u2019t either."
+  itemSprite: {fileID: -5739067391630183118, guid: fe0760a2665f2374b8e842d5e4f32101, type: 3}
+  itemRarity: 2
+  value: 35
+  itemType: 0
+  equipmentType: 0
+  stats:
+    hasStats: 1
+    MaxHealth: 0
+    Armor: 1
+  trigger:
+    triggerType: 4
+    triggerAction:
+    - rid: 1702588519639679056
+  moves: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 1702588519639679056
+      type: {class: DamageEnemyAction, ns: , asm: Assembly-CSharp}
+      data:
+        dmg: 10
