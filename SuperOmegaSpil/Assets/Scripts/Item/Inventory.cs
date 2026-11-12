@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +22,9 @@ public class Inventory : MonoBehaviour
     [Header("")]
     public GameObject chooseEquipmentUI;
     public GameObject chooseConsumableUI;
-
+    [Header("")]
+    [SerializeField] GameObject moneytxtRoom;
+    [SerializeField] GameObject moneytxtWorld;
     readonly List<(Item item, TriggerType type, Action<TriggerContext> listener)> triggerListeners
         = new List<(Item, TriggerType, Action<TriggerContext>)>();
 
@@ -44,7 +48,15 @@ public class Inventory : MonoBehaviour
     public void AddMoney(int amount)
     {
         money += amount;
+        UpdateMoneyUI();
+        Debug.Log("Money changed by " + amount + ", new total: " + money);
         MoneyChanged?.Invoke(amount);
+    }
+
+    void UpdateMoneyUI()
+    {
+        moneytxtRoom.GetComponent<TMP_Text>().text = "Money : " + money.ToString();
+        moneytxtWorld.GetComponent<TMP_Text>().text = "Money : " + money.ToString();
     }
 
     // Use this to give the player an item (shop, dialogue, rewards...).
