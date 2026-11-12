@@ -25,6 +25,7 @@ public class ShopEvent : Event
     [SerializeField] string priceFormat = "{0}g";
     [SerializeField] string soldText = "SOLD";
     [SerializeField] Color cantAffordColor = new Color(1f, 0.3f, 0.3f);
+    [SerializeField, Range(0f, 1f)] float soldOpacity = 0.4f;
 
     readonly List<Item> stock = new List<Item>();
     readonly List<bool> sold = new List<bool>();
@@ -146,8 +147,13 @@ public class ShopEvent : Event
                 priceText != null ? item.itemName : $"{item.itemName}  {price}";
             slot.transform.GetChild(3).GetComponent<TMP_Text>().text = item.itemDesc;
 
+            // Sold slots fade out but stay selectable, so you can still move past them to Exit.
+            CanvasGroup group = slot.GetComponent<CanvasGroup>();
+            if (group == null) group = slot.AddComponent<CanvasGroup>();
+            group.alpha = sold[i] ? soldOpacity : 1f;
+
             Button button = slot.GetComponent<Button>();
-            if (button != null) button.interactable = !sold[i];
+            if (button != null) button.interactable = true;
         }
     }
 

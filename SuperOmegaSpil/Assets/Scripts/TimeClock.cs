@@ -7,10 +7,14 @@ public class TimeClock : MonoBehaviour
 
     [SerializeField] float loopLength = 12f; // seconds per loop
     [SerializeField] float speed = 1f;       // 1 = real time
+    [SerializeField] float speedUpPerFloor = 0.25f;
 
     public float CurrentTime { get; private set; }
     public float LoopLength => loopLength;
     public bool Paused { get; set; }
+    public float Speed { get; private set; }
+
+    int floor;
 
     [SerializeField] List<float> overworldPoints = new List<float> { 3f, 6f, 9f, 12f };
 
@@ -30,13 +34,29 @@ public class TimeClock : MonoBehaviour
             return;
         }
         Instance = this;
+        Speed = speed;
         ResetPoints();
+    }
+
+    void OnEnable()
+    {
+        RoomSpawner.FloorSpawned += OnFloorSpawned;
+    }
+
+    void OnDisable()
+    {
+        RoomSpawner.FloorSpawned -= OnFloorSpawned;
+    }
+    void OnFloorSpawned()
+    {
+        floor++;
+        Speed = speed * (1f + speedUpPerFloor * (floor - 1));
     }
 
     void Update()
     {
         if (Paused) return;
-        AdvanceTime(Time.deltaTime * speed);
+        AdvanceTime(Time.deltaTime * Speed);
     }
 
     public void ResetPoints() => SetPoints(overworldPoints);
