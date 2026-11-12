@@ -62,7 +62,7 @@ public class ExtraMaxHealthConsequence : ConsequenceEffect
     }
 }
 [Serializable]
-public class GoldenShrineCurseConsequence : ConsequenceEffect
+public class GiveItem : ConsequenceEffect
 {
     public Item cursedItem;
     public override void Execute()
