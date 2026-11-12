@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
+  m_Name: Coiled shell
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: Coiled shell earrings
+  itemDesc: 
+  itemSprite: {fileID: -6292618842688738765, guid: 8896dc10b6699e94cb8698da120fa7f4, type: 3}
+  itemRarity: 0
+  value: 10
+  itemType: 1
+  equipmentType: 7
+  stats:
+    hasStats: 1
+    MaxHealth: 5
+    Armor: 1
+  trigger:
+    triggerType: 0
+    triggerAction: []
+  moves: []
+  references:
+    version: 2
+    RefIds: []

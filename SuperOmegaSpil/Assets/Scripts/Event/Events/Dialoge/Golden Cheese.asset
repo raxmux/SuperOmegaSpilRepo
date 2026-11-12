@@ -21,7 +21,7 @@ MonoBehaviour:
   - ConsequencePrompt: oh ho ho dumbass
     itemToAdd: {fileID: 0}
     moneyToAdd: 0
-    healthloss: 20000000
+    healthloss: 0
     customConsequence: {fileID: 0}
   - ConsequencePrompt: you're missing out loser
     itemToAdd: {fileID: 0}
