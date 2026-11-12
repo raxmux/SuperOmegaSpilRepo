@@ -51,11 +51,6 @@ public class ScreenTrans : MonoBehaviour
                 alpha -= 15;
             }
 
-
-            Debug.Log("waitasecbro "+waitasecbro);
-            Debug.Log("alpha "+alpha);
-            Debug.Log("fadein "+fadein);
-
             yield return new WaitForSeconds(0.01f);
         }
     }
