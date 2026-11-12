@@ -1,3 +1,4 @@
+using Mono.Cecil.Cil;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,6 +14,7 @@ public class ScreenTrans : MonoBehaviour
     }
     public IEnumerator FadeEnumerator()
     {
+        bool waitasecbro = true;
         bool faded = false;
         byte alpha = 0;
         bool fadein = false;
@@ -20,18 +22,8 @@ public class ScreenTrans : MonoBehaviour
         while (faded == false)
         {
             transitionScreen.GetComponent<Image>().color = new Color32(255,255,255,alpha);
-            if (alpha < 255 && fadein == false)
-            {
-                alpha += 15;
-            }
-
-            if (alpha == 255 && fadein == false)
-            {
-                fadein = true;
-            }
 
 
-            bool waitasecbro = true;
 
             if (waitasecbro == true && alpha == 255)
             {
@@ -39,16 +31,30 @@ public class ScreenTrans : MonoBehaviour
                 waitasecbro = false;
             }
 
+            if (alpha == 255 && fadein == false)
+            {
+                fadein = true;
+            }
+
+            if (alpha < 255 && fadein == false)
+            {
+                alpha += 15;
+            }
+
             if (fadein == true && alpha == 0)
             {
                 faded = true;
             }
 
-            if (fadein == true)
+            if (fadein == true && waitasecbro == false)
             {
                 alpha -= 15;
             }
 
+
+            Debug.Log("waitasecbro "+waitasecbro);
+            Debug.Log("alpha "+alpha);
+            Debug.Log("fadein "+fadein);
 
             yield return new WaitForSeconds(0.01f);
         }
