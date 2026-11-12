@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
+  m_Name: GoldenCheesePos
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: The GOLDEN Cheese
+  itemDesc: A cheese made of solid gold, makes you
+  itemSprite: {fileID: -1059748643511412261, guid: 18ff069b199e388408048ef66453aa41, type: 3}
+  itemRarity: 0
+  value: 0
+  itemType: 0
+  equipmentType: 0
+  stats:
+    hasStats: 0
+    MaxHealth: 0
+    Armor: 0
+  trigger:
+    triggerType: 5
+    triggerAction:
+    - rid: 6178564035019014237
+  moves: []
+  references:
+    version: 2
+    RefIds:
+    - rid: 6178564035019014237
+      type: {class: ChangeMaxHpAction, ns: , asm: Assembly-CSharp}
+      data:
+        changeAmmount: 5

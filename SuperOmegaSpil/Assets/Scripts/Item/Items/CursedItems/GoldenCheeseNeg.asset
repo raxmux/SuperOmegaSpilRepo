@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
-  m_Name: GoldenCheese
+  m_Name: GoldenCheeseNeg
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: The GOLDEN Cheese
+  itemName: The GOLDEN Cheese_
   itemDesc: A cheese made of solid gold, makes you
   itemSprite: {fileID: -1059748643511412261, guid: 18ff069b199e388408048ef66453aa41, type: 3}
   itemRarity: 0
@@ -24,9 +24,14 @@ MonoBehaviour:
     MaxHealth: 0
     Armor: 0
   trigger:
-    triggerType: 0
-    triggerAction: []
+    triggerType: 4
+    triggerAction:
+    - rid: 6178564035019014238
   moves: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 6178564035019014238
+      type: {class: ChangeMaxHpAction, ns: , asm: Assembly-CSharp}
+      data:
+        changeAmmount: -5
