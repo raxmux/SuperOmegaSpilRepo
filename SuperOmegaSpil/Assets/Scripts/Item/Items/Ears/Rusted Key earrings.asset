@@ -14,11 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Rusted Key earrings
   itemDesc: Opens up to nothing
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: 3357643199290397308, guid: 8896dc10b6699e94cb8698da120fa7f4, type: 3}
   itemRarity: 1
   value: 15
-  itemType: 0
-  equipmentType: 0
+  itemType: 1
+  equipmentType: 7
   stats:
     hasStats: 0
     MaxHealth: 0
