@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
@@ -27,6 +28,7 @@ public class EventManager : MonoBehaviour
 
     [Header("")]
     [SerializeField] MapMovement mapMovement;
+    [SerializeField] ScreenTrans screenTrans;
     public GameObject endUI;
 
 
@@ -65,9 +67,8 @@ public class EventManager : MonoBehaviour
                 currentEvent = endEvents[UnityEngine.Random.Range(0, endEvents.Length)];
                 currentEvent.StartEvent();
                 break;
-
+            }
         }
-    }
 
     public void EndEvent(bool end = false)
     {
