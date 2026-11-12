@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
+  m_Name: "Traveler\u2019s Boots"
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: "Traveler\u2019s Boots"
+  itemDesc: "Someone walked a long way in these. They didn\u2019t make it, but the
+    boots did."
+  itemSprite: {fileID: -1614192002043686822, guid: 32350c17efa50f848ba1b957823b1a16, type: 3}
+  itemRarity: 0
+  value: 10
+  itemType: 1
+  equipmentType: 4
+  stats:
+    hasStats: 0
+    MaxHealth: 0
+    Armor: 0
+  trigger:
+    triggerType: 0
+    triggerAction: []
+  moves:
+  - {fileID: 11400000, guid: cfafc4ee836420c4b96c66d17b453833, type: 2}
+  references:
+    version: 2
+    RefIds: []
