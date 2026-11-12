@@ -3861,7 +3861,7 @@ MonoBehaviour:
   minScale: 0.3
   maxScale: 5
   hitParticle: {fileID: 6924430945145308078, guid: 6149946f60c22bf41a41db6bd4c57c65, type: 3}
-  particleOffset: {x: 0, y: 0, z: 0}
+  particleOffset: {x: 0, y: 60, z: 0}
   particleLifetime: 0.5
 --- !u!4 &748173402
 Transform:
@@ -4495,6 +4495,7 @@ MonoBehaviour:
   maxHp: 100
   armor: 0
   isPlayer: 0
+  debugCurrentHp: 0
 --- !u!4 &898561592
 Transform:
   m_ObjectHideFlags: 0
@@ -9092,6 +9093,7 @@ MonoBehaviour:
   maxHp: 100
   armor: 0
   isPlayer: 1
+  debugCurrentHp: 0
 --- !u!4 &1791299918
 Transform:
   m_ObjectHideFlags: 0
