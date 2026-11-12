@@ -25,6 +25,10 @@ public class Inventory : MonoBehaviour
     [Header("")]
     [SerializeField] GameObject moneytxtRoom;
     [SerializeField] GameObject moneytxtWorld;
+
+
+
+
     readonly List<(Item item, TriggerType type, Action<TriggerContext> listener)> triggerListeners
         = new List<(Item, TriggerType, Action<TriggerContext>)>();
 

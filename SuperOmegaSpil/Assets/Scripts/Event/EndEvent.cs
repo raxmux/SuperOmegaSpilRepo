@@ -5,6 +5,7 @@ using static UnityEngine.RuleTile.TilingRuleOutput;
 [CreateAssetMenu(fileName = "End Event", menuName = "Event/End Event")]
 public class EndEvent : Event
 {
+    public override EventType EventType => EventType.end;
     public override void StartEvent()
     {
         base.StartEvent();
