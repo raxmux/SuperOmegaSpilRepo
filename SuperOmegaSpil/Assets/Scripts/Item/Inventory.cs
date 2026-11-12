@@ -93,12 +93,12 @@ public class Inventory : MonoBehaviour
                 {
                     pickEquipment = null;
 
-                    TMP_Text[] text = chooseEquipmentUI.GetComponentsInChildren<TMP_Text>();
-
-                    text[1].text = $"{item_.name} : {item_.stats.MaxHealth} HP, " +
-                        $"{item_.stats.Armor} Armor \n {item_.itemDesc}";
-                    text[2].text = $"{old.name} : {old.stats.MaxHealth} HP, " +
-                        $"{old.stats.Armor} Armor \n {old.itemDesc}";
+                    TMP_Text[] text = chooseEquipmentUI.GetComponentsInChildren<TMP_Text>(true);
+                    if (text.Length >= 3)
+                    {
+                        text[1].text = $"<b>{item_.itemName}</b>\n{item_.GetFullDescription()}";
+                        text[2].text = $"<b>{old.itemName}</b>\n{old.GetFullDescription()}";
+                    }
 
                     yield return Choose(chooseEquipmentUI, () => pickEquipment.HasValue,
                         () => pickEquipment = true);
@@ -159,7 +159,7 @@ public class Inventory : MonoBehaviour
             Destroy(child.gameObject);
         }
         int j = 0;
-        for(int i = 0; i < items.Count; i++)
+        for (int i = 0; i < items.Count; i++)
         {
             j++;
             GameObject slot = Instantiate(itemSlotPrefab, itembar.position + new Vector3(j*60, 0, 0), Quaternion.identity, itembar);

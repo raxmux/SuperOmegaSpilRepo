@@ -145,7 +145,7 @@ public class ShopEvent : Event
             if (priceText != null) priceText.text = price;
             slot.transform.GetChild(2).GetComponent<TMP_Text>().text =
                 priceText != null ? item.itemName : $"{item.itemName}  {price}";
-            slot.transform.GetChild(3).GetComponent<TMP_Text>().text = item.itemDesc;
+            slot.transform.GetChild(3).GetComponent<TMP_Text>().text = item.GetFullDescription();
 
             // Sold slots fade out but stay selectable, so you can still move past them to Exit.
             CanvasGroup group = slot.GetComponent<CanvasGroup>();
