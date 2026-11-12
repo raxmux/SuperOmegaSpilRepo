@@ -146,6 +146,8 @@ public class Inventory : MonoBehaviour
         else if (item.itemType == itemType.Consumable) removed = consumables.Remove(item);
 
         if (removed) UnregisterTrigger(item);
+        if (removed) playerCombatant.maxHp -= item.stats.MaxHealth;
+        if (removed) playerCombatant.armor -= item.stats.Armor;
     }
 
     public void PickEquipmentButton(bool keepNewItem)
