@@ -55,7 +55,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d4076c75deb3a5b4681ae0fb62ca2e51, type: 2}
   - {fileID: 11400000, guid: ffabc4aea84fe274e9430a7e2c0f00e3, type: 2}
   - {fileID: 11400000, guid: 2ce2732a9da62e847b952f2dbacf9fd9, type: 2}
-  - {fileID: 11400000, guid: 8bfa6f376bcc00a428444cfdcbebacf4, type: 2}
+  - {fileID: 11400000, guid: b3456f18941d0d84f913055ea563a3fd, type: 2}
+  - {fileID: 11400000, guid: 756402738f0ba7c43b7e0fde8fbbc563, type: 2}
+  - {fileID: 11400000, guid: 40ba74f0a7c5b6b44bd3c3f5bd0a16c7, type: 2}
   itemsPerShop: 3
   commonChance: 50
   uncommonChance: 28
