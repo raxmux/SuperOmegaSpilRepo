@@ -45,16 +45,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PaletteManager
   color1: {fileID: 2100000, guid: 6802ae325dd2103458239b3e38bbf014, type: 2}
-  color2: {fileID: 2100000, guid: bcfe88a4a888d094bbcf3f501e78acb1, type: 2}
-  color3: {fileID: 2100000, guid: 47f24e21f3826b742b42900398560444, type: 2}
+  color2: {fileID: 2100000, guid: 47f24e21f3826b742b42900398560444, type: 2}
+  color3: {fileID: 2100000, guid: bcfe88a4a888d094bbcf3f501e78acb1, type: 2}
   palettes:
   - name: "Kolla det h\xE4r"
-    mainColor12: {r: 1, g: 0.78798103, b: 0, a: 0}
-    secoColor12: {r: 0.20865506, g: 1, b: 0, a: 0}
-    mainColor3: {r: 0, g: 1, b: 0.55122906, a: 0}
-    secoColor3: {r: 0, g: 0.6809162, b: 1, a: 0}
+    mainColor12: {r: 0.342936, g: 0.6075471, b: 0.15016729, a: 0}
+    secoColor12: {r: 0.7584905, g: 0.5904841, b: 0.14740472, a: 0}
+    mainColor3: {r: 0.5467923, g: 0.54844946, b: 0.5999999, a: 0}
+    secoColor3: {r: 0.46190763, g: 0, b: 1, a: 0}
   - name: fy faan
-    mainColor12: {r: 1, g: 0, b: 0.26495826, a: 0}
-    secoColor12: {r: 1, g: 0, b: 0.65619063, a: 0}
-    mainColor3: {r: 0.7665175, g: 0, b: 1, a: 0}
-    secoColor3: {r: 0, g: 0.4827063, b: 1, a: 0}
+    mainColor12: {r: 0.430509, g: 0.47799128, b: 0.5245282, a: 0}
+    secoColor12: {r: 0.7584905, g: 0.23445548, b: 0.113057934, a: 0}
+    mainColor3: {r: 0.2746671, g: 0.4028828, b: 0.6301887, a: 0}
+    secoColor3: {r: 0.645283, g: 0.569974, b: 0.5101388, a: 0}

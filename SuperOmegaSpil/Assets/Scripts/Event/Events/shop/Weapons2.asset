@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d42207c9590df454c890a5a6f0030add, type: 3}
-  m_Name: New Shop Event
+  m_Name: Weapons2
   m_EditorClassIdentifier: Assembly-CSharp::ShopEvent
   itemsForSale:
-  - {fileID: 11400000, guid: 4e4c4ed338645514e987825d31b42382, type: 2}
-  - {fileID: 11400000, guid: 8bdf8bf0453312b4dac93dcf29b9b7c8, type: 2}
-  - {fileID: 11400000, guid: 89e8a250ddb144d4f930ff7347f6a893, type: 2}
+  - {fileID: 11400000, guid: 8210e7aa355590b4c9e341756af91bac, type: 2}
+  - {fileID: 11400000, guid: d4076c75deb3a5b4681ae0fb62ca2e51, type: 2}
+  - {fileID: 11400000, guid: 2ce2732a9da62e847b952f2dbacf9fd9, type: 2}

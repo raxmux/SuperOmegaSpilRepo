@@ -70,3 +70,14 @@ public class GiveItem : ConsequenceEffect
         Inventory.instance.GiveItem(cursedItem);
     }
 }
+
+[Serializable]
+public class CoinConsequence : ConsequenceEffect
+{
+    public int coinsToAdd;
+    public override void Execute()
+    {
+        Inventory player = GameObject.Find("inventory").GetComponent<Inventory>();
+        player.money += coinsToAdd;
+    }
+}
