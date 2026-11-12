@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
+  m_Name: Beast Hide Pants
+  m_EditorClassIdentifier: Assembly-CSharp::Item
+  itemName: Beast Hide Pants
+  itemDesc: Still shaggy, still warm, and sometimes they growl.
+  itemSprite: {fileID: 5484518373694477364, guid: 32350c17efa50f848ba1b957823b1a16, type: 3}
+  itemRarity: 3
+  value: 75
+  itemType: 1
+  equipmentType: 4
+  stats:
+    hasStats: 1
+    MaxHealth: 20
+    Armor: 0
+  trigger:
+    triggerType: 0
+    triggerAction: []
+  moves:
+  - {fileID: 11400000, guid: de76479d5053b694f823bdc93914f378, type: 2}
+  references:
+    version: 2
+    RefIds: []
