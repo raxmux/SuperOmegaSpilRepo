@@ -16,5 +16,5 @@ MonoBehaviour:
   description: 
   icon: {fileID: 0}
   timeCost: 2
-  damage: 30
+  damage: 50
   heal: 0

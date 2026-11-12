@@ -10,18 +10,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
-  m_Name: Seafarers's cap
+  m_Name: Stud earrings
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: Seafarer's cap
-  itemDesc: An old fishermans hat, wonder how it ended up here though..
-  itemSprite: {fileID: 1778922416938572602, guid: 6947421eff43dc041ac9d99322f1d6af, type: 3}
-  itemRarity: 1
-  value: 25
+  itemName: Stud earrings
+  itemDesc: Just some plain ol' earrings
+  itemSprite: {fileID: 8375159402105883158, guid: 8896dc10b6699e94cb8698da120fa7f4, type: 3}
+  itemRarity: 0
+  value: 5
   itemType: 1
-  equipmentType: 2
+  equipmentType: 7
   stats:
-    hasStats: 0
-    MaxHealth: 40
+    hasStats: 1
+    MaxHealth: 5
     Armor: 0
   trigger:
     triggerType: 0
