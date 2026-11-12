@@ -825,15 +825,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d1a2994ecf0569446a01099ff5aff328, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 96ac1d388a1ebef4f92520ff4af1a914, type: 2}
+  m_sharedMaterial: {fileID: 957045971602601760, guid: 96ac1d388a1ebef4f92520ff4af1a914, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294835709
+  m_fontColor: {r: 0.9924528, g: 0.9924528, b: 0.9924528, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -863,7 +863,7 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 82.88
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -889,10 +889,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0.22317886, y: 0.082659245, z: 0.23144531, w: 0.09092426}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &113951185
@@ -1608,6 +1608,7 @@ GameObject:
   m_Component:
   - component: {fileID: 267612002}
   - component: {fileID: 267612003}
+  - component: {fileID: 267612004}
   m_Layer: 0
   m_Name: Dungeon UI top_0
   m_TagString: Untagged
@@ -1690,6 +1691,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &267612004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 267612001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f651587aa9d8e104982a1da15f047f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HpOutline
+  combatant: {fileID: 1791299917}
 --- !u!1 &268970688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1837,6 +1851,7 @@ GameObject:
   m_Component:
   - component: {fileID: 273928130}
   - component: {fileID: 273928131}
+  - component: {fileID: 273928132}
   m_Layer: 0
   m_Name: Dungeon UI bottom_0 (1)
   m_TagString: Untagged
@@ -1919,6 +1934,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &273928132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 273928129}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f651587aa9d8e104982a1da15f047f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HpOutline
+  combatant: {fileID: 1791299917}
 --- !u!1 &376223456
 GameObject:
   m_ObjectHideFlags: 0
@@ -2162,7 +2190,7 @@ MonoBehaviour:
   m_text: Button
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d1a2994ecf0569446a01099ff5aff328, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 8767499678299636323, guid: d1a2994ecf0569446a01099ff5aff328, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2186,7 +2214,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.25
+  m_fontSize: 2.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -2298,15 +2326,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d1a2994ecf0569446a01099ff5aff328, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 96ac1d388a1ebef4f92520ff4af1a914, type: 2}
+  m_sharedMaterial: {fileID: 957045971602601760, guid: 96ac1d388a1ebef4f92520ff4af1a914, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294835709
+  m_fontColor: {r: 0.9924528, g: 0.9924528, b: 0.9924528, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -2336,7 +2364,7 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 82.88
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -2362,10 +2390,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0.23579407, y: 0.07859707, z: 0.20959473, w: 0.09169674}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &500726331
@@ -2522,6 +2550,7 @@ GameObject:
   m_Component:
   - component: {fileID: 530418298}
   - component: {fileID: 530418299}
+  - component: {fileID: 530418300}
   m_Layer: 0
   m_Name: Dungeon UI bottom_0 (1)
   m_TagString: Untagged
@@ -2604,6 +2633,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &530418300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 530418297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f651587aa9d8e104982a1da15f047f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HpOutline
+  combatant: {fileID: 1791299917}
 --- !u!1 &564940829
 GameObject:
   m_ObjectHideFlags: 0
@@ -2991,8 +3033,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 5.41, y: -5.7264}
-  m_SizeDelta: {x: 8.0577, y: 1.2671499}
+  m_AnchoredPosition: {x: 5.41, y: -6.03}
+  m_SizeDelta: {x: 10.24, y: 1.99}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &613974483
 MonoBehaviour:
@@ -3510,7 +3552,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &669368287
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3528,8 +3570,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4.3445, y: -0.2417875}
-  m_SizeDelta: {x: 8.6889, y: 0.4836}
+  m_AnchoredPosition: {x: 4.4196, y: -0.2417875}
+  m_SizeDelta: {x: 8.8392, y: 0.483575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669368288
 MonoBehaviour:
@@ -3782,8 +3824,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4.3445, y: -2.5925124}
-  m_SizeDelta: {x: 8.6889, y: 0.4836}
+  m_AnchoredPosition: {x: 4.4196, y: -2.5925124}
+  m_SizeDelta: {x: 8.8392, y: 0.483575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &760068969
 MonoBehaviour:
@@ -4170,14 +4212,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0.24528301, g: 0.24528301, b: 0.24528301, a: 0.24313726}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 673427242143566838, guid: e85a82a928f808e4ab97d64925723cc5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5231,6 +5273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1204266353}
   - component: {fileID: 1204266352}
+  - component: {fileID: 1204266354}
   m_Layer: 0
   m_Name: Dungeon UI top_0
   m_TagString: Untagged
@@ -5313,6 +5356,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1851249000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1204266354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1204266351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f651587aa9d8e104982a1da15f047f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HpOutline
+  combatant: {fileID: 1791299917}
 --- !u!1 &1211336860
 GameObject:
   m_ObjectHideFlags: 0
@@ -5372,15 +5428,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d1a2994ecf0569446a01099ff5aff328, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 96ac1d388a1ebef4f92520ff4af1a914, type: 2}
+  m_sharedMaterial: {fileID: 957045971602601760, guid: 96ac1d388a1ebef4f92520ff4af1a914, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294835709
+  m_fontColor: {r: 0.9924528, g: 0.9924528, b: 0.9924528, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5410,7 +5466,7 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 82.88
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -5436,10 +5492,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0.19011688, y: 0.07439327, z: 0.18185043, w: 0.082657814}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1211336863
@@ -5744,7 +5800,7 @@ MonoBehaviour:
   m_text: Button
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d1a2994ecf0569446a01099ff5aff328, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 8767499678299636323, guid: d1a2994ecf0569446a01099ff5aff328, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5768,7 +5824,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.25
+  m_fontSize: 2.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -6368,8 +6424,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4.3445, y: -1.0253625}
-  m_SizeDelta: {x: 8.6889, y: 0.4836}
+  m_AnchoredPosition: {x: 4.4196, y: -1.0253625}
+  m_SizeDelta: {x: 8.8392, y: 0.483575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1467706400
 MonoBehaviour:
@@ -6501,8 +6557,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 4.3445, y: -1.8089375}
-  m_SizeDelta: {x: 8.6889, y: 0.4836}
+  m_AnchoredPosition: {x: 4.4196, y: -1.8089375}
+  m_SizeDelta: {x: 8.8392, y: 0.483575}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489878358
 MonoBehaviour:
@@ -6886,6 +6942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1547217202}
   - component: {fileID: 1547217203}
+  - component: {fileID: 1547217204}
   m_Layer: 0
   m_Name: Dungeon UI top_0 (1)
   m_TagString: Untagged
@@ -6968,6 +7025,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &1547217204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1547217201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f651587aa9d8e104982a1da15f047f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HpOutline
+  combatant: {fileID: 1791299917}
 --- !u!1 &1556992002
 GameObject:
   m_ObjectHideFlags: 0
@@ -7164,15 +7234,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: d1a2994ecf0569446a01099ff5aff328, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 96ac1d388a1ebef4f92520ff4af1a914, type: 2}
+  m_sharedMaterial: {fileID: 957045971602601760, guid: 96ac1d388a1ebef4f92520ff4af1a914, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4294835709
+  m_fontColor: {r: 0.9924528, g: 0.9924528, b: 0.9924528, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -7202,7 +7272,7 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 82.88
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -7228,10 +7298,10 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0.2226944, y: 0.07439327, z: 0.23144531, w: 0.08265877}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &1608853617
@@ -7637,7 +7707,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.45
+  m_fontSize: 1.25
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -7676,7 +7746,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0.5925293, y: 0.21270323, z: 0.7444649, w: 0.25828266}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8872,6 +8942,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1824202211}
   - component: {fileID: 1824202210}
+  - component: {fileID: 1824202212}
   m_Layer: 0
   m_Name: Dungeon UI bottom_0
   m_TagString: Untagged
@@ -8954,6 +9025,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1851249000}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1824202212
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1824202209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f651587aa9d8e104982a1da15f047f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HpOutline
+  combatant: {fileID: 1791299917}
 --- !u!1 &1833409523
 GameObject:
   m_ObjectHideFlags: 0
@@ -8964,6 +9048,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1833409524}
   - component: {fileID: 1833409525}
+  - component: {fileID: 1833409526}
   m_Layer: 0
   m_Name: Dungeon UI top_0 (1)
   m_TagString: Untagged
@@ -9046,6 +9131,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &1833409526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833409523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f651587aa9d8e104982a1da15f047f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HpOutline
+  combatant: {fileID: 1791299917}
 --- !u!1 &1847628532
 GameObject:
   m_ObjectHideFlags: 0
@@ -9766,7 +9864,7 @@ MonoBehaviour:
   m_text: Button
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d1a2994ecf0569446a01099ff5aff328, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 8767499678299636323, guid: d1a2994ecf0569446a01099ff5aff328, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9790,7 +9888,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 2.25
+  m_fontSize: 2.5
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9877,8 +9975,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.42499998, y: 0}
+  m_SizeDelta: {x: -1.49, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1947150477
 MonoBehaviour:
@@ -9902,15 +10000,15 @@ MonoBehaviour:
       m_Calls: []
   m_text: Continue
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 96ac1d388a1ebef4f92520ff4af1a914, type: 2}
+  m_sharedMaterial: {fileID: 957045971602601760, guid: 96ac1d388a1ebef4f92520ff4af1a914, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4290756543
+  m_fontColor: {r: 0.7509433, g: 0.7509433, b: 0.7509433, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -9927,7 +10025,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 1.1
+  m_fontSize: 0.95
   m_fontSizeBase: 24
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9940,7 +10038,7 @@ MonoBehaviour:
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
   m_wordSpacing: 0
-  m_lineSpacing: 0
+  m_lineSpacing: 89.26
   m_lineSpacingMax: 0
   m_paragraphSpacing: 0
   m_charWidthMaxAdj: 0
@@ -9966,7 +10064,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 1.5406075, y: 0, z: 0.8277893, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -10049,10 +10147,11 @@ MonoBehaviour:
   allEvents:
   - {fileID: 11400000, guid: 36e15ac34ea4b4349867923e447d661a, type: 2}
   - {fileID: 11400000, guid: 17986724e52021e4bb690f86a28ec85c, type: 2}
-  - {fileID: 11400000, guid: e769b47dba2cbdb41a6d82885ae6c422, type: 2}
+  - {fileID: 11400000, guid: b03ce6aafaaa0cd40b33b4c8556f7efd, type: 2}
   - {fileID: 11400000, guid: 7b0571df4ce4e9449a4f8a471648a693, type: 2}
   - {fileID: 11400000, guid: 3a3a6d06a79d03d4bad3d4d49bdad78f, type: 2}
   - {fileID: 11400000, guid: 29cc05d0f6e89ab4d8cc35a7ba1182a2, type: 2}
+  - {fileID: 11400000, guid: 4783e0592d63dab4eb9cd82ceebafdd9, type: 2}
   shopUI: {fileID: 1851248999}
   ShopButtons:
   - {fileID: 2007299694}
@@ -10641,6 +10740,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2073886524}
   - component: {fileID: 2073886525}
+  - component: {fileID: 2073886526}
   m_Layer: 0
   m_Name: Dungeon UI bottom_0
   m_TagString: Untagged
@@ -10723,6 +10823,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
   m_BlendShapeWeights: []
+--- !u!114 &2073886526
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2073886523}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f651587aa9d8e104982a1da15f047f76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::HpOutline
+  combatant: {fileID: 1791299917}
 --- !u!1 &2094572295
 GameObject:
   m_ObjectHideFlags: 0
