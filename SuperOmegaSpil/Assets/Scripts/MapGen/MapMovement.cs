@@ -8,18 +8,21 @@ using UnityEngine.UI;
 public class MapMovement : MonoBehaviour
 {
 
+    public static MapMovement instance;
+
     //[SerializeField] InputAction controller;
     Vector2 moveDirection;
 
     RaycastHit2D hit;
     [SerializeField] LayerMask mask;
-    [SerializeField] RoomSpawner roomSpawner;
+    public RoomSpawner roomSpawner;
     [SerializeField] CameraManager cameraManager;
     public bool moving = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        MapMovement.instance = this;
         //controller = PlayerInput.GetPlayerByIndex(0).actions["Move"];
     }
 
@@ -40,15 +43,10 @@ public class MapMovement : MonoBehaviour
 
                     StartCoroutine(MoveToNextRoom(hit.collider.gameObject.transform.position, !hit.collider.gameObject.GetComponent<RoomType>().discovered, hit.collider.gameObject.GetComponent<RoomType>().roomType));
 
-
-                    hit.collider.gameObject.GetComponent<RoomType>().discovered = true;
+                    if(hit.collider.gameObject.GetComponent<RoomType>().roomType != RoomType.RoomTypes.EndRoom)
+                        hit.collider.gameObject.GetComponent<RoomType>().discovered = true;
+                    
                     hit.collider.gameObject.GetComponent<SpriteRenderer>().sprite = hit.collider.gameObject.GetComponent<RoomType>().roomSprite;
-
-                    /*if (hit.collider.gameObject.GetComponent<RoomType>().roomType == RoomType.RoomTypes.EndRoom)
-                    {
-                        transform.position = new Vector3(0, 0, 0);
-                        roomSpawner.SpawnRooms();
-                    }*/
                 }
             }
         }
@@ -64,7 +62,7 @@ public class MapMovement : MonoBehaviour
 
         yield return new WaitForSeconds(0.2f);
 
-        if (isUnknown && hit.collider.gameObject.GetComponent<RoomType>().roomType != RoomType.RoomTypes.EndRoom)
+        if (isUnknown)
         {
             EnterRoom(type);
         }
@@ -90,7 +88,10 @@ public class MapMovement : MonoBehaviour
                 else EventManager.instance.StartEvent(EventType.Dialogue);
                 break;
             case RoomType.RoomTypes.EndRoom:
-                //do nothing
+
+                Debug.Log("End Room Reached");
+                EventManager.instance.StartEvent(EventType.end);
+
                 break;
             default:
 

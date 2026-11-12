@@ -27,6 +27,7 @@ public class EventManager : MonoBehaviour
 
     [Header("")]
     [SerializeField] MapMovement mapMovement;
+    public GameObject endUI;
 
 
     Event currentEvent = null;

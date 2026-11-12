@@ -6,6 +6,7 @@ public enum EventType
     Shop,
     Enemy,
     Dialogue,
+    end,
     Other
 }
 
