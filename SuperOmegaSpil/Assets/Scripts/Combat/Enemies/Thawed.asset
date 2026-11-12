@@ -10,13 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 92477f39dbe46e84e84005fd9a9ed7a3, type: 3}
-  m_Name: Makker
+  m_Name: Thawed
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
-  enemyName: Makker
+  enemyName: Thawed
   sprite: {fileID: -7560441633457950266, guid: 282d93401c6d21946a777070c5049e4b, type: 3}
   maxHp: 125
   attackTimes:
   - 12
   - 6
   lowHpThreshold: 0.3
-  moves: []
+  moves:
+  - move: {fileID: 11400000, guid: d5a29c8a87211a249898e884b8f16ecd, type: 2}
+    weight: 100
+    lowHpWeight: 100
