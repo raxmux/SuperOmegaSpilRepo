@@ -10,19 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
-  m_Name: New Item 1
+  m_Name: Prisoner iron mask
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: 
-  itemDesc: 
-  itemSprite: {fileID: 0}
-  itemRarity: 0
-  value: 0
-  itemType: 0
-  equipmentType: 0
+  itemName: Prisoner iron mask
+  itemDesc: The mask of a feared prisoner, surely this will scare off my foes.. right?
+  itemSprite: {fileID: -4885261892156902864, guid: 6947421eff43dc041ac9d99322f1d6af, type: 3}
+  itemRarity: 2
+  value: 45
+  itemType: 1
+  equipmentType: 2
   stats:
     hasStats: 0
-    MaxHealth: 0
-    Armor: 0
+    MaxHealth: 25
+    Armor: 5
   trigger:
     triggerType: 0
     triggerAction: []
