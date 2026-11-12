@@ -12,7 +12,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d42207c9590df454c890a5a6f0030add, type: 3}
   m_Name: Le shop
   m_EditorClassIdentifier: Assembly-CSharp::ShopEvent
-  shopPool: []
+  shopPool:
+  - {fileID: 11400000, guid: c1d99f355e70b62429f78b70e459d12b, type: 2}
+  - {fileID: 11400000, guid: 4f5f4561b120bd7449342711bc5d7716, type: 2}
+  - {fileID: 11400000, guid: cb89412feefc5644985c1ecc3738d254, type: 2}
+  - {fileID: 11400000, guid: e7128e54b1791224bb3402cec362e793, type: 2}
+  - {fileID: 11400000, guid: a07a9dbdd7c96d04bafab7a07373f38b, type: 2}
+  - {fileID: 11400000, guid: e6d2d44fd84467047adb4b6f550ae73e, type: 2}
+  - {fileID: 11400000, guid: 2f1eb124f9162054b98337f15dd839b2, type: 2}
+  - {fileID: 11400000, guid: e3d16cd08a9f33d4e8ae21a0a6cbb2dc, type: 2}
+  - {fileID: 11400000, guid: e35b5f04d491c0146a530f8b942540d0, type: 2}
+  - {fileID: 11400000, guid: 1dd87ec573bc83943be15f880db66862, type: 2}
+  - {fileID: 11400000, guid: ccb3dcb7755b9e64697cedea00b5faf9, type: 2}
+  - {fileID: 11400000, guid: 68fba7df5b22a3444b53022c3cc9ab99, type: 2}
+  - {fileID: 11400000, guid: 943b3d0bb4aae3b479e5001e18ba056f, type: 2}
+  - {fileID: 11400000, guid: 1af6a903abe81134b86b096e65fe496f, type: 2}
+  - {fileID: 11400000, guid: e1f97dbc36a534e49a66c3e8a6356491, type: 2}
+  - {fileID: 11400000, guid: 52f38c96c29f3fa449e0b21736f13357, type: 2}
+  - {fileID: 11400000, guid: 056caab39438c784f90f3cb0b56a8851, type: 2}
+  - {fileID: 11400000, guid: 80794bfcb9bcf3742a0290133fbcbf59, type: 2}
+  - {fileID: 11400000, guid: 42f09f68b14f59c49b5018da0b5a0481, type: 2}
+  - {fileID: 11400000, guid: 1eb9520ee76565a4b8e1b46c5fd9fb75, type: 2}
+  - {fileID: 11400000, guid: 1b14f424a09de6d44bd8aa796f025bc9, type: 2}
+  - {fileID: 11400000, guid: baa2e11ae056fc84aaed9e15599ec2df, type: 2}
+  - {fileID: 11400000, guid: a4532188c5ca33c4f9faa570b7368fb1, type: 2}
+  - {fileID: 11400000, guid: fe954501e56da7949bec07a647133743, type: 2}
+  - {fileID: 11400000, guid: f07ba5b94da8d1d419a3ad90d44485c1, type: 2}
+  - {fileID: 11400000, guid: 78adf773c6bbca24abc348c085824f24, type: 2}
+  - {fileID: 11400000, guid: 96a087f16e21b58428b5dd5615fe029b, type: 2}
+  - {fileID: 11400000, guid: 6d250fe9798813341926e573dee5bd02, type: 2}
+  - {fileID: 11400000, guid: 4884f9836a18051408428a3c0734f3d6, type: 2}
+  - {fileID: 11400000, guid: d03f5b0995796cf4191e7a5f19246a1a, type: 2}
+  - {fileID: 11400000, guid: a131f39bdebbd97418b90cda58f3ecd1, type: 2}
+  - {fileID: 11400000, guid: e9f591003bb110047a283b9dba7dbb43, type: 2}
+  - {fileID: 11400000, guid: 19e02ee770f212b48b9651ea9a0ddb06, type: 2}
+  - {fileID: 11400000, guid: 32808a990cd091148aed39c7a645f572, type: 2}
+  - {fileID: 11400000, guid: 743e2d57de3925547993912ad8a2bb4d, type: 2}
+  - {fileID: 11400000, guid: a764fcc6677286a47a955f45bdb5e46b, type: 2}
+  - {fileID: 11400000, guid: 7868337230e0c924c94cf4b9edb20d7b, type: 2}
+  - {fileID: 11400000, guid: 39bb9b5ce4f9c6349906baf35a46c4bc, type: 2}
+  - {fileID: 11400000, guid: 8210e7aa355590b4c9e341756af91bac, type: 2}
+  - {fileID: 11400000, guid: d4076c75deb3a5b4681ae0fb62ca2e51, type: 2}
+  - {fileID: 11400000, guid: ffabc4aea84fe274e9430a7e2c0f00e3, type: 2}
+  - {fileID: 11400000, guid: 2ce2732a9da62e847b952f2dbacf9fd9, type: 2}
+  - {fileID: 11400000, guid: 8bfa6f376bcc00a428444cfdcbebacf4, type: 2}
   itemsPerShop: 3
   commonChance: 50
   uncommonChance: 28
