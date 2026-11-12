@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Iron helmet
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Iron helmet
-  itemDesc: 
+  itemDesc: Bucket with ambition
   itemSprite: {fileID: 2358521161833651127, guid: 6947421eff43dc041ac9d99322f1d6af, type: 3}
   itemRarity: 1
   value: 10

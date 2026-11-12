@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Rusty sword
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Rusty sword
-  itemDesc: 
+  itemDesc: 'Older than you, yet still sharper '
   itemSprite: {fileID: -8951780388439148649, guid: d43958c6e91503043b34eab448fcfc2a, type: 3}
   itemRarity: 0
   value: 5
