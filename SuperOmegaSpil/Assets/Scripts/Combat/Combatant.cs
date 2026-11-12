@@ -6,6 +6,9 @@ public class Combatant : MonoBehaviour
     [SerializeField] public float armor = 0f;
     [SerializeField] bool isPlayer;
 
+    [Header("DEBUG - remove later")]
+    [SerializeField] float debugCurrentHp;
+
     public float MaxHp => maxHp;
     public float Hp { get; private set; }
     public bool IsPlayer => isPlayer;
@@ -13,6 +16,11 @@ public class Combatant : MonoBehaviour
 
     public event Action<Combatant> HpChanged;
     public event Action<Combatant> Died;
+
+    void Update()
+    {
+        debugCurrentHp = Hp;
+    }
 
     void Awake()
     {
