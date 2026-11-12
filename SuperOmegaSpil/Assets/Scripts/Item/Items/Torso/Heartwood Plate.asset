@@ -10,23 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e912cd77074934e4eb5d715ffa7b7836, type: 3}
-  m_Name: Torso 4
+  m_Name: Heartwood Plate
   m_EditorClassIdentifier: Assembly-CSharp::Item
-  itemName: 
-  itemDesc: 
+  itemName: Heartwood Plate
+  itemDesc: "Something is growing in the middle of it. It\u2019s on your side, for
+    now."
   itemSprite: {fileID: 6917768309481022055, guid: 1c8bf4a9d1977f0428f16a37b9dc7f18, type: 3}
-  itemRarity: 0
-  value: 0
+  itemRarity: 3
+  value: 60
   itemType: 1
   equipmentType: 5
   stats:
-    hasStats: 0
-    MaxHealth: 0
+    hasStats: 1
+    MaxHealth: 30
     Armor: 0
   trigger:
-    triggerType: 0
-    triggerAction: []
+    triggerType: 2
+    triggerAction:
+    - rid: 1702588519639679060
   moves: []
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1702588519639679060
+      type: {class: HealAction, ns: , asm: Assembly-CSharp}
+      data:
+        healAmount: 15
