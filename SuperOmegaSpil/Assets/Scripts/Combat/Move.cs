@@ -10,14 +10,14 @@ public class Move : ScriptableObject
     [Min(0f)] public float damage;
     [Min(0f)] public float heal;
 
-    public void Use(Combatant user, Combatant opponent)
+    public void Use(Combatant user, Combatant opponent, float damageMultiplier = 1f, float healMultiplier = 1f)
     {
         if (user == null || user.IsDead) return;
 
         if (damage > 0f && opponent != null)
-            opponent.TakeDamage(damage, user.gameObject);
+            opponent.TakeDamage(damage * damageMultiplier, user.gameObject);
 
         if (heal > 0f)
-            user.Heal(heal, user.gameObject);
+            user.Heal(heal * healMultiplier, user.gameObject);
     }
 }
