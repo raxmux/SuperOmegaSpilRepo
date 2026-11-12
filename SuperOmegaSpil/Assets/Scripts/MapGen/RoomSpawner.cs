@@ -113,8 +113,13 @@ public class RoomSpawner : MonoBehaviour
                 currentRooms.RemoveAt(0);
             }
         }
+        spawnEndRoom();
+        spawnShop();
+        spawnEnemies();
+    }
 
-
+    public void spawnEndRoom()
+    {
         int endRoomRand = 0;
         Vector2 endRoomPos = Vector2.zero;
 
@@ -153,22 +158,23 @@ public class RoomSpawner : MonoBehaviour
             }
         }
 
+        GameObject endRoomInstance = Instantiate(endRoom, endRoomPos, Quaternion.identity, transform);
+        endRoomInstance.GetComponent<SpriteRenderer>().sprite = unknownRoom;
+        Destroy(currentRooms[endRoomRand]);
+        currentRooms.RemoveAt(endRoomRand);
+    }
+
+    public void spawnShop()
+    {
         int shopRoomRand = 0;
         Vector2 shopRoomPos = Vector2.zero;
 
         shopRoomRand = UnityEngine.Random.Range(0, currentRooms.Count);
         shopRoomPos = currentRooms[shopRoomRand].transform.position;
 
-        GameObject shopRoomInstance = Instantiate(endRoom, endRoomPos, Quaternion.identity, transform);
+        GameObject shopRoomInstance = Instantiate(roomPrefabs[1], shopRoomPos, Quaternion.identity, transform);
         shopRoomInstance.GetComponent<SpriteRenderer>().sprite = unknownRoom;
         Destroy(currentRooms[shopRoomRand]);
-
-
-        GameObject endRoomInstance = Instantiate(endRoom, endRoomPos, Quaternion.identity, transform);
-        endRoomInstance.GetComponent<SpriteRenderer>().sprite = unknownRoom;
-        Destroy(currentRooms[endRoomRand]);
-        currentRooms.RemoveAt(endRoomRand);
-        spawnEnemies();
     }
 
     public void spawnEnemies()
