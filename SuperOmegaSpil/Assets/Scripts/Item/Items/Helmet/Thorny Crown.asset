@@ -24,10 +24,15 @@ MonoBehaviour:
     MaxHealth: 50
     Armor: 5
   trigger:
-    triggerType: 0
-    triggerAction: []
+    triggerType: 4
+    triggerAction:
+    - rid: 1702588519639679052
   moves:
   - {fileID: 11400000, guid: fd852f1d59b6a6342935aaf87cdd20e6, type: 2}
   references:
     version: 2
-    RefIds: []
+    RefIds:
+    - rid: 1702588519639679052
+      type: {class: DamageEnemyAction, ns: , asm: Assembly-CSharp}
+      data:
+        dmg: 10
