@@ -27,7 +27,8 @@ MonoBehaviour:
     triggerType: 2
     triggerAction:
     - rid: 1702588519639679053
-  moves: []
+  moves:
+  - {fileID: 11400000, guid: 3783c4b95ad2a054abaca664e85c1ec8, type: 2}
   references:
     version: 2
     RefIds:
