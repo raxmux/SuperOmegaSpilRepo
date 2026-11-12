@@ -174,7 +174,7 @@ public class DeathScreen : MonoBehaviour
         foreach (ScoreLine line in breakdown)
             text += $"{line.label}: {line.value}\n";
 
-        text += $"\nDamage taken: {Mathf.RoundToInt(stats.damageTaken)}\n";
+        text += $"Damage taken: {Mathf.RoundToInt(stats.damageTaken)}\n";
         text += $"Money spent: {stats.moneySpent}";
         return text;
     }
