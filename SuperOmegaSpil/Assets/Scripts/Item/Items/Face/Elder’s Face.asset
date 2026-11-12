@@ -16,8 +16,8 @@ MonoBehaviour:
   itemDesc: Wise, wrinkled and very patient. They know prosperity comes to those
     who wait
   itemSprite: {fileID: 7611973313624473454, guid: 761a810b605e00544bbd2f903ccab0f5, type: 3}
-  itemRarity: 0
-  value: 0
+  itemRarity: 3
+  value: 65
   itemType: 1
   equipmentType: 6
   stats:
@@ -35,4 +35,4 @@ MonoBehaviour:
     - rid: 1702588519639679054
       type: {class: AddMoneyAction, ns: , asm: Assembly-CSharp}
       data:
-        amount: 1
+        amount: 5
