@@ -85,6 +85,14 @@ public class Inventory : MonoBehaviour
                 if (old != null)
                 {
                     pickEquipment = null;
+
+                    TMP_Text[] text = chooseEquipmentUI.GetComponentsInChildren<TMP_Text>();
+
+                    text[0].text = $"{item_.name} : {item_.stats.MaxHealth} HP, " +
+                        $"{item_.stats.Armor} Armor \n {item_.itemDesc}";
+                    text[1].text = $"{old.name} : {old.stats.MaxHealth} HP, " +
+                        $"{old.stats.Armor} Armor \n {old.itemDesc}";
+
                     yield return Choose(chooseEquipmentUI, () => pickEquipment.HasValue,
                         () => pickEquipment = true);
 
@@ -171,7 +179,9 @@ public class Inventory : MonoBehaviour
         }
 
         choosing = true;
+
         ui.SetActive(true);
+
         UIMovement.instance.SetSelectedUIElement(ui.GetComponentInChildren<Button>().gameObject);
         yield return new WaitUntil(hasPicked);
         ui.SetActive(false);
