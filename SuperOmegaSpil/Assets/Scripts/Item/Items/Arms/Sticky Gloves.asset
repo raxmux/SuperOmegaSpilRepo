@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Item
   itemName: Sticky Gloves
   itemDesc: Ew, these are disgusting, but i think i saw a coin in them
-  itemSprite: {fileID: 0}
+  itemSprite: {fileID: -7270305388792693418, guid: fe0760a2665f2374b8e842d5e4f32101, type: 3}
   itemRarity: 0
   value: 5
   itemType: 0
