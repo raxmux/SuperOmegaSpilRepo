@@ -111,6 +111,18 @@ public class CombatManager : MonoBehaviour
         PlayerUsedMove?.Invoke(move);
         move.Use(player, enemy);
         TimeClock.Instance.AdvanceTime(move.timeCost);
+
+        string log = $"{player.name} used {move.moveName}!";
+        if (move.damage > 0)
+        {
+            log += $"\nit did {move.damage} damage.";
+        }
+        if (move.heal > 0)
+        {
+            log += $"\nit healed {move.heal} health.";
+        }
+        CombatUI.instance.SetCombatLog(log);
+
         return true;
     }
 
@@ -123,6 +135,16 @@ public class CombatManager : MonoBehaviour
 
         move.Use(enemy, player);
         EnemyUsedMove?.Invoke(move);
+        string log = $"{enemy.name} used {move.moveName}!";
+        if(move.damage > 0)
+        {
+            log += $"\nit did {move.damage} damage.";
+        }
+        if (move.heal > 0)
+        {
+            log += $"\nit healed {move.heal} health.";
+        }
+        CombatUI.instance.SetCombatLog(log);
     }
 
     void OnEnemyDied(Combatant _) => EndCombat(true);

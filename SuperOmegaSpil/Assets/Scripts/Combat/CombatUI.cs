@@ -3,10 +3,12 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
+using UnityEngine.Rendering;
 using UnityEngine.UI;
 
 public class CombatUI : MonoBehaviour
 {
+    public static CombatUI instance;
     [Header("Panels")]
     [SerializeField] GameObject selectionPanel;
     [SerializeField] GameObject movesPanel;
@@ -25,9 +27,23 @@ public class CombatUI : MonoBehaviour
     [Tooltip("Text shown on a greyed out, empty slot.")]
     [SerializeField] string emptySlotText = "-";
 
+    [Header("")]
+    [SerializeField] GameObject combatLog;
+
     readonly List<Move> shownMoves = new List<Move>();
     readonly List<Item> shownConsumables = new List<Item>();
     GameObject currentPanel;
+
+    private void Start()
+    {
+        if (instance != null && instance != this)
+        {
+            Debug.LogError("More than one CombatUI instance found! Destroying the new one. fuck");
+            Destroy(gameObject);
+            return;
+        }
+        instance = this;
+    }
 
     void Awake()
     {
@@ -214,5 +230,14 @@ public class CombatUI : MonoBehaviour
     {
         var label = button.GetComponentInChildren<TMP_Text>(true);
         if (label != null) label.text = text;
+    }
+
+    public void SetCombatLog(string message)
+    {
+        if (combatLog != null)
+        {
+            var text = combatLog.GetComponent<TMP_Text>();
+            if (text != null) text.text = message;
+        }
     }
 }
